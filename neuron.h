@@ -2,7 +2,8 @@
 
 #include <vector>
 
-class neuron {
+class neuron 
+{
 private:
     std::vector<int> condition_; //conditions
     bool fire_;
