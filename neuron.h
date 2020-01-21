@@ -1,13 +1,14 @@
 #pragma once
 
 #include <vector>
+#include <algorithm> 
 
 class neuron 
 {
 private:
+    int number_;
     std::vector<int> condition_; //conditions
     bool fire_;
-    int number_;
 public: 
     neuron(); //default constructor 
     
