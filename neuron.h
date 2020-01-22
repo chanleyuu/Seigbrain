@@ -1,3 +1,14 @@
+/*
+* neuron.h
+*
+* Version information
+* Author: Conall Hanley
+* Date:19/01/2020
+* Description: This file is the header file for the neuron class and declares the class interface. 
+*
+* Copyright notice -
+*/ 
+
 #pragma once
 
 #include <vector>
@@ -17,7 +28,6 @@ public:
     bool isfireing(std::vector<int> check);
     
     bool getfire() const;
-    void setfire(bool fire);
     
     std::vector<int> getcondition() const;
     void setcondition(std::vector<int> condition); 
