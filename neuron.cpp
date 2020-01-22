@@ -57,3 +57,8 @@ int neuron::getnumber() const
 {
     return number_;
 }
+
+void neuron::setnumber(int num)
+{
+    number_ = num;
+}
