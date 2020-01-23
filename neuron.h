@@ -18,16 +18,17 @@ class neuron
 {
 private:
     int number_;
-    std::vector<int> condition_; //conditions
-    bool fire_;
+    //std::vector<int> condition_; //conditions
+    double weight_;
+    double bias_;
 public: 
     neuron(); //default constructor 
     
-    neuron(int num, std::vector<int> cond); //custom constructor 
+    neuron(int num, double weight, double bias); //custom constructor 
     
-    bool isfireing(std::vector<int> check);
+    double getoutput(std::vector<double> check);
     
-    bool getfire() const;
+    double getweight() const;
     
     std::vector<int> getcondition() const;
     void setcondition(std::vector<int> condition); 

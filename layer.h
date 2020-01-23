@@ -18,7 +18,12 @@
 class network 
 {
 private:
+    std::vector<neuron> neurons_;
     
 public:
+    layer(); //default constructor
     
+    std::vector<neuron> getneurons() const;
+    void addneuron(neuron n);
+    void removeneuron(int number);
 };

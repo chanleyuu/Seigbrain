@@ -16,41 +16,26 @@ neuron::neuron() : number_{ 1 }
     
 }
 
-neuron::neuron(int num, std::vector<int> cond) : number_{ num }, condition_{ cond } 
+neuron::neuron(int num, double weight, double bias) : number_{ num }, weight_{ weight }, bias_{ bias }
 {
     
 }
 
-bool neuron::isfireing(std::vector<int> check)
+double neuron::getoutput(std::vector<double> check)
 {
-   
-    std::vector<int>::iterator it;
-    it = std::search (check.begin(), check.end(), condition_.begin(), condition_.end());
-        
-        
-    if (it!=check.end()) {
-        fire_ = true;
-        return true;
+    double avg = 0.0;
+    int n = check.size();
+    for (int i = 0; i < n; i++) {
+        avg += check[i];
     }
-    
-    fire_ = false;
-    return false;
+    avg = avg / (double) n;
+    return avg + bias_;
 }
 
 
-bool neuron::getfire() const 
+double neuron::getweight() const 
 {
-    return fire_;
-}
-
-std::vector<int> neuron::getcondition() const
-{
-    return condition_;
-}
-
-void neuron::setcondition(std::vector<int> condition)
-{
-    condition_ = condition;
+    return weight_;
 }
 
 int neuron::getnumber() const
