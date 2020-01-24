@@ -15,7 +15,7 @@
 
 #include "neuron.h"
 
-class network 
+class layer
 {
 private:
     std::vector<neuron> neurons_;
@@ -26,4 +26,7 @@ public:
     std::vector<neuron> getneurons() const;
     void addneuron(neuron n);
     void removeneuron(int number);
+    neuron getneuron(int number);
+    
+    void conntectneurons(layer l);
 };

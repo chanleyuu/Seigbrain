@@ -14,10 +14,13 @@
 
 #include <vector>
 
+#include "layer.h"
+
 class network 
 {
 private:
-    
+    std::vector<layer> layers;
 public:
     
+    void train();
 };

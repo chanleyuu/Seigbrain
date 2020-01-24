@@ -38,6 +38,21 @@ double neuron::getweight() const
     return weight_;
 }
 
+void neuron::setweight(int weight) 
+{
+    weight_ = weight;
+}
+
+double neuron::getbias() const 
+{
+    return bias_;
+}
+
+void neuron::setbias(int bias)
+{
+    bias_ = bias;
+}
+
 int neuron::getnumber() const
 {
     return number_;

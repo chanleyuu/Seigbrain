@@ -29,9 +29,10 @@ public:
     double getoutput(std::vector<double> check);
     
     double getweight() const;
+    void setweight(int weight);
     
-    std::vector<int> getcondition() const;
-    void setcondition(std::vector<int> condition); 
+    double getbias() const;
+    void setbias(int bias);
     
     int getnumber() const;
     void setnumber(int num);

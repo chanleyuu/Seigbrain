@@ -10,3 +10,19 @@
 */ 
 
 #include "layer.h"
+
+layer::layer()
+{
+    
+}
+
+std::vector<neuron> layer::getneurons() const
+{
+    return neurons_;
+}
+
+void layer::addneuron(neuron n)
+{
+    neurons_.push_back(n);
+}
+
