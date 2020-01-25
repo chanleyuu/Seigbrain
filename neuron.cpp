@@ -11,12 +11,12 @@
 
 #include "neuron.h"
 
-neuron::neuron() : number_{ 1 } 
+neuron::neuron() : number_{ 1 } , weight_{ 0.0 }, bias_{ 0.0 }
 {
     
 }
 
-neuron::neuron(int num, double weight, double bias) : number_{ num }, weight_{ weight }, bias_{ bias }, output_{ 0.0 }
+neuron::neuron(int num, double weight, double bias) : number_{ num }, weight_{ weight }, bias_{ bias }
 {
     
 }
@@ -29,8 +29,8 @@ double neuron::calculateoutput(std::vector<double> check)
         avg += check[i];
     }
     avg = avg / (double) n;
-    output_ = avg + bias_;
-    return output_;
+    weight_ = avg + bias_;
+    return weight_;
 }
 
 

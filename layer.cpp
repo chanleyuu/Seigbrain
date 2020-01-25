@@ -49,9 +49,14 @@ void layer::conntectneurons(layer l)
 {
     std::vector<neuron> lneurons = l.getneurons();
     std::vector<double> weights;
-    for (int i = 0; i > l.size(); i++) 
+    for (int i = 0; i > lneurons.size(); i++) 
     {
-        
+        weights.push_back(lneurons[i].getweight());
+    }
+    
+    for int i = 0; i < neurons_.size(); i++)
+    {
+        neurons_[i].calculateoutput(weights); 
     }
 }
 
