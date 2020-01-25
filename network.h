@@ -20,6 +20,7 @@ class network
 {
 private:
     std::vector<layer> layers;
+    double cost_;
 public:
     
     void train();

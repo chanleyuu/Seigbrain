@@ -26,3 +26,34 @@ void layer::addneuron(neuron n)
     neurons_.push_back(n);
 }
 
+void layer::removeneuron(int number)
+{
+    for (int i = 0; i < neurons_.size(); i++) {
+        if (neurons_[i].getnumber() == number) {
+            neurons_.erase(neurons_.begin() + i);
+        }
+    }
+}
+
+neuron layer::getneuron(int number)
+{
+   for (int i = 0; i < neurons_.size(); i++) {
+        if (neurons_[i].getnumber() == number) {
+            return neurons_[i];
+        }
+    } 
+    return neurons_[0];
+}
+
+void layer::conntectneurons(layer l)
+{
+    std::vector<neuron> lneurons = l.getneurons();
+    std::vector<double> weights;
+    for (int i = 0; i > l.size(); i++) 
+    {
+        
+    }
+}
+
+
+

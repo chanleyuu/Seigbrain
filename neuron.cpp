@@ -16,12 +16,12 @@ neuron::neuron() : number_{ 1 }
     
 }
 
-neuron::neuron(int num, double weight, double bias) : number_{ num }, weight_{ weight }, bias_{ bias }
+neuron::neuron(int num, double weight, double bias) : number_{ num }, weight_{ weight }, bias_{ bias }, output_{ 0.0 }
 {
     
 }
 
-double neuron::getoutput(std::vector<double> check)
+double neuron::calculateoutput(std::vector<double> check)
 {
     double avg = 0.0;
     int n = check.size();
@@ -29,7 +29,8 @@ double neuron::getoutput(std::vector<double> check)
         avg += check[i];
     }
     avg = avg / (double) n;
-    return avg + bias_;
+    output_ = avg + bias_;
+    return output_;
 }
 
 

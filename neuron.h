@@ -21,12 +21,14 @@ private:
     //std::vector<int> condition_; //conditions
     double weight_;
     double bias_;
+ //   double output_;
 public: 
     neuron(); //default constructor 
     
     neuron(int num, double weight, double bias); //custom constructor 
     
-    double getoutput(std::vector<double> check);
+    double calculateoutput(std::vector<double> check);
+  //  double getoutput() const;
     
     double getweight() const;
     void setweight(int weight);
