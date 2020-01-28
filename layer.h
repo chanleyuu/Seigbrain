@@ -20,6 +20,7 @@ class layer
 private:
     std::vector<neuron> neurons_;
     
+	double cost_;
 public:
     layer(); //default constructor
     
@@ -29,4 +30,7 @@ public:
     neuron getneuron(int number);
     
     void conntectneurons(layer l);
+
+	double getcost() const;
+	void caluclatecost();
 };
