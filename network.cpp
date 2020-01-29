@@ -11,3 +11,12 @@
 
 #include "network.h"
 
+network::network()
+{
+    
+}
+
+double network::think()
+{
+    
+}

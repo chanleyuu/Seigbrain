@@ -12,16 +12,25 @@
 
 #pragma once
 
-#include <vector>
+//#include <vector>
 
 #include "layer.h"
 
 class network 
 {
 private:
-    std::vector<layer> layers;
+    layer baselayer;
+    layer hiddenlayer1;
+    layer hiddenlayer2;
+    layer outputlayer;
     double cost_;
 public:
+    
+    network();
+    
+    double think();
+    
+    double calculatecost();
     
     void train();
 };

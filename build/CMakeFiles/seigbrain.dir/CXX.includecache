@@ -6,13 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/aquadoff/projects/Seigbrain/main.cpp
-iostream
+/home/aquadoff/projects/Seigbrain/layer.h
+vector
 -
 neuron.h
 /home/aquadoff/projects/Seigbrain/neuron.h
 
+/home/aquadoff/projects/Seigbrain/main.cpp
+iostream
+-
+network.h
+/home/aquadoff/projects/Seigbrain/network.h
+
+/home/aquadoff/projects/Seigbrain/network.h
+layer.h
+/home/aquadoff/projects/Seigbrain/layer.h
+
 /home/aquadoff/projects/Seigbrain/neuron.h
 vector
+-
+algorithm
 -
 
