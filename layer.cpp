@@ -54,11 +54,27 @@ void layer::conntectneurons(layer l)
         weights.push_back(lneurons[i].getweight());
     }
     
-    for int i = 0; i < neurons_.size(); i++)
+    for (int i = 0; i < neurons_.size(); i++)
     {
         neurons_[i].calculateoutput(weights); 
     }
 }
 
+double layer::getcost() const
+{
+    return cost_;
+}
+
+void layer::caluclatecost()
+{
+    int n = neurons_.size();
+    double avg = 0.0;
+    for (int i = 0; i < n; i++) {
+       avg += neurons_[i].getweight();
+    }
+    
+    avg = avg / (double) n;
+    cost_ = 1.0 - avg;
+}
 
 
