@@ -42,3 +42,14 @@ double network::think()
     
     
 }
+
+void network::train()
+{
+	for (int i = 0; i < hiddenlayer1.getneurons.size(); i++) 
+	{
+		double oldcost = hiddenlayer1.getcost();
+		think();
+
+	}
+
+}
