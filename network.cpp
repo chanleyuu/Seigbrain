@@ -34,18 +34,30 @@ network::network()
     }
 }
 
-double network::think()
+int network::think()
 {
     hiddenlayer1.conntectneurons(baselayer);
     hiddenlayer2.conntectneurons(hiddenlayer1);
     outputlayer.conntectneurons(hiddenlayer2);
     
-    
+    double highnum = 0.0;
+    int out = 0;
+    std::vector<neuron> outneurons = outputlayer.getneurons();
+    for (int i = 0; i < outneurons.size(); i++) 
+	{
+        if (outneurons[i].getweight() > highnum) 
+        {
+            highnum = outneurons[i].getweight();
+            out = outneurons[i].getnumber();
+        }
+        
+    }
+    return out;
 }
 
 void network::train()
 {
-	for (int i = 0; i < hiddenlayer1.getneurons.size(); i++) 
+	for (int i = 0; i < hiddenlayer1.getneurons().size(); i++) 
 	{
 		double oldcost = hiddenlayer1.getcost();
 		think();

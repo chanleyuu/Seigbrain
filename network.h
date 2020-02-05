@@ -23,12 +23,11 @@ private:
     layer hiddenlayer1;
     layer hiddenlayer2;
     layer outputlayer;
-    double cost_;
 public:
     
     network();
     
-    double think();
+    int think();
     
     double calculatecost();
     
