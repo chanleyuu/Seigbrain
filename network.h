@@ -13,6 +13,7 @@
 #pragma once
 
 //#include <vector>
+#include <fstream>
 
 #include "layer.h"
 
@@ -32,4 +33,6 @@ public:
     double calculatecost();
     
     void train();
+    
+    void readdata();
 };

@@ -60,8 +60,13 @@ void network::train()
 	for (int i = 0; i < hiddenlayer1.getneurons().size(); i++) 
 	{
 		double oldcost = hiddenlayer1.getcost();
+        double upcost = 0.0;
+        double downcost = 0.0;
 		think();
-
+        while (oldcost > (double) i / 10) {
+            
+        }
+        
 	}
 
 }
