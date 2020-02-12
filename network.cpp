@@ -59,7 +59,7 @@ void network::train()
 {
 	for (int i = 0; i < hiddenlayer1.getneurons().size(); i++) 
 	{
-		double targetcost = 1 - ((double)i + 1.0) / ((double) hiddenlayer1.getneurons().size());
+		double targetcost = 1.0 - ((double)i + 1.0) / ((double) hiddenlayer1.getneurons().size());
 		double oldcost = hiddenlayer1.getcost();
         double upcost = 0.0;
         double downcost = 0.0;
