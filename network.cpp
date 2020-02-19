@@ -65,6 +65,11 @@ void network::train()
         double downcost = 0.0;
 		think();
         while (oldcost > targetcost) {
+            double oldweight = hiddenlayer1.getneurons()[i].getweight();
+            double currweight = oldweight;
+            for (int i = 0; i < 100; i++) {
+                
+            }
             
         }
         
