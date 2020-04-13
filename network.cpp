@@ -72,6 +72,9 @@ void network::train()
                 upcost = hiddenlayer1.getcost();
                 hiddenlayer1.getneurons()[i].setweight(currweight - 0.01);
                 downcost = hiddenlayer1.getcost();
+                if (upcost > downcost && oldcost > downcost) {
+                    
+                }
             }
             
         }
