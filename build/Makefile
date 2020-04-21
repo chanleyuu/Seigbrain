@@ -40,6 +40,9 @@ default_target: all
 .SUFFIXES: .hpux_make_needs_suffix_list
 
 
+# Command-line flag to silence nested $(MAKE).
+$(VERBOSE)MAKESILENT = -s
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -144,13 +147,13 @@ edit_cache/fast: edit_cache
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aquadoff/projects/Seigbrain/build/CMakeFiles /home/aquadoff/projects/Seigbrain/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/aquadoff/projects/Seigbrain/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
 # The main clean target
@@ -160,12 +163,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -178,12 +181,12 @@ depend:
 
 # Build rule for target.
 seigbrain: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 seigbrain
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 seigbrain
 .PHONY : seigbrain
 
 # fast build rule for target.
 seigbrain/fast:
-	$(MAKE) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/build
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/build
 .PHONY : seigbrain/fast
 
 main.o: main.cpp.o
@@ -192,7 +195,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -201,7 +204,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -210,7 +213,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
