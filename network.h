@@ -28,6 +28,8 @@ public:
     
     network();
     
+    int produceoutput();
+    
     int think();
     
     double calculatecost();
@@ -35,4 +37,6 @@ public:
     void train();
     
     void readdata();
+    
+    void importimage();
 };
