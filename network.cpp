@@ -9,7 +9,10 @@
 * Copyright notice -
 */ 
 
+
+#include <Magick++.h>
 #include "network.h"
+
 
 network::network()
 {
@@ -84,5 +87,48 @@ void network::train()
         }
         
 	}
+	
+	for (int i = 0; i < hiddenlayer2.getneurons().size(); i++) 
+	{
+		double targetcost = 1.0 - ((double)i + 1.0) / ((double) hiddenlayer2.getneurons().size());
+		double oldcost = hiddenlayer2.getcost();
+        double upcost = 0.0;
+        double downcost = 0.0;
+		think();
+        while (oldcost > targetcost) {
+            double oldweight = hiddenlayer2.getneurons()[i].getweight();
+            double currweight = oldweight;
+            for (int i = 0; i < 100; i++) {
+                hiddenlayer2.getneurons()[i].setweight(currweight + 0.01);
+                upcost = hiddenlayer2.getcost();
+                hiddenlayer2.getneurons()[i].setweight(currweight - 0.01);
+                downcost = hiddenlayer2.getcost();
+                if (upcost > downcost && oldcost > downcost) {
+                hiddenlayer2.getneurons()[i].setweight(currweight + 0.01);
+                }
+                else 
+                {
+                hiddenlayer2.getneurons()[i].setweight(currweight - 0.01);
+                }
+            }
+            
+        }
+        
+	}
 
+}
+
+void network::importimage()
+{
+    Magick::Image image;
+    
+    try {
+        image.read( "./data/number1.jpg );
+    }
+}
+
+
+int network::produceoutput()
+{
+    
 }
