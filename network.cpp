@@ -10,9 +10,7 @@
 */ 
 
 
-#include <Magick++.h>
 #include "network.h"
-
 
 network::network()
 {
@@ -123,7 +121,7 @@ void network::importimage()
     Magick::Image image;
     
     try {
-        image.read( "./data/number1.jpg );
+        image.read( "./data/number1.jpg" );
     }
 }
 

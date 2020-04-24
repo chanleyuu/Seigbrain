@@ -14,6 +14,7 @@
 
 //#include <vector>
 #include <fstream>
+#include <ImageMagick-7/Magick++.h>
 
 #include "layer.h"
 
