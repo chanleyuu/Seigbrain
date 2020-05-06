@@ -58,63 +58,41 @@ int network::think()
 
 void network::train()
 {
-	for (int i = 0; i < hiddenlayer1.getneurons().size(); i++) 
-	{
-		double targetcost = 1.0 - ((double)i + 1.0) / ((double) hiddenlayer1.getneurons().size());
-		double oldcost = hiddenlayer1.getcost();
-        double upcost = 0.0;
-        double downcost = 0.0;
-		think();
-        while (oldcost > targetcost) {
-            double oldweight = hiddenlayer1.getneurons()[i].getweight();
-            double currweight = oldweight;
-            for (int i = 0; i < 100; i++) {
-                hiddenlayer1.getneurons()[i].setweight(currweight + 0.01);
-                upcost = hiddenlayer1.getcost();
-                hiddenlayer1.getneurons()[i].setweight(currweight - 0.01);
-                downcost = hiddenlayer1.getcost();
-                if (upcost > downcost && oldcost > downcost) {
-                hiddenlayer1.getneurons()[i].setweight(currweight + 0.01);
-                }
-                else 
-                {
-                hiddenlayer1.getneurons()[i].setweight(currweight - 0.01);
-                }
-            }
-            
-        }
-        
-	}
-	
-	for (int i = 0; i < hiddenlayer2.getneurons().size(); i++) 
-	{
-		double targetcost = 1.0 - ((double)i + 1.0) / ((double) hiddenlayer2.getneurons().size());
-		double oldcost = hiddenlayer2.getcost();
-        double upcost = 0.0;
-        double downcost = 0.0;
-		think();
-        while (oldcost > targetcost) {
-            double oldweight = hiddenlayer2.getneurons()[i].getweight();
-            double currweight = oldweight;
-            for (int i = 0; i < 100; i++) {
-                hiddenlayer2.getneurons()[i].setweight(currweight + 0.01);
-                upcost = hiddenlayer2.getcost();
-                hiddenlayer2.getneurons()[i].setweight(currweight - 0.01);
-                downcost = hiddenlayer2.getcost();
-                if (upcost > downcost && oldcost > downcost) {
-                hiddenlayer2.getneurons()[i].setweight(currweight + 0.01);
-                }
-                else 
-                {
-                hiddenlayer2.getneurons()[i].setweight(currweight - 0.01);
-                }
-            }
-            
-        }
-        
-	}
-
+	tunelayer(hiddenlayer1);
+	tunelayer(hiddenlayer2);
 }
+
+void network::tunelayer(layer L)
+{
+    for (int i = 0; i < L.getneurons().size(); i++) 
+	{
+		double targetcost = 1.0 - ((double)i + 1.0) / ((double) L.getneurons().size());
+		double oldcost = L.getcost();
+        double upcost = 0.0;
+        double downcost = 0.0;
+		think();
+        while (oldcost > targetcost) {
+            double oldweight = L.getneurons()[i].getweight();
+            double currweight = oldweight;
+            for (int i = 0; i < 100; i++) {
+                L.getneurons()[i].setweight(currweight + 0.01);
+                upcost = L.getcost();
+                L.getneurons()[i].setweight(currweight - 0.01);
+                downcost = L.getcost();
+                if (upcost > downcost && oldcost > downcost) {
+                L.getneurons()[i].setweight(currweight + 0.01);
+                }
+                else 
+                {
+                L.getneurons()[i].setweight(currweight - 0.01);
+                }
+            }
+            
+        }
+        
+	}
+}
+
 
 void network::importimage()
 {
@@ -122,6 +100,10 @@ void network::importimage()
     
     try {
         image.read( "./data/number1.jpg" );
+    }
+    catch( std::exception &error_ )
+    {
+        std::cout << "ERROR!: " << error_.what() << std::endl;
     }
 }
 
