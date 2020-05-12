@@ -9,7 +9,7 @@
 * Copyright notice -
 */ 
 
-
+#include <iostream>
 #include "network.h"
 
 network::network()

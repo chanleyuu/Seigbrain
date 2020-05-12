@@ -37,6 +37,8 @@ public:
     
     void train();
     
+    void tunelayer(layer L);
+    
     void readdata();
     
     void importimage();
