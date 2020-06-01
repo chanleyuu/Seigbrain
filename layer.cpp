@@ -67,10 +67,13 @@ double layer::getsensitivity() const
 
 
 //Layer takes the previous values as an input
-void layer::calculatesensitivity(Layer lastgen)
+void layer::calculatesensitivity(layer lastgen)
 {
+    double out;
     for (int i = 0; i < this->neurons_.size(); i++) {
-        neurons_[i].
+       double changeweight = neurons_[i].getweight() - lastgen.getneuron(i).getweight();
+       double changebias = neurons_[i].getbias() - lastgen.getneuron(i).getbias();
+       out *= changeweight / changebias;
     }
 }
 

@@ -21,6 +21,8 @@
 class network 
 {
 private:
+    double learningrate;
+    
     layer baselayer;
     layer hiddenlayer1;
     layer hiddenlayer2;
@@ -28,6 +30,9 @@ private:
 public:
     
     network();
+    
+    double getlearningrate() const;
+    void setlearningrate(double rate);
     
     int produceoutput();
     
