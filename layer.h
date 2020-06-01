@@ -20,6 +20,7 @@ class layer
 private:
     std::vector<neuron> neurons_;
     
+    double sensetivity;
 	double cost_;
 public:
     layer(); //default constructor
@@ -33,4 +34,7 @@ public:
 
 	double getcost() const;
 	void caluclatecost();
+    
+    double getsensitivity() const;
+    void calculatesensitivity(Layer lastgen);
 };

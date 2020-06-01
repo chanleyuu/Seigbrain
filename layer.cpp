@@ -60,6 +60,21 @@ void layer::conntectneurons(layer l)
     }
 }
 
+double layer::getsensitivity() const
+{
+    return sensetivity;
+}
+
+
+//Layer takes the previous values as an input
+void layer::calculatesensitivity(Layer lastgen)
+{
+    for (int i = 0; i < this->neurons_.size(); i++) {
+        neurons_[i].
+    }
+}
+
+
 double layer::getcost() const
 {
     return cost_;

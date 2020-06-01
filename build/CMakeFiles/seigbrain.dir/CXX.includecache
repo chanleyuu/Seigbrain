@@ -19,6 +19,10 @@ network.h
 /home/aquadoff/projects/Seigbrain/network.h
 
 /home/aquadoff/projects/Seigbrain/network.h
+fstream
+-
+ImageMagick-7/Magick++.h
+-
 layer.h
 /home/aquadoff/projects/Seigbrain/layer.h
 
