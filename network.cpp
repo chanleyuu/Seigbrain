@@ -62,10 +62,11 @@ void network::train()
 	tunelayer(hiddenlayer2);
 }
 
-void network::tunelayer(layer L)
+void network::tunelayer(layer& L)
 {
     for (int i = 0; i < L.getneurons().size(); i++) 
 	{
+        double sensitivty ;
 		double targetcost = 1.0 - ((double)i + 1.0) / ((double) L.getneurons().size());
 		double oldcost = L.getcost();
         double upcost = 0.0;
