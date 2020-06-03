@@ -66,7 +66,8 @@ void network::tunelayer(layer& L)
 {
     for (int i = 0; i < L.getneurons().size(); i++) 
 	{
-        double sensitivty ;
+        
+        double sensitivty = L.getsensitivity();
 		double targetcost = 1.0 - ((double)i + 1.0) / ((double) L.getneurons().size());
 		double oldcost = L.getcost();
         double upcost = 0.0;
@@ -99,6 +100,7 @@ void network::importimage()
 {
     Magick::Image image;
     
+    /*TO DO, set image as inputs for neural network */
     try {
         image.read( "./data/number1.jpg" );
     }
@@ -113,3 +115,14 @@ int network::produceoutput()
 {
     
 }
+
+double network::getlearningrate()
+{
+    return learningrate;
+}
+
+void network::setlearningrate(double rate)
+{
+    rate = learningrate;
+}
+
