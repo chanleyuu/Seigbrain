@@ -36,5 +36,5 @@ public:
 	void caluclatecost();
     
     double getsensitivity() const;
-    void calculatesensitivity(Layer lastgen);
+    void calculatesensitivity(layer& lastgen);
 };

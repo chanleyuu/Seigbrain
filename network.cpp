@@ -62,7 +62,7 @@ void network::train()
 	tunelayer(hiddenlayer2);
 }
 
-void network::tunelayer(layer& L)
+void network::tunelayer(layer& L, layer& pastlayer)
 {
     for (int i = 0; i < L.getneurons().size(); i++) 
 	{
