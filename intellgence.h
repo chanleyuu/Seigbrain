@@ -14,3 +14,12 @@
 #pragma once
 
 #include "network.h"
+
+//This class houses the Diogenes Core(s)
+class intellegence
+{
+private:
+    
+public:
+    
+}

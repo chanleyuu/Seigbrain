@@ -17,7 +17,7 @@
 #include <ImageMagick-7/Magick++.h>
 
 #include "layer.h"
-
+//Diogenes Core
 class network 
 {
 private:
