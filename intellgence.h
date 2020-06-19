@@ -1,5 +1,5 @@
 /*
-* intellegence.h
+* intelligence.h
 *
 * Version information
 * Author: Conall Hanley
@@ -13,13 +13,14 @@
 
 #pragma once
 
+#include <vector>
 #include "network.h"
 
 //This class houses the Diogenes Core(s)
-class intellegence
+class intelligence
 {
 private:
-    
+    vector<network> gen;
 public:
-    
+     void train();
 }
