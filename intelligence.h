@@ -22,6 +22,8 @@ class intelligence
 private:
     vector<network> gen;
 public:
+    intelligence();
+    
     void addnetwork();
     void train();
 }
