@@ -12,6 +12,11 @@
 
 #include "intelligence.h"
 
-intelligence::intelligence(){
+intelligence::intelligence(layer firstlayer){
+    gen.push_back(firstlayer);
+}
+
+void intelligence::train()
+{
     
 }
