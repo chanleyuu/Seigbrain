@@ -13,8 +13,8 @@
 #pragma once
 
 //#include <vector>
-#include <fstream>
-#include <ImageMagick-7/Magick++.h>
+
+
 
 #include "layer.h"
 //Diogenes Core
@@ -29,7 +29,7 @@ private:
     layer outputlayer;
 public:
     
-    network();
+    network(layer base);
     
     double getlearningrate() const;
     void setlearningrate(double rate);
@@ -46,5 +46,6 @@ public:
     
     void readdata();
     
-    void importimage();
+    
+    void setfirstlayer(layer lay);
 };

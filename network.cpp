@@ -12,13 +12,11 @@
 #include <iostream>
 #include "network.h"
 
-network::network()
+network::network(layer base)
 {
-    for (int i = 0; i < 10000; i++) {
-        neuron nuer( i, 0.0, 0.0);
-        baselayer.addneuron(nuer);
-    }
-        
+    
+    baselayer = base;
+    
     for (int i = 0; i < 32; i++) {
         neuron nuer( i, 0.0, 0.0);
         hiddenlayer1.addneuron(nuer);
@@ -96,27 +94,13 @@ void network::tunelayer(layer& L, layer& pastlayer)
 }
 
 
-void network::importimage()
-{
-    Magick::Image image;
-    
-    /*TO DO, set image as inputs for neural network */
-    try {
-        image.read( "./data/number1.jpg" );
-    }
-    catch( std::exception &error_ )
-    {
-        std::cout << "ERROR!: " << error_.what() << std::endl;
-    }
-}
-
 
 int network::produceoutput()
 {
     
 }
 
-double network::getlearningrate()
+double network::getlearningrate() const
 {
     return learningrate;
 }
