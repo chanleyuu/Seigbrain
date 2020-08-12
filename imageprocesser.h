@@ -22,5 +22,7 @@ class imageprocesser {
 private:
     layer imagelayer
 public:
+    imageprocesser(); //constructor
+    
     void importimage();
-}
+};
