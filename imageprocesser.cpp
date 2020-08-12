@@ -2,6 +2,11 @@
 
 #include "imageprocesser.h"
 
+imageprocesser::imageprocesser()
+{
+    
+}
+
 void imageprocesser::importimage()
 {
     Magick::Image image;
