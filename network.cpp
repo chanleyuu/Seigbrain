@@ -96,9 +96,21 @@ void network::tunelayer(layer& L, layer& pastlayer)
 }
 
 
-
-int network::produceoutput()
+//This funtion outputs a vector,
+//the first value is the output the second is the cost
+std::vector<double> network::produceoutput()
 {
+  int guess;//The AI's best guess
+  int certainty;//how sure the AI is
+  std::vector<double> out;
+
+  for (int i = 0; i < outputlayer.size(); i++){
+    outputlayer.getneuron(i) += guess;
+  }
+
+  certainty = outputlayer.getcost();
+  out.push_back(guess);
+  out.push_back(certainty);
 
 }
 

@@ -11,16 +11,22 @@
 
 #include "intelligence.h"
 
-intelligence::intelligence(layer firstlayer){
-    gen.push_back(firstlayer);
+intelligence::intelligence(layer inlayer, double learningrate): inlayer = inputlayer{
+
+    gen.push_back();
 }
 
 void intelligence::train()
 {
-    layer currlayer;
+    network currentgen;
+
 
 }
 
-void intelligence::train() {
+layer intelligence::getinputlayer() const{
+  return inputlayer;
+}
 
+void intelligence::setinputlayer(layer l){
+  l = inputlayer;
 }
