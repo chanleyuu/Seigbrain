@@ -111,7 +111,7 @@ std::vector<double> network::produceoutput()
   certainty = outputlayer.getcost();
   out.push_back(guess);
   out.push_back(certainty);
-
+  return out;
 }
 
 double network::getlearningrate() const
