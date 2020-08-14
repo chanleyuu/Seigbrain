@@ -12,7 +12,7 @@
 #include <iostream>
 #include "network.h"
 
-network::network(layer base, double rate): rate = this->learningrate
+network::network(layer base, double rate): learningrate_{ rate }
 {
 
     baselayer = base;
@@ -100,10 +100,11 @@ void network::tunelayer(layer& L, layer& pastlayer)
 //the first value is the output the second is the cost
 std::vector<double> network::produceoutput()
 {
-  int guess;//The AI's best guess
-  int certainty;//how sure the AI is
+  double guess;//The AI's best guess
+  double certainty;//how sure the AI is
   std::vector<double> out;
 
+  double highscore;
   for (int i = 0; i < outputlayer.size(); i++){
     outputlayer.getneuron(i) += guess;
   }
@@ -116,10 +117,10 @@ std::vector<double> network::produceoutput()
 
 double network::getlearningrate() const
 {
-    return learningrate;
+    return learningrate_;
 }
 
 void network::setlearningrate(double rate)
 {
-    rate = learningrate;
+    rate = learningrate_;
 }

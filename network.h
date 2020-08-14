@@ -18,7 +18,7 @@
 class network
 {
 private:
-    double learningrate;
+    double learningrate_;
 
     layer baselayer;
     layer hiddenlayer1;

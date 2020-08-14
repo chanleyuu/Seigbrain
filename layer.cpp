@@ -37,11 +37,9 @@ void layer::removeneuron(int number)
 
 neuron layer::getneuron(int number)
 {
-  //This is stupid, I should get rid of this and just have the neurons sorted
-   for (int i = 0; i < neurons_.size(); i++) {
-        if (neurons_[i].getnumber() == number) {
-            return neurons_[i];
-        }
+
+    if (neurons_[i].getnumber() == number) {
+        return neurons_[i];
     }
     return neurons_[0];
 }
