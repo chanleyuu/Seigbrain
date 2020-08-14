@@ -37,6 +37,8 @@ public:
 
     double calculatecost();
 
+    void tunelayers();
+
     void tunelayer(layer& L, layer& pastlayer);
 
     void readdata();

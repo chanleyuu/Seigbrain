@@ -54,10 +54,10 @@ int network::think()
     return out;
 }
 
-void network::train()
+void network::tunelayers()
 {
-	tunelayer(hiddenlayer1);
-	tunelayer(hiddenlayer2);
+	tunelayer(hiddenlayer1, inputlayer);
+	tunelayer(hiddenlayer2, hiddenlayer1);
 }
 
 

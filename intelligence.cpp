@@ -11,7 +11,7 @@
 
 #include "intelligence.h"
 
-intelligence::intelligence(layer inlayer, double learningrate): inlayer = inputlayer{
+intelligence::intelligence(layer inlayer, double learningrate): inputlayer{ inlayer }{
 
     gen.push_back();
 }
