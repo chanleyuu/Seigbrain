@@ -4,16 +4,15 @@
 
 imageprocesser::imageprocesser()
 {
-    
+
 }
 
-void imageprocesser::importimage()
+void imageprocesser::importimage(std::string imagepath)
 {
-    Magick::Image image;
-    
+
     /*TO DO, set image as inputs for neural network */
     try {
-        image.read( "./data/number1.jpg" );
+        image_.read( imagepath );
     }
     catch( std::exception &error_ )
     {

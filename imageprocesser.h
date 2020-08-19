@@ -22,9 +22,12 @@
 class imageprocesser {
 
 private:
-    layer imagelayer;
-public:
-    imageprocesser(std::string imagepath); //constructor
+    Magick::Image image_;
 
-    void importimage();
+    layer imagelayer_;
+
+public:
+    imageprocesser(); //constructor
+
+    void importimage(std::string imagepath);
 };
