@@ -15,9 +15,11 @@
 #include <fstream>
 #include <string>
 #include <ImageMagick-7/Magick++.h>
+#include <ImageMagick-7/MagickCore.h>
 #include <iostream>
 
-#include "layer"
+#include "layer.h"
+#include "neuron.h"
 
 class imageprocesser {
 
@@ -29,5 +31,5 @@ private:
 public:
     imageprocesser(); //constructor
 
-    void importimage(std::string imagepath);
+    layer importimage(std::string imagepath);
 };
