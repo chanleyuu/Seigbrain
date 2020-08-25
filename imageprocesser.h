@@ -15,7 +15,8 @@
 #include <fstream>
 #include <string>
 #include <ImageMagick-7/Magick++.h>
-#include <ImageMagick-7/MagickCore.h>
+#include <ImageMagick-7/MagickCore/MagickCore.h>
+#include <ImageMagick-7/MagickCore/quantum.h>
 #include <iostream>
 
 #include "layer.h"
@@ -27,6 +28,7 @@ private:
     Magick::Image image_;
 
     layer imagelayer_;
+    
 
 public:
     imageprocesser(); //constructor

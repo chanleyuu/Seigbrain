@@ -13,7 +13,8 @@
 
 intelligence::intelligence(layer inlayer, double learningrate): inputlayer{ inlayer }{
 
-    gen.push_back();
+    network net(inlayer);
+    gen.push_back(net);
 }
 
 void intelligence::train()
@@ -29,4 +30,12 @@ layer intelligence::getinputlayer() const{
 
 void intelligence::setinputlayer(layer l){
   l = inputlayer;
+}
+
+int intelligence::getgeneration() const {
+  return generation_;
+}
+
+void intelligence::setgeneration(int gen) {
+  generation_ = gen;
 }

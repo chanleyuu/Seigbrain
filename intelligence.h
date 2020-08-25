@@ -20,6 +20,7 @@
 class intelligence
 {
 private:
+    int generation_;
     layer inputlayer;
     vector<network> gen;
 public:
@@ -31,4 +32,6 @@ public:
 
     layer getinputlayer() const;
 
+    int getgeneration() const;
+    void setgeneration(int gen);
 }
