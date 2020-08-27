@@ -21,7 +21,9 @@ void intelligence::train()
 {
     network currentgen;
 
-
+    currentgen.think();
+    currentgen.tunelayers();
+    gen.push_back(currentgen);
 }
 
 layer intelligence::getinputlayer() const{
