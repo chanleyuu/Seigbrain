@@ -45,4 +45,6 @@ public:
 
 
     void setfirstlayer(layer lay);
+
+    layer getinputlayer() const;
 };

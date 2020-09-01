@@ -15,11 +15,12 @@ intelligence::intelligence(layer inlayer, double learningrate): inputlayer{ inla
 
     network net(inlayer);
     gen.push_back(net);
+    generation_++;
 }
 
 void intelligence::train()
 {
-    network currentgen;
+    network currentgen(gen[generation_].getinputlayer());
 
     currentgen.think();
     currentgen.tunelayers();

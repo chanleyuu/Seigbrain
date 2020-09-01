@@ -124,3 +124,8 @@ void network::setlearningrate(double rate)
 {
     rate = learningrate_;
 }
+
+layer network::getinputlayer() const
+{
+  return baselayer
+}
