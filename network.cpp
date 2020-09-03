@@ -104,9 +104,11 @@ std::vector<double> network::produceoutput()
   double certainty;//how sure the AI is
   std::vector<double> out;
 
-  double highscore;
+  double highscore = 0.0;
   for (int i = 0; i < outputlayer.size(); i++){
-    outputlayer.getneuron(i) += guess;
+    if (outputlayer.getneuron(i) > highscore) {
+        guess = i + 1.0;
+    }
   }
 
   certainty = outputlayer.getcost();
