@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/home/aquadoff/projects/Seigbrain/imageprocesser.h
+fstream
+-
+string
+-
+ImageMagick-7/Magick++.h
+-
+ImageMagick-7/MagickCore/MagickCore.h
+-
+ImageMagick-7/MagickCore/quantum.h
+-
+iostream
+-
+layer.h
+/home/aquadoff/projects/Seigbrain/layer.h
+neuron.h
+/home/aquadoff/projects/Seigbrain/neuron.h
+
+/home/aquadoff/projects/Seigbrain/intelligence.h
+vector
+-
+network.h
+/home/aquadoff/projects/Seigbrain/network.h
+
 /home/aquadoff/projects/Seigbrain/layer.h
 vector
 -
@@ -15,13 +39,17 @@ neuron.h
 /home/aquadoff/projects/Seigbrain/main.cpp
 iostream
 -
-network.h
-/home/aquadoff/projects/Seigbrain/network.h
+filesystem
+-
+intelligence.h
+/home/aquadoff/projects/Seigbrain/intelligence.h
+layer.h
+/home/aquadoff/projects/Seigbrain/layer.h
+imageprocesser.h
+/home/aquadoff/projects/Seigbrain/imageprocesser.h
 
 /home/aquadoff/projects/Seigbrain/network.h
-fstream
--
-ImageMagick-7/Magick++.h
+vector
 -
 layer.h
 /home/aquadoff/projects/Seigbrain/layer.h

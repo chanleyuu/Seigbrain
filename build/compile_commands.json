@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/seigbrain.dir/main.cpp.o -c /home/aquadoff/projects/Seigbrain/main.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/main.cpp"
+}
+]
