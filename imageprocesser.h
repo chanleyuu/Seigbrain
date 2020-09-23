@@ -12,11 +12,16 @@
 
 #pragma once
 
+#define STB_IMAGE_IMPLEMENTATION
+
 #include <fstream>
 #include <string>
+#include <stdint.h>
+/*
 #include <ImageMagick-7/Magick++.h>
 #include <ImageMagick-7/MagickCore/MagickCore.h>
-#include <ImageMagick-7/MagickCore/quantum.h>
+#include <ImageMagick-7/MagickCore/quantum.h> */
+#include <stb/stb_image.h>
 #include <iostream>
 
 #include "layer.h"
@@ -25,7 +30,11 @@
 class imageprocesser {
 
 private:
-    Magick::Image image_;
+    //Magick::Image image_;
+    
+    int width, height, bpp;
+    
+    uint8_t* rgb_image;
 
     layer imagelayer_;
     
@@ -33,5 +42,5 @@ private:
 public:
     imageprocesser(); //constructor
 
-    layer importimage(std::string imagepath);
+    layer importimage(const char imagepath[]);
 };

@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(seigbrain)
+project(seigbrain LANGUAGES CXX)
 
-add_link_options(ImageMagick)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(seigbrain main.cpp)
+set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/usr/local/lib/pkgconfig")
+list(APPEND flags "Magick++-config --cxxflags --cppflags")
+
+add_executable(seigbrain main.cpp )
 
 install(TARGETS seigbrain RUNTIME DESTINATION bin)

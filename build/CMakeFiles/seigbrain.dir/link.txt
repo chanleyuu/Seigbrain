@@ -1,1 +1,1 @@
-/usr/bin/c++ -g -rdynamic ImageMagick CMakeFiles/seigbrain.dir/main.cpp.o -o seigbrain 
+/usr/bin/c++ -g -rdynamic CMakeFiles/seigbrain.dir/main.cpp.o -o seigbrain 
