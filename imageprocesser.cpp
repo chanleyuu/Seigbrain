@@ -7,23 +7,33 @@ imageprocesser::imageprocesser()
 
 }
 
-layer imageprocesser::importimage(std::string imagepath)
+void GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a) {
+    const stbi_uc *p = image + (4 * (y * imageWidth + x));
+    *r = p[0];
+    *g = p[1];
+    *b = p[2];
+    *a = p[3];
+}
+
+layer imageprocesser::importimage(const char imagepath[])
 {
 
     /*TO DO, set image as inputs for neural network */
-    int height = 100;
-    int width = 100;
+    height = 100;
+    width = 100;
 
     layer out;
 
     try {
-        image_.read( imagepath );
+        rgb_image = stbi_load(imagepath, &width, &height, &bpp, 3);
     }
     catch( std::exception &error_ )
     {
         std::cout << "ERROR!: " << error_.what() << std::endl;
     }
+    
 
+    /*
     MagickCore::Quantum *pixels = image_.getPixels(0, 0, width, height);
     
     for (int i = 0; i < width; i++){
@@ -37,7 +47,7 @@ layer imageprocesser::importimage(std::string imagepath)
         neuron value(i * e, pixcolor, 0);
         out.addneuron(value);
       }
-    }
+    } */
 
     return out;
 }
