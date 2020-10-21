@@ -38,6 +38,7 @@ private:
 
     layer imagelayer_;
     
+    double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a) ;
 
 public:
     imageprocesser(); //constructor
