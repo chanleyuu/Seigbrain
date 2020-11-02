@@ -22,7 +22,7 @@ class intelligence
 private:
     int generation_;
     layer inputlayer;
-    vector<network> gen;
+    std::vector<network> gen;
 public:
     intelligence(layer firstlayer); //constructor
 

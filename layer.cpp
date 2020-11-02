@@ -38,8 +38,8 @@ void layer::removeneuron(int number)
 neuron layer::getneuron(int number)
 {
 
-    if (neurons_[i].getnumber() == number) {
-        return neurons_[i];
+    if (neurons_[number].getnumber() == number) {
+        return neurons_[number];
     }
     return neurons_[0];
 }

@@ -11,11 +11,15 @@ fstream
 -
 string
 -
+stdint.h
+-
 ImageMagick-7/Magick++.h
 -
 ImageMagick-7/MagickCore/MagickCore.h
 -
 ImageMagick-7/MagickCore/quantum.h
+-
+stb/stb_image.h
 -
 iostream
 -

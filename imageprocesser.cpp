@@ -7,12 +7,15 @@ imageprocesser::imageprocesser()
 
 }
 
-void GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a) {
+double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a) {
     const stbi_uc *p = image + (4 * (y * imageWidth + x));
     *r = p[0];
     *g = p[1];
     *b = p[2];
     *a = p[3];
+    
+    double out =  10;
+    return out;
 }
 
 layer imageprocesser::importimage(const char imagepath[])
@@ -21,7 +24,8 @@ layer imageprocesser::importimage(const char imagepath[])
     /*TO DO, set image as inputs for neural network */
     height = 100;
     width = 100;
-
+    bpp = 4;
+    
     layer out;
 
     try {
@@ -32,6 +36,24 @@ layer imageprocesser::importimage(const char imagepath[])
         std::cout << "ERROR!: " << error_.what() << std::endl;
     }
     
+    for (int i = 0; i < 100; i++) {
+        for (int e = 0; e <100; e++){
+            
+            int i = 18;
+            int j = 1341;
+            unsigned char* pixelOffset = rgb_image + (i + height * j) * bpp;
+            unsigned char r = pixelOffset[0];
+            unsigned char g = pixelOffset[1];
+            unsigned char b = pixelOffset[2];
+            unsigned char a = bpp >= 4 ? pixelOffset[3] : 0xff;
+            long outer = long(r) + long(g) + long(b);
+            
+            
+            neuron n;
+            n.setbias(double(outer) / 630.0);
+            out.addneuron(n);
+        }
+    }
 
     /*
     MagickCore::Quantum *pixels = image_.getPixels(0, 0, width, height);
