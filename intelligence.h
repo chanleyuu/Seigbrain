@@ -34,4 +34,4 @@ public:
 
     int getgeneration() const;
     void setgeneration(int gen);
-}
+};

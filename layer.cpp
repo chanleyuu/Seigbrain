@@ -97,14 +97,18 @@ double layer::getcost() const
     return cost_;
 }
 
-void layer::caluclatecost()
+void layer::caluclatecost(layer correct)
 {
     int n = neurons_.size();
     double avg = 0.0;
     for (int i = 0; i < n; i++) {
-       avg += neurons_[i].getweight();
+       avg += (neurons_[i].getweight() - correct.getneuron(i).getweight()) * (neurons_[i].getweight() - correct.getneuron(i).getweight());
     }
 
     avg = avg / (double) n;
     cost_ = 1.0 - avg;
+}
+
+void layer::nudge(){
+    
 }

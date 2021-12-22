@@ -33,8 +33,9 @@ public:
     void conntectneurons(layer l);
 
 	double getcost() const;
-	void caluclatecost();
+	void caluclatecost(layer correct);
     
     double getsensitivity() const;
     void calculatesensitivity(layer& lastgen);
+    void nudge();
 };
