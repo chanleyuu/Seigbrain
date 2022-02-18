@@ -56,7 +56,7 @@ int network::think()
 
 void network::tunelayers()
 {
-	tunelayer(hiddenlayer1, inputlayer);
+	tunelayer(hiddenlayer1, baselayer);
 	tunelayer(hiddenlayer2, hiddenlayer1);
 }
 
@@ -77,16 +77,16 @@ void network::tunelayer(layer& L, layer& pastlayer)
             double oldweight = L.getneurons()[i].getweight();
             double currweight = oldweight;
             for (int i = 0; i < 100; i++) {
-                L.getneurons()[i].setweight(currweight + learningrate);
+                L.getneurons()[i].setweight(currweight + learningrate_);
                 upcost = L.getcost();
-                L.getneurons()[i].setweight(currweight - learningrate);
+                L.getneurons()[i].setweight(currweight - learningrate_);
                 downcost = L.getcost();
                 if (upcost > downcost && oldcost > downcost) {
-                L.getneurons()[i].setweight(currweight + learningrate);
+                L.getneurons()[i].setweight(currweight + learningrate_);
                 }
                 else
                 {
-                L.getneurons()[i].setweight(currweight - learningrate);
+                L.getneurons()[i].setweight(currweight - learningrate_);
                 }
             }
 

@@ -26,7 +26,7 @@ private:
     layer outputlayer;
 public:
 
-    network(layer base);
+    network(layer base, double rate);
 
     double getlearningrate() const;
     void setlearningrate(double rate);

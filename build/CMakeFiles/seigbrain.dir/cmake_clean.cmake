@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/seigbrain.dir/main.cpp.o"
+  "CMakeFiles/seigbrain.dir/main.cpp.o.d"
   "seigbrain"
   "seigbrain.pdb"
 )

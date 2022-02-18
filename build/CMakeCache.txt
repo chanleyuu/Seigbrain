@@ -28,7 +28,7 @@ CMAKE_BUILD_TYPE:STRING=Debug
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
+CMAKE_CXX_COMPILER:STRING=/usr/bin/c++
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -213,6 +213,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 seigbrain_BINARY_DIR:STATIC=/home/aquadoff/projects/Seigbrain/build
 
 //Value Computed by CMake
+seigbrain_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
 seigbrain_SOURCE_DIR:STATIC=/home/aquadoff/projects/Seigbrain
 
 
@@ -229,9 +232,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/aquadoff/projects/Seigbrain/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=18
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=22
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=4
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
