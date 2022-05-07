@@ -21,14 +21,17 @@ private:
     std::vector<neuron> neurons_;
     
     double sensetivity;
+    double rate;
 	double cost_;
+    layer* nextLayer;
 public:
-    layer(); //default constructor
+    layer(layer* next = NULL); //default constructor
     
     std::vector<neuron> getneurons() const;
     void addneuron(neuron n);
     void removeneuron(int number);
     neuron getneuron(int number);
+    int getsize();
     
     void conntectneurons(layer l);
 

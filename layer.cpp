@@ -11,9 +11,11 @@
 
 #include "layer.h"
 
-layer::layer()
+layer::layer(layer* nxt = NULL)
 {
-
+    if (nxt != nullptr){
+        
+    }
 }
 
 std::vector<neuron> layer::getneurons() const
@@ -68,6 +70,7 @@ double layer::getsensitivity() const
 //Layer takes the previous values as an input
 void layer::calculatesensitivity(layer& lastgen)
 {
+
     double Y = 1;
     double Yprime = 1;
     double out;
@@ -109,6 +112,17 @@ void layer::caluclatecost(layer correct)
     cost_ = 1.0 - avg;
 }
 
-void layer::nudge(){
+void layer::nudge()
+{
+    int n = neurons_.size();
     
+    for (int i = 0; i < n; i++){
+        //I think the answer is to add the learning rate if the neuron is higher and subtract if lower
+        
+    }
+    
+}
+
+int layer::getsize() {
+    return neurons_.size();
 }
