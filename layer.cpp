@@ -115,6 +115,7 @@ void layer::caluclatecost(layer correct)
 void layer::nudge()
 {
     int n = neurons_.size();
+    //Only enter loop if there is a next layer
     
     for (int i = 0; i < n; i++){
         //I think the answer is to add the learning rate if the neuron is higher and subtract if lower
