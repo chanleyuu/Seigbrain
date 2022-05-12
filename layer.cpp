@@ -11,10 +11,10 @@
 
 #include "layer.h"
 
-layer::layer(layer* nxt = NULL)
+layer::layer(layer* next)
 {
-    if (nxt != nullptr){
-        
+    if (next != NULL){
+        nextLayer = next;
     }
 }
 
@@ -118,6 +118,12 @@ void layer::nudge()
     
     for (int i = 0; i < n; i++){
         //I think the answer is to add the learning rate if the neuron is higher and subtract if lower
+        if (nextLayer->getneuron(i).getweight() > this->getneuron(i).getweight()){    
+            this->getneuron(i).setbias(this->getneuron(i).getbias() + rate); //If connected neuron is firing, this one will be more likly to fire
+        }
+        else {
+            this->getneuron(i).setbias(this->getneuron(i).getbias() - rate); //subtract if not firing
+        }
         
     }
     
