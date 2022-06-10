@@ -19,6 +19,7 @@ class neuron
 private:
     int number_;
     //std::vector<int> condition_; //conditions
+    double activation_threshhold;
     double weight_;
     double bias_;
  //   double output_;
@@ -27,7 +28,7 @@ public:
     
     neuron(int num, double weight, double bias); //custom constructor 
     
-    double calculateoutput(std::vector<double> check);
+    double calculateoutput(std::vector<double>* check = NULL);
   //  double getoutput() const;
     
     double getweight() const;

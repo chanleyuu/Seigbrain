@@ -5,6 +5,8 @@
 * Author: Conall Hanley
 * Date:22/01/2020
 * Description: This file is the implementation file for the network class and defines (implements) the functions of the class
+* This class defines a specific model.
+* TODO Allow it to generate various models.
 *
 * Copyright notice -
 */
@@ -105,8 +107,8 @@ std::vector<double> network::produceoutput()
   std::vector<double> out;
 
   double highscore = 0.0;
-  for (int i = 0; i < outputlayer.size(); i++){
-    if (outputlayer.getneuron(i) > highscore) {
+  for (int i = 0; i < outputlayer.getsize(); i++){
+    if (outputlayer.getneuron(i).calculateoutput() > highscore) {
         guess = i + 1.0;
     }
   }
@@ -129,5 +131,5 @@ void network::setlearningrate(double rate)
 
 layer network::getinputlayer() const
 {
-  return baselayer
+  return baselayer;
 }

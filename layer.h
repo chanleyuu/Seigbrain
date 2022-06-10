@@ -40,5 +40,5 @@ public:
     
     double getsensitivity() const;
     void calculatesensitivity(layer& lastgen);
-    void nudge();
+    void nudge(); 
 };

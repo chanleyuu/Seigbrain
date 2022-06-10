@@ -21,14 +21,17 @@ neuron::neuron(int num, double weight, double bias) : number_{ num }, weight_{ w
     
 }
 
-double neuron::calculateoutput(std::vector<double> check)
+//the vector check is the previous layer's outputs
+double neuron::calculateoutput(std::vector<double>* check)
 {
     double avg = 0.0;
-    int n = check.size();
-    for (int i = 0; i < n; i++) {
-        avg += check[i];
+    if (check != NULL){
+        int n = check->size();
+        for (int i = 0; i < n; i++) {
+            avg += check->at(i);
+        }
+        avg = avg / (double) n;
     }
-    avg = avg / (double) n;
     weight_ = avg + bias_;
     return weight_;
 }
