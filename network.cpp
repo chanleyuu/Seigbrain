@@ -108,7 +108,7 @@ std::vector<double> network::produceoutput()
 
   double highscore = 0.0;
   for (int i = 0; i < outputlayer.getsize(); i++){
-    if (outputlayer.getneuron(i).calculateoutput() > highscore) {
+    if (outputlayer.getneuron(i).calculateoutput(hiddenlayer2.) > highscore) {
         guess = i + 1.0;
     }
   }

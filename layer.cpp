@@ -57,7 +57,7 @@ void layer::conntectneurons(layer l)
 
     for (int i = 0; i < neurons_.size(); i++)
     {
-        neurons_[i].calculateoutput(weights);
+        neurons_[i].calculateoutput(&weights);
     }
 }
 

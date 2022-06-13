@@ -30,9 +30,11 @@ public:
     std::vector<neuron> getneurons() const;
     void addneuron(neuron n);
     void removeneuron(int number);
+    void setnuerons(std::vector<neuron> inputs);
     neuron getneuron(int number);
     int getsize();
     
+    std::vector<double> getactivations();
     void conntectneurons(layer l);
 
 	double getcost() const;
