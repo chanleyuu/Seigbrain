@@ -104,11 +104,12 @@ std::vector<double> network::produceoutput()
 {
   double guess;//The AI's best guess
   double certainty;//how sure the AI is
+  std::vector<double> in = hiddenlayer2.getactivations();
   std::vector<double> out;
 
   double highscore = 0.0;
   for (int i = 0; i < outputlayer.getsize(); i++){
-    if (outputlayer.getneuron(i).calculateoutput(hiddenlayer2.) > highscore) {
+    if (outputlayer.getneuron(i).calculateoutput(&in) > highscore) {
         guess = i + 1.0;
     }
   }

@@ -46,6 +46,13 @@ neuron layer::getneuron(int number)
     return neurons_[0];
 }
 
+void layer::setnuerons(std::vector<neuron> inputs) 
+{
+    for (int i = 0; i < neurons_.size(); i++){
+        neurons_[i] = inputs[i];
+    }
+}
+
 void layer::conntectneurons(layer l)
 {
     std::vector<neuron> lneurons = l.getneurons();
