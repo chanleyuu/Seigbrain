@@ -18,7 +18,7 @@ double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *
     return out;
 }
 
-std::vector< char > imageprocesser::importimage(const char imagepath[])
+std::vector< double > imageprocesser::importimage(const double imagepath[])
 {
 
     /*TO DO, set image as inputs for neural network */
@@ -26,7 +26,7 @@ std::vector< char > imageprocesser::importimage(const char imagepath[])
     width = 100;
     bpp = 4;
     
-    layer out;
+    std::vector<double> out;
 
     try {
         rgb_image = stbi_load(imagepath, &width, &height, &bpp, 3);
@@ -49,9 +49,9 @@ std::vector< char > imageprocesser::importimage(const char imagepath[])
             long outer = long(r) + long(g) + long(b);
             
             
-            neuron n;
-            n.setbias(double(outer) / 630.0);
-            out.addneuron(n);
+           // neuron n;
+           // n.setbias(double(outer) / 630.0);
+            out.push_back(double(outer) / 630.0);
         }
     }
 

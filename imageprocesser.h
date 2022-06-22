@@ -36,12 +36,12 @@ private:
     
     uint8_t* rgb_image;
 
-    std::vector<char> values_;
+    std::vector<double> values_;
     
     double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a) ;
 
 public:
     imageprocesser(); //constructor
 
-    std::vector<char> importimage(const char imagepath[]);
+    std::vector<double> importimage(const double imagepath[]);
 };
