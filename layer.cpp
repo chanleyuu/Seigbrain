@@ -18,6 +18,15 @@ layer::layer(layer* next)
     }
 }
 
+layer::layer(std::vector<double> inputs)
+{
+    for (int i = 0; i < inputs.size(); i++)
+    {
+        neuron newinput(i, inputs[i], 0.0);
+        this->addneuron(newinput);
+    }
+}
+
 std::vector<neuron> layer::getneurons() const
 {
     return neurons_;

@@ -24,8 +24,10 @@ private:
     double rate;
 	double cost_;
     layer* nextLayer;
+    layer* previouslayer;
 public:
     layer(layer* next = NULL); //default constructor
+    layer(std::vector<double> inputs);//constructor for base layer
     
     std::vector<neuron> getneurons() const;
     void addneuron(neuron n);

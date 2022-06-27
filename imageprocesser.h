@@ -43,5 +43,5 @@ private:
 public:
     imageprocesser(); //constructor
 
-    std::vector<double> importimage(const double imagepath[]);
+    std::vector<double> importimage(const char imagepath[]);
 };

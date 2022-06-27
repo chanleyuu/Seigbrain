@@ -18,7 +18,7 @@ double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *
     return out;
 }
 
-std::vector< double > imageprocesser::importimage(const double imagepath[])
+std::vector< double > imageprocesser::importimage(const char imagepath[])
 {
 
     /*TO DO, set image as inputs for neural network */
