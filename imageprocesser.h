@@ -17,6 +17,7 @@
 #include <fstream>
 #include <string>
 #include <stdint.h>
+#include <stdlib.h>
 /*
 #include <ImageMagick-7/Magick++.h>
 #include <ImageMagick-7/MagickCore/MagickCore.h>
@@ -24,8 +25,8 @@
 #include <stb/stb_image.h>
 #include <iostream>
 
-#include "layer.h"
-#include "neuron.h"
+//#include "layer.h"
+//#include "neuron.h"
 
 class imageprocesser {
 

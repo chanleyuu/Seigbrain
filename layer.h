@@ -26,7 +26,7 @@ private:
     layer* nextLayer;
     layer* previouslayer;
 public:
-    layer(layer* next = NULL); //default constructor
+    layer(layer* next = nullptr); //default constructor
     layer(std::vector<double> inputs);//constructor for base layer
     
     std::vector<neuron> getneurons() const;
