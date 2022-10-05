@@ -14,19 +14,18 @@
 
 #include <vector>
 #include "layer.h"
+#include <iostream>
 //Diogenes Core
 class network
 {
 private:
     double learningrate_;
 
-    layer baselayer;
-    layer hiddenlayer1;
-    layer hiddenlayer2;
+    std::vector<layer> layers;
     layer outputlayer;
 public:
 
-    network(layer base, double rate);
+    network(layer base, double rate, int outputsize);
 
     double getlearningrate() const;
     void setlearningrate(double rate);
@@ -36,6 +35,8 @@ public:
     int think();
 
     double calculatecost();
+    
+    void addlayer(int size);
 
     void tunelayers();
 

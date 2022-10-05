@@ -24,8 +24,9 @@ private:
     layer inputlayer;
     std::vector<network> gen;
     double learningrate;
+    std::vector<int> outputsizes;
 public:
-    intelligence(layer inlayer, double rate); //constructor
+    intelligence(layer inlayer, double rate,int outputsize); //constructor
 
     void addnetwork();
     void train();
@@ -35,4 +36,6 @@ public:
 
     int getgeneration() const;
     void setgeneration(int gen);
+    
+    std::vector<network> getnetworks();
 };

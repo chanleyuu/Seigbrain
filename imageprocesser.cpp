@@ -1,6 +1,7 @@
-
+#define STB_IMAGE_IMPLEMENTATION
 
 #include "imageprocesser.h"
+
 
 imageprocesser::imageprocesser()
 {
@@ -35,24 +36,29 @@ std::vector< double > imageprocesser::importimage(const char imagepath[])
     {
         std::cout << "ERROR!: " << error_.what() << std::endl;
     }
-    
-    for (int i = 0; i < 100; i++) {
-        for (int e = 0; e <100; e++){
-            
-            int i = 18;
-            int j = 1341;
-            unsigned char* pixelOffset = rgb_image + (i + height * j) * bpp;
-            unsigned char r = pixelOffset[0];
-            unsigned char g = pixelOffset[1];
-            unsigned char b = pixelOffset[2];
-            unsigned char a = bpp >= 4 ? pixelOffset[3] : 0xff;
-            long outer = long(r) + long(g) + long(b);
-            
-            
-           // neuron n;
-           // n.setbias(double(outer) / 630.0);
-            out.push_back(double(outer) / 630.0);
-        }
+    if (rgb_image) {
+      for (int i = 0; i < 100; i++) {
+          for (int e = 0; e <100; e++){
+              
+              int h = 18;
+              int j = 1341;
+              unsigned char* pixelOffset = rgb_image + (h + height * j) * bpp;
+              unsigned char r = pixelOffset[0];
+              unsigned char g = pixelOffset[1];
+              unsigned char b = pixelOffset[2];
+              unsigned char a = bpp >= 4 ? pixelOffset[3] : 0xff;
+              long outer = long(r) + long(g) + long(b);
+              
+              
+            // neuron n;
+            // n.setbias(double(outer) / 630.0);
+              out.push_back(double(outer) / 630.0);
+          }
+      }
+    }
+    else {
+      std::cout << "Image not loaded!" << std::endl;
+      return out;
     }
 
     /*

@@ -7372,3 +7372,879 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+The system is: Linux - 5.18.15-1-default - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/aquadoff/projects/Seigbrain/build/CMakeFiles/3.23.3/CompilerIdCXX/a.out"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_da535/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_da535.dir/build.make CMakeFiles/cmTC_da535.dir/build
+gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da535.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_da535.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccd5gk5C.s
+GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)
+	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/include/c++/12
+ /usr/include/c++/12/x86_64-suse-linux
+ /usr/include/c++/12/backward
+ /usr/lib64/gcc/x86_64-suse-linux/12/include
+ /usr/local/include
+ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include
+ /usr/include
+End of search list.
+GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)
+	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 00000000000000000000000000000000
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da535.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccd5gk5C.s
+GNU assembler version 2.38 (x86_64-suse-linux) using BFD version (GNU Binutils; openSUSE Tumbleweed) 2.38.20220525-6
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_da535
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da535.dir/link.txt --verbose=1
+/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_da535 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) 
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_da535' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_da535.'
+ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccoNhVpE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_da535 /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_da535' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_da535.'
+gmake[1]: Leaving directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/include/c++/12]
+    add: [/usr/include/c++/12/x86_64-suse-linux]
+    add: [/usr/include/c++/12/backward]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+    add: [/usr/local/include]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/include/c++/12] ==> [/usr/include/c++/12]
+  collapse include dir [/usr/include/c++/12/x86_64-suse-linux] ==> [/usr/include/c++/12/x86_64-suse-linux]
+  collapse include dir [/usr/include/c++/12/backward] ==> [/usr/include/c++/12/backward]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include] ==> [/usr/x86_64-suse-linux/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/12;/usr/include/c++/12/x86_64-suse-linux;/usr/include/c++/12/backward;/usr/lib64/gcc/x86_64-suse-linux/12/include;/usr/local/include;/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed;/usr/x86_64-suse-linux/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_da535/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_da535.dir/build.make CMakeFiles/cmTC_da535.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da535.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_da535.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccd5gk5C.s]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/include/c++/12]
+  ignore line: [ /usr/include/c++/12/x86_64-suse-linux]
+  ignore line: [ /usr/include/c++/12/backward]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 00000000000000000000000000000000]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da535.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccd5gk5C.s]
+  ignore line: [GNU assembler version 2.38 (x86_64-suse-linux) using BFD version (GNU Binutils]
+  ignore line: [ openSUSE Tumbleweed) 2.38.20220525-6]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_da535]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_da535.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_da535 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) ]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_da535' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_da535.']
+  link line: [ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccoNhVpE.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_da535 /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccoNhVpE.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_da535] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..]
+    arg [CMakeFiles/cmTC_da535.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12] ==> [/usr/lib64/gcc/x86_64-suse-linux/12]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> [/usr/x86_64-suse-linux/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> [/usr/lib64]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o;/usr/lib64/crtn.o]
+  implicit dirs: [/usr/lib64/gcc/x86_64-suse-linux/12;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib]
+  implicit fwks: []
+
+
+The system is: Linux - 5.18.15-1-default - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/aquadoff/projects/Seigbrain/build/CMakeFiles/3.24.0/CompilerIdCXX/a.out"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a391b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a391b.dir/build.make CMakeFiles/cmTC_a391b.dir/build
+gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a391b.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a391b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccP7VkcL.s
+GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)
+	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/include/c++/12
+ /usr/include/c++/12/x86_64-suse-linux
+ /usr/include/c++/12/backward
+ /usr/lib64/gcc/x86_64-suse-linux/12/include
+ /usr/local/include
+ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include
+ /usr/include
+End of search list.
+GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)
+	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 00000000000000000000000000000000
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a391b.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccP7VkcL.s
+GNU assembler version 2.38 (x86_64-suse-linux) using BFD version (GNU Binutils; openSUSE Tumbleweed) 2.38.20220525-6
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_a391b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a391b.dir/link.txt --verbose=1
+/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a391b 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) 
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a391b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a391b.'
+ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccD6mKjL.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a391b /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a391b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a391b.'
+gmake[1]: Leaving directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/include/c++/12]
+    add: [/usr/include/c++/12/x86_64-suse-linux]
+    add: [/usr/include/c++/12/backward]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+    add: [/usr/local/include]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/include/c++/12] ==> [/usr/include/c++/12]
+  collapse include dir [/usr/include/c++/12/x86_64-suse-linux] ==> [/usr/include/c++/12/x86_64-suse-linux]
+  collapse include dir [/usr/include/c++/12/backward] ==> [/usr/include/c++/12/backward]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include] ==> [/usr/x86_64-suse-linux/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/12;/usr/include/c++/12/x86_64-suse-linux;/usr/include/c++/12/backward;/usr/lib64/gcc/x86_64-suse-linux/12/include;/usr/local/include;/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed;/usr/x86_64-suse-linux/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a391b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a391b.dir/build.make CMakeFiles/cmTC_a391b.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a391b.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_a391b.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccP7VkcL.s]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/include/c++/12]
+  ignore line: [ /usr/include/c++/12/x86_64-suse-linux]
+  ignore line: [ /usr/include/c++/12/backward]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 00000000000000000000000000000000]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a391b.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccP7VkcL.s]
+  ignore line: [GNU assembler version 2.38 (x86_64-suse-linux) using BFD version (GNU Binutils]
+  ignore line: [ openSUSE Tumbleweed) 2.38.20220525-6]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_a391b]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a391b.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_a391b ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.1.1 20220721 [revision 4f15d2234608e82159d030dadb17af678cfad626] (SUSE Linux) ]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_a391b' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_a391b.']
+  link line: [ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccD6mKjL.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_a391b /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccD6mKjL.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_a391b] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..]
+    arg [CMakeFiles/cmTC_a391b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12] ==> [/usr/lib64/gcc/x86_64-suse-linux/12]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> [/usr/x86_64-suse-linux/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> [/usr/lib64]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o;/usr/lib64/crtn.o]
+  implicit dirs: [/usr/lib64/gcc/x86_64-suse-linux/12;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib]
+  implicit fwks: []
+
+
+The system is: Linux - 5.19.2-1-default - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/aquadoff/projects/Seigbrain/build/CMakeFiles/3.24.1/CompilerIdCXX/a.out"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_af9bc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_af9bc.dir/build.make CMakeFiles/cmTC_af9bc.dir/build
+gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (SUSE Linux) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af9bc.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_af9bc.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cccv5251.s
+GNU C++17 (SUSE Linux) version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (x86_64-suse-linux)
+	compiled by GNU C version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/include/c++/12
+ /usr/include/c++/12/x86_64-suse-linux
+ /usr/include/c++/12/backward
+ /usr/lib64/gcc/x86_64-suse-linux/12/include
+ /usr/local/include
+ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include
+ /usr/include
+End of search list.
+GNU C++17 (SUSE Linux) version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (x86_64-suse-linux)
+	compiled by GNU C version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 00000000000000000000000000000000
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af9bc.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccv5251.s
+GNU assembler version 2.39.0 (x86_64-suse-linux) using BFD version (GNU Binutils; openSUSE Tumbleweed) 2.39.0.20220810-1
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_af9bc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af9bc.dir/link.txt --verbose=1
+/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_af9bc 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (SUSE Linux) 
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_af9bc' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_af9bc.'
+ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSZ6MSx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_af9bc /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_af9bc' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_af9bc.'
+gmake[1]: Leaving directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/include/c++/12]
+    add: [/usr/include/c++/12/x86_64-suse-linux]
+    add: [/usr/include/c++/12/backward]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+    add: [/usr/local/include]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/include/c++/12] ==> [/usr/include/c++/12]
+  collapse include dir [/usr/include/c++/12/x86_64-suse-linux] ==> [/usr/include/c++/12/x86_64-suse-linux]
+  collapse include dir [/usr/include/c++/12/backward] ==> [/usr/include/c++/12/backward]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include] ==> [/usr/x86_64-suse-linux/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/12;/usr/include/c++/12/x86_64-suse-linux;/usr/include/c++/12/backward;/usr/lib64/gcc/x86_64-suse-linux/12/include;/usr/local/include;/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed;/usr/x86_64-suse-linux/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_af9bc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_af9bc.dir/build.make CMakeFiles/cmTC_af9bc.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (SUSE Linux) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af9bc.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_af9bc.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cccv5251.s]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/include/c++/12]
+  ignore line: [ /usr/include/c++/12/x86_64-suse-linux]
+  ignore line: [ /usr/include/c++/12/backward]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 00000000000000000000000000000000]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af9bc.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccv5251.s]
+  ignore line: [GNU assembler version 2.39.0 (x86_64-suse-linux) using BFD version (GNU Binutils]
+  ignore line: [ openSUSE Tumbleweed) 2.39.0.20220810-1]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_af9bc]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af9bc.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_af9bc ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.1.1 20220812 [revision 6b7d570a5001bb79e34c0d1626a8c7f55386dac7] (SUSE Linux) ]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_af9bc' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_af9bc.']
+  link line: [ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSZ6MSx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_af9bc /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccSZ6MSx.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_af9bc] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..]
+    arg [CMakeFiles/cmTC_af9bc.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12] ==> [/usr/lib64/gcc/x86_64-suse-linux/12]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> [/usr/x86_64-suse-linux/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> [/usr/lib64]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o;/usr/lib64/crtn.o]
+  implicit dirs: [/usr/lib64/gcc/x86_64-suse-linux/12;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib]
+  implicit fwks: []
+
+
+The system is: Linux - 5.19.8-1-default - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/aquadoff/projects/Seigbrain/build/CMakeFiles/3.24.2/CompilerIdCXX/a.out"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_bb3c1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bb3c1.dir/build.make CMakeFiles/cmTC_bb3c1.dir/build
+gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++   -v -o CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (SUSE Linux) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bb3c1.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_bb3c1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccJjFoZq.s
+GNU C++17 (SUSE Linux) version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (x86_64-suse-linux)
+	compiled by GNU C version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/include/c++/12
+ /usr/include/c++/12/x86_64-suse-linux
+ /usr/include/c++/12/backward
+ /usr/lib64/gcc/x86_64-suse-linux/12/include
+ /usr/local/include
+ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include
+ /usr/include
+End of search list.
+GNU C++17 (SUSE Linux) version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (x86_64-suse-linux)
+	compiled by GNU C version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984], GMP version 6.2.1, MPFR version 4.1.0-p7, MPC version 1.2.1, isl version isl-0.25-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 00000000000000000000000000000000
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bb3c1.dir/'
+ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJjFoZq.s
+GNU assembler version 2.39.0 (x86_64-suse-linux) using BFD version (GNU Binutils; openSUSE Tumbleweed) 2.39.0.20220810-1
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.'
+Linking CXX executable cmTC_bb3c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb3c1.dir/link.txt --verbose=1
+/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bb3c1 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/c++
+COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-suse-linux
+Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c,c++,objc,fortran,obj-c++,ada,go,d,jit --enable-offload-targets=nvptx-none,amdgcn-amdhsa, --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (SUSE Linux) 
+COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/
+LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_bb3c1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bb3c1.'
+ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cctnJ1NI.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_bb3c1 /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_bb3c1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bb3c1.'
+gmake[1]: Leaving directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/include/c++/12]
+    add: [/usr/include/c++/12/x86_64-suse-linux]
+    add: [/usr/include/c++/12/backward]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+    add: [/usr/local/include]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+    add: [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/include/c++/12] ==> [/usr/include/c++/12]
+  collapse include dir [/usr/include/c++/12/x86_64-suse-linux] ==> [/usr/include/c++/12/x86_64-suse-linux]
+  collapse include dir [/usr/include/c++/12/backward] ==> [/usr/include/c++/12/backward]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed] ==> [/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  collapse include dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include] ==> [/usr/x86_64-suse-linux/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/include/c++/12;/usr/include/c++/12/x86_64-suse-linux;/usr/include/c++/12/backward;/usr/lib64/gcc/x86_64-suse-linux/12/include;/usr/local/include;/usr/lib64/gcc/x86_64-suse-linux/12/include-fixed;/usr/x86_64-suse-linux/include;/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_bb3c1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_bb3c1.dir/build.make CMakeFiles/cmTC_bb3c1.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/aquadoff/projects/Seigbrain/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (SUSE Linux) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bb3c1.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_bb3c1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccJjFoZq.s]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/include/c++/12]
+  ignore line: [ /usr/include/c++/12/x86_64-suse-linux]
+  ignore line: [ /usr/include/c++/12/backward]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/include-fixed]
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (SUSE Linux) version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (x86_64-suse-linux)]
+  ignore line: [	compiled by GNU C version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984]  GMP version 6.2.1  MPFR version 4.1.0-p7  MPC version 1.2.1  isl version isl-0.25-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 00000000000000000000000000000000]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bb3c1.dir/']
+  ignore line: [ /usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/as -v --64 -o CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccJjFoZq.s]
+  ignore line: [GNU assembler version 2.39.0 (x86_64-suse-linux) using BFD version (GNU Binutils]
+  ignore line: [ openSUSE Tumbleweed) 2.39.0.20220810-1]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [Linking CXX executable cmTC_bb3c1]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb3c1.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++  -v -rdynamic CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bb3c1 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/c++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-suse-linux]
+  ignore line: [Configured with: ../configure --prefix=/usr --infodir=/usr/share/info --mandir=/usr/share/man --libdir=/usr/lib64 --libexecdir=/usr/lib64 --enable-languages=c c++ objc fortran obj-c++ ada go d jit --enable-offload-targets=nvptx-none amdgcn-amdhsa  --enable-offload-defaulted --without-cuda-driver --enable-host-shared --enable-checking=release --disable-werror --with-gxx-include-dir=/usr/include/c++/12 --enable-ssp --disable-libssp --disable-libvtv --enable-cet=auto --disable-libcc1 --enable-plugin --with-bugurl=https://bugs.opensuse.org/ --with-pkgversion='SUSE Linux' --with-slibdir=/lib64 --with-system-zlib --enable-libstdcxx-allocator=new --disable-libstdcxx-pch --enable-libphobos --enable-version-specific-runtime-libs --with-gcc-major-version-only --enable-linker-build-id --enable-linux-futex --enable-gnu-indirect-function --program-suffix=-12 --without-system-libunwind --enable-multilib --with-arch-32=x86-64 --with-tune=generic --with-build-config=bootstrap-lto-lean --enable-link-mutex --build=x86_64-suse-linux --host=x86_64-suse-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 12.2.1 20220830 [revision e927d1cf141f221c5a32574bde0913307e140984] (SUSE Linux) ]
+  ignore line: [COMPILER_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib64/gcc/x86_64-suse-linux/12/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib/:/usr/lib64/gcc/x86_64-suse-linux/12/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_bb3c1' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bb3c1.']
+  link line: [ /usr/lib64/gcc/x86_64-suse-linux/12/collect2 -plugin /usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so -plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cctnJ1NI.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_bb3c1 /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o /usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o -L/usr/lib64/gcc/x86_64-suse-linux/12 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/12/../../.. CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib64/gcc/x86_64-suse-linux/12/crtend.o /usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib64/gcc/x86_64-suse-linux/12/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cctnJ1NI.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_bb3c1] ==> ignore
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib]
+    arg [-L/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..]
+    arg [CMakeFiles/cmTC_bb3c1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o]
+    arg [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+  collapse obj [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12] ==> [/usr/lib64/gcc/x86_64-suse-linux/12]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../../../x86_64-suse-linux/lib] ==> [/usr/x86_64-suse-linux/lib]
+  collapse library dir [/usr/lib64/gcc/x86_64-suse-linux/12/../../..] ==> [/usr/lib64]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtbegin.o;/usr/lib64/gcc/x86_64-suse-linux/12/crtend.o;/usr/lib64/crtn.o]
+  implicit dirs: [/usr/lib64/gcc/x86_64-suse-linux/12;/usr/lib64;/lib64;/usr/x86_64-suse-linux/lib]
+  implicit fwks: []
+
+

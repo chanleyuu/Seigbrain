@@ -1,7 +1,32 @@
 [
 {
   "directory": "/home/aquadoff/projects/Seigbrain/build",
-  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/main.cpp.o -c /home/aquadoff/projects/Seigbrain/main.cpp",
+  "command": "/usr/bin/c++  -I/home/aquadoff/projects/Seigbrain/included -I/home/aquadoff/projects/siegbrain/include -g -std=c++17 -o CMakeFiles/seigbrain.dir/main.cpp.o -c /home/aquadoff/projects/Seigbrain/main.cpp",
   "file": "/home/aquadoff/projects/Seigbrain/main.cpp"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++  -I/home/aquadoff/projects/Seigbrain/included -I/home/aquadoff/projects/siegbrain/include -g -std=c++17 -o CMakeFiles/seigbrain.dir/imageprocesser.cpp.o -c /home/aquadoff/projects/Seigbrain/imageprocesser.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/imageprocesser.cpp"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++  -I/home/aquadoff/projects/Seigbrain/included -I/home/aquadoff/projects/siegbrain/include -g -std=c++17 -o CMakeFiles/seigbrain.dir/network.cpp.o -c /home/aquadoff/projects/Seigbrain/network.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/network.cpp"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++  -I/home/aquadoff/projects/Seigbrain/included -I/home/aquadoff/projects/siegbrain/include -g -std=c++17 -o CMakeFiles/seigbrain.dir/intelligence.cpp.o -c /home/aquadoff/projects/Seigbrain/intelligence.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/intelligence.cpp"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++  -I/home/aquadoff/projects/Seigbrain/included -I/home/aquadoff/projects/siegbrain/include -g -std=c++17 -o CMakeFiles/seigbrain.dir/neuron.cpp.o -c /home/aquadoff/projects/Seigbrain/neuron.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/neuron.cpp"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++  -I/home/aquadoff/projects/Seigbrain/included -I/home/aquadoff/projects/siegbrain/include -g -std=c++17 -o CMakeFiles/seigbrain.dir/layer.cpp.o -c /home/aquadoff/projects/Seigbrain/layer.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/layer.cpp"
 }
 ]
