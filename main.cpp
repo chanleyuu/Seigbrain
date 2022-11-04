@@ -36,5 +36,6 @@ int main(int argc, char **argv) {
     //std::filesystem::__cxx11::path dou = new std::filesystem::__cxx11::path(cwd + "/data/number1.jpg") ;
     layer firstlayer(im.importimage("/home/aquadoff/projects/Seigbrain/data/number1.jpg"));
     intelligence intel(firstlayer, 0.5);
+    
     return 0;
 }

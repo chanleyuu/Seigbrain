@@ -174,54 +174,6 @@ seigbrain/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/build
 .PHONY : seigbrain/fast
 
-imageprocesser.o: imageprocesser.cpp.o
-.PHONY : imageprocesser.o
-
-# target to build an object file
-imageprocesser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/imageprocesser.cpp.o
-.PHONY : imageprocesser.cpp.o
-
-imageprocesser.i: imageprocesser.cpp.i
-.PHONY : imageprocesser.i
-
-# target to preprocess a source file
-imageprocesser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/imageprocesser.cpp.i
-.PHONY : imageprocesser.cpp.i
-
-imageprocesser.s: imageprocesser.cpp.s
-.PHONY : imageprocesser.s
-
-# target to generate assembly for a file
-imageprocesser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/imageprocesser.cpp.s
-.PHONY : imageprocesser.cpp.s
-
-intelligence.o: intelligence.cpp.o
-.PHONY : intelligence.o
-
-# target to build an object file
-intelligence.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/intelligence.cpp.o
-.PHONY : intelligence.cpp.o
-
-intelligence.i: intelligence.cpp.i
-.PHONY : intelligence.i
-
-# target to preprocess a source file
-intelligence.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/intelligence.cpp.i
-.PHONY : intelligence.cpp.i
-
-intelligence.s: intelligence.cpp.s
-.PHONY : intelligence.s
-
-# target to generate assembly for a file
-intelligence.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/intelligence.cpp.s
-.PHONY : intelligence.cpp.s
-
 layer.o: layer.cpp.o
 .PHONY : layer.o
 
@@ -270,30 +222,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-network.o: network.cpp.o
-.PHONY : network.o
-
-# target to build an object file
-network.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/network.cpp.o
-.PHONY : network.cpp.o
-
-network.i: network.cpp.i
-.PHONY : network.i
-
-# target to preprocess a source file
-network.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/network.cpp.i
-.PHONY : network.cpp.i
-
-network.s: network.cpp.s
-.PHONY : network.s
-
-# target to generate assembly for a file
-network.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/network.cpp.s
-.PHONY : network.cpp.s
-
 neuron.o: neuron.cpp.o
 .PHONY : neuron.o
 
@@ -331,21 +259,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... seigbrain"
-	@echo "... imageprocesser.o"
-	@echo "... imageprocesser.i"
-	@echo "... imageprocesser.s"
-	@echo "... intelligence.o"
-	@echo "... intelligence.i"
-	@echo "... intelligence.s"
 	@echo "... layer.o"
 	@echo "... layer.i"
 	@echo "... layer.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... network.o"
-	@echo "... network.i"
-	@echo "... network.s"
 	@echo "... neuron.o"
 	@echo "... neuron.i"
 	@echo "... neuron.s"

@@ -11,20 +11,19 @@
 
 #include "layer.h"
 
-layer::layer(layer* next)
+layer::layer(double* euler)
 {
-    if (next != NULL){
-        nextLayer = next;
-    }
+    euler_ = euler;
 }
 
-layer::layer(std::vector<double> inputs)
+layer::layer(std::vector<double> inputs, double* euler)
 {
     for (int i = 0; i < inputs.size(); i++)
     {
-        neuron newinput(i, inputs[i], 0.0);
+        neuron newinput(i, 0.0, euler);
         this->addneuron(newinput);
     }
+    euler_ = euler;
 }
 
 std::vector<neuron> layer::getneurons() const
@@ -68,12 +67,12 @@ void layer::conntectneurons(layer l)
     std::vector<double> weights;
     for (int i = 0; i > lneurons.size(); i++)
     {
-        weights.push_back(lneurons[i].getweight());
+       // weights.push_back(lneurons[i].getweight());
     }
 
     for (int i = 0; i < neurons_.size(); i++)
     {
-        neurons_[i].calculateoutput(&weights);
+        //neurons_[i].calculateoutput(&weights);
     }
 }
 
@@ -91,15 +90,15 @@ void layer::calculatesensitivity(layer& lastgen)
     double Yprime = 1;
     double out;
     for (int i = 0; i < this->neurons_.size(); i++) {
-       double changeweight = neurons_[i].getweight() - lastgen.getneuron(i).getweight();
+       //double changeweight = neurons_[i].getweight() - lastgen.getneuron(i).getweight();
        double changebias = neurons_[i].getbias() - lastgen.getneuron(i).getbias();
-       Y *= changeweight / changebias;
+      // Y *= changeweight / changebias;
     }
 
     for (int i = 0; i < this->neurons_.size(); i++) {
-       double changeweight = neurons_[i].getweight() - lastgen.getneuron(i).getweight();
+      // double changeweight = neurons_[i].getweight() - lastgen.getneuron(i).getweight();
        double changebias = neurons_[i].getbias() - lastgen.getneuron(i).getbias();
-       Yprime *= (changeweight / changebias * changebias) * -1;
+     //  Yprime *= (changeweight / changebias * changebias) * -1;
     }
 
     out = Y - Yprime;
@@ -121,7 +120,7 @@ void layer::caluclatecost(layer correct)
     int n = neurons_.size();
     double avg = 0.0;
     for (int i = 0; i < n; i++) {
-       avg += (neurons_[i].getweight() - correct.getneuron(i).getweight()) * (neurons_[i].getweight() - correct.getneuron(i).getweight());
+    //   avg += (neurons_[i].getweight() - correct.getneuron(i).getweight()) * (neurons_[i].getweight() - correct.getneuron(i).getweight());
     }
 
     avg = avg / (double) n;
@@ -133,6 +132,7 @@ void layer::nudge()
     int n = neurons_.size();
     //Only enter loop if there is a next layer
     
+    /*
     for (int i = 0; i < n; i++){
         //I think the answer is to add the learning rate if the neuron is higher and subtract if lower
         if (nextLayer->getneuron(i).getweight() > this->getneuron(i).getweight()){    
@@ -142,7 +142,7 @@ void layer::nudge()
             this->getneuron(i).setbias(this->getneuron(i).getbias() - rate); //subtract if not firing
         }
         
-    }
+    } */
     
 }
 

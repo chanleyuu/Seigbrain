@@ -15,7 +15,7 @@ include_directories(included ${PROJECT_SOURCE_DIR}/include)
 #add_library(image imageprocesser.h)
 #target_include_directories(cmake PRIVATE "${PROJECT_SOURCE_DIR}/include")
 add_executable(seigbrain)
-target_sources(seigbrain PRIVATE main.cpp imageprocesser.h imageprocesser.cpp network.cpp network.h intelligence.cpp intelligence.h neuron.cpp neuron.h layer.cpp layer.h)
+target_sources(seigbrain PRIVATE main.cpp imageprocesser.h  network.h intelligence.h neuron.cpp neuron.h layer.cpp layer.h my_math.h)
 #target_link_libraries(seigbrain ${image})
 
 install(TARGETS seigbrain RUNTIME DESTINATION bin)

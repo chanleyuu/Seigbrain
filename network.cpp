@@ -14,10 +14,10 @@
 #include <iostream>
 #include "network.h"
 
-network::network(layer base, double rate, int outputsize): learningrate_{ rate }
+network::network(std::vector<double> inputs, double rate, int outputsize): learningrate_{ rate }
 {
 
-    layers.push_back(base);
+    //layers.push_back(base);
 
     /*
     for (int i = 0; i < 32; i++) {
@@ -30,9 +30,15 @@ network::network(layer base, double rate, int outputsize): learningrate_{ rate }
         hiddenlayer2.addneuron(nuer);
     }
     */
+    
+    euler = my_math_euler_num();
+    layer last(&euler);
+    layer first(inputs, &euler);
+    layers.push_back(first);
+    outputlayer = last;
     for (int i = 0; i < outputsize; i++) {
-        neuron nuer( i, 0.0, 0.0);
-        outputlayer.addneuron(nuer);
+        neuron n( i, 0.0, &euler);
+        outputlayer.addneuron(n);
     }
 }
 
@@ -43,7 +49,7 @@ int network::think()
     hiddenlayer1.conntectneurons(baselayer);
     hiddenlayer2.conntectneurons(hiddenlayer1);
     outputlayer.conntectneurons(hiddenlayer2);
- */
+ 
     
     for (int i = 0; i < layers.size(); i++) {
         
@@ -61,6 +67,8 @@ int network::think()
 
     }
     return out;
+    */
+    return 1;
 }
 
 void network::tunelayers()
@@ -73,53 +81,34 @@ void network::tunelayers()
             std::cout << "model must have two or more layers to tune!" << std::endl;
             return;
     }
-    for (int i = 0; i < layers.size() - 1; i++) {
-        tunelayer(layers[i + 1], layers[i]);
+    for (int i = layers.size(); i < 1; i--) {
+        tunelayer(layers[i - 1], layers[i]);
     }
 }
 
 
 //Adjust weights based on cost of the function
+//Back propagate
 void network::tunelayer(layer& L, layer& pastlayer)
 {
+    double cost = 0.0;
+    
     for (int i = 0; i < L.getneurons().size(); i++)
 	{
-
-        double sensitivty = L.getsensitivity();
-        double targetcost = 1.0 - ((double)i + 1.0) / ((double) L.getneurons().size());
-        double oldcost = L.getcost();
-        double upcost = 0.0;
-        double downcost = 0.0;
-		    think();
-        while (oldcost > targetcost) {
-            double oldweight = L.getneurons()[i].getweight();
-            double currweight = oldweight;
-            for (int i = 0; i < 100; i++) {
-                L.getneurons()[i].setweight(currweight + learningrate_);
-                upcost = L.getcost();
-                L.getneurons()[i].setweight(currweight - learningrate_);
-                downcost = L.getcost();
-                if (upcost > downcost && oldcost > downcost) {
-                L.getneurons()[i].setweight(currweight + learningrate_);
-                }
-                else
-                {
-                L.getneurons()[i].setweight(currweight - learningrate_);
-                }
-            }
-
+        for (int j = 0; j < L.getneurons()[i].getweights().size(); j++) {
+            cost += (pastlayer.getneurons()[j].getweights()[i] * pastlayer.getneurons()[j].get_delta());
         }
-
+        costs_.push_back(cost);
 	}
 }
 
 void network::addlayer(int size) {
     
-    layer newlayer;
+    layer newlayer(&euler);
     
     for (int i = 0; i < size; i++) {
-        neuron nuer( i, 0.0, 0.0);
-        newlayer.addneuron(nuer);
+        neuron n( i, 0.0, &euler);
+        newlayer.addneuron(n);
     }
     
     layers.push_back(newlayer);
@@ -139,21 +128,35 @@ std::vector<double> network::produceoutput()
             return out;
     }
     
-    for (int i = 0; i < layers[1].getsize(); i++){
-        in.push_back(layers[1].getneuron(i).calculateoutput());
+    for (int i = 1; i < layers.size(); i++){
+        
+        
+        for (int j = 0; j < layers[i].getsize(); i++) {
+            std::vector<double> weights;
+            std::vector<double> activations;
+            for (int k = 0; k < layers[k - 1].getsize(); k++) {
+                weights.push_back(layers[i - 1].getneuron(k).getweights()[j]);
+                activations.push_back(layers[i - 1].getneuron(k).get_activation());
+            }
+            layers[i].getneuron(j).calculateoutput(&weights, &activations);
+        }
     }
 
-  double highscore = 0.0;
-  for (int i = 0; i < outputlayer.getsize(); i++){
-    if (outputlayer.getneuron(i).calculateoutput(&in) > highscore) {
-        guess = i + 1.0;
+    for (int i = 0; i < outputlayer.getsize(); i++){
+        std::vector<double> weights;
+        std::vector<double> activations;
+        for (int j = 0; j < layers[layers.size() - 1].getsize(); i++) {
+                weights.push_back(layers[i - 1].getneuron(j).getweights()[i]);
+                activations.push_back(layers[i - 1].getneuron(j).get_activation());
+        }
+        outputlayer.getneuron(i).calculateoutput(&weights, &activations);
     }
-  }
 
   certainty = outputlayer.getcost();
   out.push_back(guess);
   out.push_back(certainty);
   return out;
+
 }
 
 double network::getlearningrate() const

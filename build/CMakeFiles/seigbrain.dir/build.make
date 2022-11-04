@@ -83,52 +83,10 @@ CMakeFiles/seigbrain.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/seigbrain.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aquadoff/projects/Seigbrain/main.cpp -o CMakeFiles/seigbrain.dir/main.cpp.s
 
-CMakeFiles/seigbrain.dir/imageprocesser.cpp.o: CMakeFiles/seigbrain.dir/flags.make
-CMakeFiles/seigbrain.dir/imageprocesser.cpp.o: /home/aquadoff/projects/Seigbrain/imageprocesser.cpp
-CMakeFiles/seigbrain.dir/imageprocesser.cpp.o: CMakeFiles/seigbrain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/seigbrain.dir/imageprocesser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/seigbrain.dir/imageprocesser.cpp.o -MF CMakeFiles/seigbrain.dir/imageprocesser.cpp.o.d -o CMakeFiles/seigbrain.dir/imageprocesser.cpp.o -c /home/aquadoff/projects/Seigbrain/imageprocesser.cpp
-
-CMakeFiles/seigbrain.dir/imageprocesser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/seigbrain.dir/imageprocesser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aquadoff/projects/Seigbrain/imageprocesser.cpp > CMakeFiles/seigbrain.dir/imageprocesser.cpp.i
-
-CMakeFiles/seigbrain.dir/imageprocesser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/seigbrain.dir/imageprocesser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aquadoff/projects/Seigbrain/imageprocesser.cpp -o CMakeFiles/seigbrain.dir/imageprocesser.cpp.s
-
-CMakeFiles/seigbrain.dir/network.cpp.o: CMakeFiles/seigbrain.dir/flags.make
-CMakeFiles/seigbrain.dir/network.cpp.o: /home/aquadoff/projects/Seigbrain/network.cpp
-CMakeFiles/seigbrain.dir/network.cpp.o: CMakeFiles/seigbrain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/seigbrain.dir/network.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/seigbrain.dir/network.cpp.o -MF CMakeFiles/seigbrain.dir/network.cpp.o.d -o CMakeFiles/seigbrain.dir/network.cpp.o -c /home/aquadoff/projects/Seigbrain/network.cpp
-
-CMakeFiles/seigbrain.dir/network.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/seigbrain.dir/network.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aquadoff/projects/Seigbrain/network.cpp > CMakeFiles/seigbrain.dir/network.cpp.i
-
-CMakeFiles/seigbrain.dir/network.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/seigbrain.dir/network.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aquadoff/projects/Seigbrain/network.cpp -o CMakeFiles/seigbrain.dir/network.cpp.s
-
-CMakeFiles/seigbrain.dir/intelligence.cpp.o: CMakeFiles/seigbrain.dir/flags.make
-CMakeFiles/seigbrain.dir/intelligence.cpp.o: /home/aquadoff/projects/Seigbrain/intelligence.cpp
-CMakeFiles/seigbrain.dir/intelligence.cpp.o: CMakeFiles/seigbrain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/seigbrain.dir/intelligence.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/seigbrain.dir/intelligence.cpp.o -MF CMakeFiles/seigbrain.dir/intelligence.cpp.o.d -o CMakeFiles/seigbrain.dir/intelligence.cpp.o -c /home/aquadoff/projects/Seigbrain/intelligence.cpp
-
-CMakeFiles/seigbrain.dir/intelligence.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/seigbrain.dir/intelligence.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aquadoff/projects/Seigbrain/intelligence.cpp > CMakeFiles/seigbrain.dir/intelligence.cpp.i
-
-CMakeFiles/seigbrain.dir/intelligence.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/seigbrain.dir/intelligence.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aquadoff/projects/Seigbrain/intelligence.cpp -o CMakeFiles/seigbrain.dir/intelligence.cpp.s
-
 CMakeFiles/seigbrain.dir/neuron.cpp.o: CMakeFiles/seigbrain.dir/flags.make
 CMakeFiles/seigbrain.dir/neuron.cpp.o: /home/aquadoff/projects/Seigbrain/neuron.cpp
 CMakeFiles/seigbrain.dir/neuron.cpp.o: CMakeFiles/seigbrain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/seigbrain.dir/neuron.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/seigbrain.dir/neuron.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/seigbrain.dir/neuron.cpp.o -MF CMakeFiles/seigbrain.dir/neuron.cpp.o.d -o CMakeFiles/seigbrain.dir/neuron.cpp.o -c /home/aquadoff/projects/Seigbrain/neuron.cpp
 
 CMakeFiles/seigbrain.dir/neuron.cpp.i: cmake_force
@@ -142,7 +100,7 @@ CMakeFiles/seigbrain.dir/neuron.cpp.s: cmake_force
 CMakeFiles/seigbrain.dir/layer.cpp.o: CMakeFiles/seigbrain.dir/flags.make
 CMakeFiles/seigbrain.dir/layer.cpp.o: /home/aquadoff/projects/Seigbrain/layer.cpp
 CMakeFiles/seigbrain.dir/layer.cpp.o: CMakeFiles/seigbrain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/seigbrain.dir/layer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/seigbrain.dir/layer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/seigbrain.dir/layer.cpp.o -MF CMakeFiles/seigbrain.dir/layer.cpp.o.d -o CMakeFiles/seigbrain.dir/layer.cpp.o -c /home/aquadoff/projects/Seigbrain/layer.cpp
 
 CMakeFiles/seigbrain.dir/layer.cpp.i: cmake_force
@@ -156,9 +114,6 @@ CMakeFiles/seigbrain.dir/layer.cpp.s: cmake_force
 # Object files for target seigbrain
 seigbrain_OBJECTS = \
 "CMakeFiles/seigbrain.dir/main.cpp.o" \
-"CMakeFiles/seigbrain.dir/imageprocesser.cpp.o" \
-"CMakeFiles/seigbrain.dir/network.cpp.o" \
-"CMakeFiles/seigbrain.dir/intelligence.cpp.o" \
 "CMakeFiles/seigbrain.dir/neuron.cpp.o" \
 "CMakeFiles/seigbrain.dir/layer.cpp.o"
 
@@ -166,14 +121,11 @@ seigbrain_OBJECTS = \
 seigbrain_EXTERNAL_OBJECTS =
 
 seigbrain: CMakeFiles/seigbrain.dir/main.cpp.o
-seigbrain: CMakeFiles/seigbrain.dir/imageprocesser.cpp.o
-seigbrain: CMakeFiles/seigbrain.dir/network.cpp.o
-seigbrain: CMakeFiles/seigbrain.dir/intelligence.cpp.o
 seigbrain: CMakeFiles/seigbrain.dir/neuron.cpp.o
 seigbrain: CMakeFiles/seigbrain.dir/layer.cpp.o
 seigbrain: CMakeFiles/seigbrain.dir/build.make
 seigbrain: CMakeFiles/seigbrain.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable seigbrain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aquadoff/projects/Seigbrain/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable seigbrain"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/seigbrain.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

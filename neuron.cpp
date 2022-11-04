@@ -11,40 +11,36 @@
 
 #include "neuron.h"
 
-neuron::neuron() : number_{ 1 } , weight_{ 0.0 }, bias_{ 0.0 }
+neuron::neuron(double* euler) : number_{ 1 } , bias_{ 0.0 }, euler_{ euler }
 {
     
 }
 
-neuron::neuron(int num, double weight, double bias) : number_{ num }, weight_{ weight }, bias_{ bias }
+neuron::neuron(int num, double bias, double * euler) : number_{ num },  bias_{ bias }, euler_{ euler }
 {
     
 }
 
 //the vector check is the previous layer's outputs
-double neuron::calculateoutput(std::vector<double>* check)
+double neuron::calculateoutput(std::vector<double>* weights, std::vector<double>* inputs)
 {
-    double avg = 0.0;
-    if (check != NULL){
-        int n = check->size();
-        for (int i = 0; i < n; i++) {
-            avg += check->at(i);
-        }
-        avg = avg / (double) n;
+    
+    for (int i = 0; i < weights->size(); i++) {
+        activation_ += (weights->at(i) * inputs->at(i)) + bias_;
     }
-    weight_ = avg + bias_;
-    return weight_;
+    activation_ = 1.0 / (1.0 +  pow(*euler_, -1.0 * activation_));
+    return activation_;
 }
 
 
-double neuron::getweight() const 
+std::vector<double> neuron::getweights() const 
 {
-    return weight_;
+    return weights_;
 }
 
-void neuron::setweight(int weight) 
+void neuron::setweight(int index ,int weight) 
 {
-    weight_ = weight;
+    weights_[index] = weight;
 }
 
 double neuron::getbias() const 
@@ -66,3 +62,29 @@ void neuron::setnumber(int num)
 {
     number_ = num;
 }
+
+void neuron::set_activation(double act)
+{
+    activation_ = act;
+}
+
+double neuron::get_activation()
+{
+    return activation_;
+}
+
+double neuron::get_delta()
+{
+    return delta_;
+}
+
+void neuron::set_delta(double delta)
+{
+    delta_ = delta;
+}
+
+double neuron::tranfer_derivitive()
+{
+    return activation_ * (1.0 - activation_);
+}
+

@@ -13,30 +13,44 @@
 
 #include <vector>
 #include <algorithm> 
+#include <math.h>
+#include "my_math.h"
+
 
 class neuron 
 {
 private:
     int number_;
     //std::vector<int> condition_; //conditions
-    double activation_threshhold;
-    double weight_;
+    double activation_;
+    std::vector<double> weights_;
     double bias_;
+    double delta_;
+    double* euler_; //Euler constant
  //   double output_;
 public: 
-    neuron(); //default constructor 
+    neuron(double* euler); //default constructor 
     
-    neuron(int num, double weight, double bias); //custom constructor 
+    neuron(int num, double bias, double* euler); //custom constructor 
     
-    double calculateoutput(std::vector<double>* check = NULL);
+    double calculateoutput(std::vector<double>* weights, std::vector<double>* inputs);
   //  double getoutput() const;
     
-    double getweight() const;
-    void setweight(int weight);
+    std::vector<double> getweights() const;
+    void addweight();
+    void setweight(int index,int weight);
     
     double getbias() const;
     void setbias(int bias);
     
     int getnumber() const;
     void setnumber(int num);
+    
+    double tranfer_derivitive();
+    
+    void set_activation(double act);
+    double get_activation();
+    
+    double get_delta();
+    void set_delta(double delta);
 };

@@ -22,12 +22,12 @@ private:
     
     double sensetivity;
     double rate;
-	double cost_;
-    layer* nextLayer;
-    layer* previouslayer;
+    double cost_;
+    double* euler_;
 public:
-    layer(layer* next = nullptr); //default constructor
-    layer(std::vector<double> inputs);//constructor for base layer
+    layer();//default constructor ;No initialazation for euler constant pointer
+    layer(double* euler); 
+    layer(std::vector<double> inputs, double* euler); //constructor for base layer
     
     std::vector<neuron> getneurons() const;
     void addneuron(neuron n);
@@ -40,6 +40,7 @@ public:
     void conntectneurons(layer l);
 
 	double getcost() const;
+    void feedforward(layer next);
 	void caluclatecost(layer correct);
     
     double getsensitivity() const;
