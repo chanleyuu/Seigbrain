@@ -11,10 +11,10 @@
 * Copyright notice -
 */
 
-#include <iostream>
+//#include <iostream>
 #include "network.h"
 
-network::network(std::vector<double> inputs, double rate, int outputsize): learningrate_{ rate }
+network::network(std::vector<double>* inputs, double rate, int outputsize): learningrate_{ rate }
 {
 
     //layers.push_back(base);
@@ -81,6 +81,11 @@ void network::tunelayers()
             std::cout << "model must have two or more layers to tune!" << std::endl;
             return;
     }
+    //Start by back propagating the dirst layer
+    for (int i = 0; i < outputlayer.getsize(); i++){
+        costs_.push_back (outputlayer.getneuron(i).get_activation() - desire_[i]);
+    }
+    
     for (int i = layers.size(); i < 1; i--) {
         tunelayer(layers[i - 1], layers[i]);
     }
@@ -93,13 +98,19 @@ void network::tunelayer(layer& L, layer& pastlayer)
 {
     double cost = 0.0;
     
+    
     for (int i = 0; i < L.getneurons().size(); i++)
 	{
-        for (int j = 0; j < L.getneurons()[i].getweights().size(); j++) {
+        for (int j = 0; j < pastlayer.getneurons()[i].getweights().size(); j++) {
             cost += (pastlayer.getneurons()[j].getweights()[i] * pastlayer.getneurons()[j].get_delta());
         }
         costs_.push_back(cost);
 	}
+	
+	for (int i = 0; i < L.getneurons().size(); i++)
+	{
+        L.getneurons()[i].set_delta(costs_[i] *  L.getneurons()[i].tranfer_derivitive());
+    }
 }
 
 void network::addlayer(int size) {
@@ -149,12 +160,12 @@ std::vector<double> network::produceoutput()
                 weights.push_back(layers[i - 1].getneuron(j).getweights()[i]);
                 activations.push_back(layers[i - 1].getneuron(j).get_activation());
         }
-        outputlayer.getneuron(i).calculateoutput(&weights, &activations);
+        out.push_back(outputlayer.getneuron(i).calculateoutput(&weights, &activations));
     }
 
-  certainty = outputlayer.getcost();
-  out.push_back(guess);
-  out.push_back(certainty);
+  //certainty = outputlayer.getcost();
+  //out.push_back(guess);
+  //out.push_back(certainty);
   return out;
 
 }
@@ -172,4 +183,13 @@ void network::setlearningrate(double rate)
 layer network::getinputlayer() const
 {
   return layers[0];
+}
+
+void network::feed() 
+{
+    for (int i = 0; i < layers.size() - 1; i++)
+    {
+        layers[i].feedforward(layers[i + 1]);
+    }
+    layers[layers.size()].feedforward(outputlayer);
 }

@@ -8,8 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/aquadoff/projects/Seigbrain/intelligence.cpp" "CMakeFiles/seigbrain.dir/intelligence.cpp.o" "gcc" "CMakeFiles/seigbrain.dir/intelligence.cpp.o.d"
   "/home/aquadoff/projects/Seigbrain/layer.cpp" "CMakeFiles/seigbrain.dir/layer.cpp.o" "gcc" "CMakeFiles/seigbrain.dir/layer.cpp.o.d"
   "/home/aquadoff/projects/Seigbrain/main.cpp" "CMakeFiles/seigbrain.dir/main.cpp.o" "gcc" "CMakeFiles/seigbrain.dir/main.cpp.o.d"
+  "/home/aquadoff/projects/Seigbrain/my_math.cpp" "CMakeFiles/seigbrain.dir/my_math.cpp.o" "gcc" "CMakeFiles/seigbrain.dir/my_math.cpp.o.d"
+  "/home/aquadoff/projects/Seigbrain/network.cpp" "CMakeFiles/seigbrain.dir/network.cpp.o" "gcc" "CMakeFiles/seigbrain.dir/network.cpp.o.d"
   "/home/aquadoff/projects/Seigbrain/neuron.cpp" "CMakeFiles/seigbrain.dir/neuron.cpp.o" "gcc" "CMakeFiles/seigbrain.dir/neuron.cpp.o.d"
   )
 

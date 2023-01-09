@@ -11,16 +11,17 @@
 
 #include "intelligence.h"
 
-intelligence::intelligence(layer inlayer, double rate, int outputsize): inputlayer{ inlayer }, learningrate{ rate }{
+intelligence::intelligence(std::vector<double>* inputs, double rate, int outputsize): inputs_{ inputs }, learningrate{ rate }{
 
-    network net(inlayer, learningrate, outputsize);
+    network net(inputs, learningrate, outputsize);
     gen.push_back(net);
     generation_++;
 }
 
 void intelligence::train()
 {
-    network currentgen(gen[generation_].getinputlayer(), learningrate, outputsizes[generation_]);
+    *inputs_ = gen[generation_].getinputlayer().getactivations();
+    network currentgen(inputs_, learningrate, outputsizes[generation_]);
 
     currentgen.think();
     currentgen.tunelayers();
@@ -28,20 +29,20 @@ void intelligence::train()
     generation_++;
 }
 
-layer intelligence::getinputlayer() const{
-  return inputlayer;
+std::vector<double> intelligence::getinputs() const{
+  return gen.at(generation_).getinputlayer().getactivations();
 }
 
-void intelligence::setinputlayer(layer l){
-  l = inputlayer;
+void intelligence::setinputs(std::vector<double>* l){
+  inputs_ = l;
 }
 
 int intelligence::getgeneration() const {
   return generation_;
 }
 
-void intelligence::setgeneration(int gen) {
-  generation_ = gen;
+void intelligence::setgeneration(int generation) {
+  generation_ = generation;
 }
 
 std::vector<network> intelligence::getnetworks(){

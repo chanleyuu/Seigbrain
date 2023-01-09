@@ -10,7 +10,7 @@
 
 int main(int argc, char **argv) {
     std::cout << "Hello, Time!" << std::endl;
-    imageprocesser im;
+    //imageprocesser im;
     
     unsigned int bufferSize = 512;
     std::vector<char> buffer(bufferSize + 1);
@@ -32,10 +32,27 @@ int main(int argc, char **argv) {
     
     std::filesystem::path cwd = std::filesystem::current_path();
     
-   // char[count] loc = link.;
-    //std::filesystem::__cxx11::path dou = new std::filesystem::__cxx11::path(cwd + "/data/number1.jpg") ;
-    layer firstlayer(im.importimage("/home/aquadoff/projects/Seigbrain/data/number1.jpg"));
-    intelligence intel(firstlayer, 0.5);
+   /* char[count] loc = link.;
+    std::filesystem::__cxx11::path dou = new std::filesystem::__cxx11::path(cwd + "/data/number1.jpg") ;
+    layer firstlayer(im.importimage("/home/aquadoff/projects/Seigbrain/data/number1.jpg")); */
+    std::vector<double> firstlayer;
+    firstlayer.push_back(0.5232);
+    firstlayer.push_back(0.3123);
+    firstlayer.push_back(0.8673);
+    firstlayer.push_back(0.1232);
+    firstlayer.push_back(0.432);
+    firstlayer.push_back(0.5632);
+    firstlayer.push_back(0.76532);
+    firstlayer.push_back(0.9232);
+
+
+    
+    intelligence starthere(&firstlayer, 0.3412, 9);
+    starthere.getnetworks()[1].addlayer(20);
+    starthere.getnetworks()[1].addlayer(20);
+    starthere.getnetworks()[1].feed();
+    
+    std::vector<double> outs =  
     
     return 0;
 }

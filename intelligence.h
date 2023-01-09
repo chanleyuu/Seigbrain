@@ -14,6 +14,7 @@
 #pragma once
 
 #include <vector>
+//#include "layer.h"
 #include "network.h"
 
 //This class houses the Diogenes Core(s)
@@ -21,21 +22,21 @@ class intelligence
 {
 private:
     int generation_;
-    layer inputlayer;
+    std::vector<double>* inputs_;
     std::vector<network> gen;
     double learningrate;
     std::vector<int> outputsizes;
 public:
-    intelligence(layer inlayer, double rate,int outputsize); //constructor
+    intelligence(std::vector<double>* inputs, double rate,int outputsize); //constructor
 
     void addnetwork();
     void train();
-    void setinputlayer(layer l);
+    void setinputs(std::vector<double>* l);
 
-    layer getinputlayer() const;
+    std::vector<double> getinputs() const;
 
     int getgeneration() const;
-    void setgeneration(int gen);
-    
+    void setgeneration(int generation);
+    std::vector<double> get_current_outputs();
     std::vector<network> getnetworks();
 };

@@ -27,7 +27,7 @@ private:
 public:
     layer();//default constructor ;No initialazation for euler constant pointer
     layer(double* euler); 
-    layer(std::vector<double> inputs, double* euler); //constructor for base layer
+    layer(std::vector<double>* inputs, double* euler); //constructor for base layer
     
     std::vector<neuron> getneurons() const;
     void addneuron(neuron n);

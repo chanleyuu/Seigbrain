@@ -11,14 +11,19 @@
 
 #include "layer.h"
 
+layer::layer()
+{
+}
+
+
 layer::layer(double* euler)
 {
     euler_ = euler;
 }
 
-layer::layer(std::vector<double> inputs, double* euler)
+layer::layer(std::vector<double>* inputs, double* euler)
 {
-    for (int i = 0; i < inputs.size(); i++)
+    for (int i = 0; i < inputs->size(); i++)
     {
         neuron newinput(i, 0.0, euler);
         this->addneuron(newinput);
@@ -145,6 +150,18 @@ void layer::nudge()
     } */
     
 }
+
+std::vector<double> layer::getactivations()
+{
+    std::vector<double> out;
+    
+    for (int i = 0; i < neurons_.size(); i++) {
+        out[i] = neurons_[i].get_activation();
+    }
+    
+    return out;
+}
+
 
 int layer::getsize() {
     return neurons_.size();

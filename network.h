@@ -13,9 +13,10 @@
 #pragma once
 
 #include <vector>
-#include "layer.h"
-#include "my_math.h"
+//#include "layer.h"
 #include <iostream>
+#include "my_math.h"
+#include "layer.h"
 //Diogenes Core
 class network
 {
@@ -30,9 +31,9 @@ private:
     double euler;
 public:
 
-    network(std::vector<double> inputs ,int outputsize, std::vector<double> desire);
+    network(std::vector<double>* inputs ,int outputsize, std::vector<double> desire);
     
-    network(std::vector<double> inputs, double rate, int outputsize);
+    network(std::vector<double>* inputs, double rate, int outputsize);
 
     double getlearningrate() const;
     void setlearningrate(double rate);
@@ -58,6 +59,8 @@ public:
     layer getinputlayer() const;
     
     void set_desire(std::vector<double> desire);
+    
+    void feed();
     
     std::vector<double> get_desire();
 };

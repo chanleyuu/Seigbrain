@@ -215,6 +215,21 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Path to a library.
 IMAGE_LIB:FILEPATH=IMAGE_LIB-NOTFOUND
 
+//The directory containing a CMake configuration file for OPENCL.
+OPENCL_DIR:PATH=OPENCL_DIR-NOTFOUND
+
+//Path to a file.
+OpenCL_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+OpenCL_LIBRARY:FILEPATH=/usr/lib/libOpenCL.so
+
+//The directory containing a CMake configuration file for OpenCL_LIBRARY.
+OpenCL_LIBRARY_DIR:PATH=OpenCL_LIBRARY_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for opencl.
+opencl_DIR:PATH=opencl_DIR-NOTFOUND
+
 //Value Computed by CMake
 seigbrain_BINARY_DIR:STATIC=/home/aquadoff/projects/Seigbrain/build
 
@@ -238,9 +253,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/home/aquadoff/projects/Seigbrain/build
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=24
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=25
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=2
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -374,6 +389,14 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenCL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCL:INTERNAL=[/usr/lib64/libOpenCL.so.1][/usr/include][v3.0()]
+//Have symbol CL_VERSION_3_0
+OPENCL_VERSION_3_0:INTERNAL=1
+//ADVANCED property for variable: OpenCL_INCLUDE_DIR
+OpenCL_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenCL_LIBRARY
+OpenCL_LIBRARY-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 
