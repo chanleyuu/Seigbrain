@@ -37,6 +37,7 @@ public:
     int getsize();
     
     std::vector<double> getactivations();
+    std::vector<double> getweights();
     void conntectneurons(layer l);
 
 	double getcost() const;

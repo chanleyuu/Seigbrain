@@ -166,3 +166,27 @@ std::vector<double> layer::getactivations()
 int layer::getsize() {
     return neurons_.size();
 }
+
+//gets weights for a particular node
+std::vector<double> layer::getweights()
+{
+    std::vector<double> out;
+    
+    for (int i = 0; i < neurons_.size(); i++) {
+        
+        for (int e = 0; e < neurons_[i].getweights().size(); e++) {
+            out.push_back(neurons_[i].getweights()[e]);
+        }
+    } 
+    
+    return out;
+}
+
+void layer::feedforward(layer next) {
+    std::vector<double> weights = next.getweights();
+    std::vector<double> activations = next.getactivations();
+    
+    for (int i = 0; i < neurons_.size(); i++) {
+        neurons_[i].calculateoutput(&weights, &activations);
+    }
+}

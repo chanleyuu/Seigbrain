@@ -52,7 +52,11 @@ int main(int argc, char **argv) {
     starthere.getnetworks()[1].addlayer(20);
     starthere.getnetworks()[1].feed();
     
-    std::vector<double> outs =  
+    std::vector<double> outs =  starthere.getnetworks()[1].produceoutput();
+    
+    for (int i = 0; i < outs.size(); i++) {
+      std::cout << outs[i] << std::endl;
+    }
     
     return 0;
 }
