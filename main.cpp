@@ -45,12 +45,11 @@ int main(int argc, char **argv) {
     firstlayer.push_back(0.76532);
     firstlayer.push_back(0.9232);
 
-
     
     intelligence starthere(&firstlayer, 0.3412, 9);
-    starthere.getnetworks()[1].addlayer(20);
-    starthere.getnetworks()[1].addlayer(20);
-    starthere.getnetworks()[1].feed();
+    starthere.getnetworks()[0].addlayer(20);
+    starthere.getnetworks()[0].addlayer(20);
+    starthere.getnetworks()[0].feed();
     
     std::vector<double> outs =  starthere.getnetworks()[1].produceoutput();
     

@@ -16,7 +16,7 @@ neuron::neuron(double* euler) : number_{ 1 } , bias_{ 0.0 }, euler_{ euler }
     
 }
 
-neuron::neuron(int num, double bias, double * euler) : number_{ num },  bias_{ bias }, euler_{ euler }
+neuron::neuron(int num, double bias, const double * euler) : number_{ num },  bias_{ bias }, euler_{ euler }
 {
     
 }
@@ -41,7 +41,7 @@ std::vector<double> neuron::getweights() const
     return weights_;
 }
 
-void neuron::setweight(int index ,int weight) 
+void neuron::setweight(int index, double weight) 
 {
     weights_[index] = weight;
 }
@@ -51,7 +51,7 @@ double neuron::getbias() const
     return bias_;
 }
 
-void neuron::setbias(int bias)
+void neuron::setbias(double bias)
 {
     bias_ = bias;
 }
@@ -91,3 +91,7 @@ double neuron::tranfer_derivitive()
     return activation_ * (1.0 - activation_);
 }
 
+void neuron::addweight()
+{
+    weights_.push_back(0.0);
+}

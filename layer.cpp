@@ -16,16 +16,17 @@ layer::layer()
 }
 
 
-layer::layer(double* euler)
+layer::layer(const double* euler)
 {
     euler_ = euler;
 }
 
-layer::layer(std::vector<double>* inputs, double* euler)
+layer::layer(std::vector<double>* inputs, const double* euler)
 {
     for (int i = 0; i < inputs->size(); i++)
     {
         neuron newinput(i, 0.0, euler);
+        newinput.set_activation(inputs->at(i));
         this->addneuron(newinput);
     }
     euler_ = euler;
@@ -156,7 +157,7 @@ std::vector<double> layer::getactivations()
     std::vector<double> out;
     
     for (int i = 0; i < neurons_.size(); i++) {
-        out[i] = neurons_[i].get_activation();
+        out.push_back(neurons_[i].get_activation());
     }
     
     return out;
@@ -182,9 +183,9 @@ std::vector<double> layer::getweights()
     return out;
 }
 
-void layer::feedforward(layer next) {
-    std::vector<double> weights = next.getweights();
-    std::vector<double> activations = next.getactivations();
+void layer::feedforward(layer prev) {
+    std::vector<double> weights = prev.getweights();
+    std::vector<double> activations = prev.getactivations();
     
     for (int i = 0; i < neurons_.size(); i++) {
         neurons_[i].calculateoutput(&weights, &activations);

@@ -31,7 +31,7 @@ network::network(std::vector<double>* inputs, double rate, int outputsize): lear
     }
     */
     
-    euler = my_math_euler_num();
+    //euler = my_math_euler_num();
     layer last(&euler);
     layer first(inputs, &euler);
     layers.push_back(first);
@@ -187,9 +187,34 @@ layer network::getinputlayer() const
 
 void network::feed() 
 {
-    for (int i = 0; i < layers.size() - 1; i++)
+    for (int i = 1; i < layers.size() - 1; i++)
     {
         layers[i].feedforward(layers[i + 1]);
     }
     layers[layers.size()].feedforward(outputlayer);
+}
+
+//Adds one weight for every node in the next layer
+void network::init_weights()
+{
+    for (int i = 0; i < layers.size(); i++)
+    {
+            //If we are at the last hidden layer, we need to generate weights for the final layer
+            if (i == layers.size() - 1)
+            {
+                for (int j = 0; j < outputlayer.getneurons().size(); j++)
+                {
+                    outputlayer.getneurons()[j].addweight();
+                }
+            }
+            else {
+                for (int e = 0; e < layers[i].getneurons().size(); e++)
+                {
+                    for (int j = 0; j < layers[i + 1].getneurons().size(); j++ ) {
+                        layers[i].getneurons()[e].addweight();
+                    }
+                    
+                }
+            }
+    }
 }

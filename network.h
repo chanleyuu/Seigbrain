@@ -23,12 +23,13 @@ class network
 private:
     double learningrate_;
 
+    //Contains input layer and all hidden layers
     std::vector<layer> layers;
     std::vector<double> costs_;
     std::vector<double> desire_;
     std::vector<double> inputs_;
     layer outputlayer;
-    double euler;
+    const double euler = my_math_euler_num();
 public:
 
     network(std::vector<double>* inputs ,int outputsize, std::vector<double> desire);
@@ -59,6 +60,8 @@ public:
     layer getinputlayer() const;
     
     void set_desire(std::vector<double> desire);
+    
+    void init_weights();
     
     void feed();
     
