@@ -18,16 +18,16 @@
 class layer
 {
 private:
-    std::vector<neuron> neurons_;
+    inline static std::vector<neuron> neurons_;
     
-    double sensetivity;
-    double rate;
-    double cost_;
-    const double* euler_;
+    inline static double sensetivity;
+    inline static double rate;
+    inline static double cost_;
+    inline static const double* euler_;
 public:
     layer();//default constructor ;No initialazation for euler constant pointer
     layer(const double* euler); 
-    layer(std::vector<double>* inputs, const double* euler); //constructor for base layer
+    layer(std::vector<double> inputs, const double* euler); //constructor for base layer
     
     std::vector<neuron> getneurons() const;
     void addneuron(neuron n);

@@ -11,27 +11,31 @@
 
 #include "neuron.h"
 
-neuron::neuron(double* euler) : number_{ 1 } , bias_{ 0.0 }, euler_{ euler }
+neuron::neuron(double* euler)
 {
-    
+    number_ = 0;
+    bias_ = 0.0;
+    euler_ = euler;
 }
 
-neuron::neuron(int num, double bias, const double * euler) : number_{ num },  bias_{ bias }, euler_{ euler }
+neuron::neuron(int num, double bias, const double * euler)
 {
-    
+    number_ = num;
+    bias_ = bias;
+    euler_ = euler;
 }
 
 //the vector check is the previous layer's outputs
-double neuron::calculateoutput(std::vector<double>* weights, std::vector<double>* inputs)
+double neuron::calculateoutput(std::vector<double>& weights, std::vector<double>& inputs)
 {
     
-    for (int i = 0; i < weights->size(); i++) {
-        activation_ += (weights->at(i) * inputs->at(i));
+    for (int i = 0; i < weights.size(); i++) {
+        activation_ += (weights.at(i) * inputs.at(i));
     }
     activation_ += bias_;
     activation_ = 1.0 / (1.0 +  pow(*euler_, -1.0 * activation_));
-    delete weights;
-    delete inputs;
+    //delete weights;
+    //delete inputs;
     return activation_;
 }
 
@@ -94,4 +98,14 @@ double neuron::tranfer_derivitive()
 void neuron::addweight()
 {
     weights_.push_back(0.0);
+}
+
+int neuron::get_weight_count()
+{
+    return weights_.size();
+}
+
+void neuron::clear_weights()
+{
+    weights_.clear();
 }

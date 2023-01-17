@@ -22,16 +22,16 @@ class intelligence
 {
 private:
     int generation_;
-    std::vector<double>* inputs_;
+    std::vector<double> inputs_;
     std::vector<network> gen;
     double learningrate;
     std::vector<int> outputsizes;
 public:
-    intelligence(std::vector<double>* inputs, double rate,int outputsize); //constructor
+    intelligence(std::vector<double>& inputs, double rate,int outputsize); //constructor
 
     void addnetwork();
     void train();
-    void setinputs(std::vector<double>* l);
+    void setinputs(std::vector<double> l);
 
     std::vector<double> getinputs() const;
 

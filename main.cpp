@@ -46,12 +46,14 @@ int main(int argc, char **argv) {
     firstlayer.push_back(0.9232);
 
     
-    intelligence starthere(&firstlayer, 0.3412, 9);
-    starthere.getnetworks()[0].addlayer(20);
-    starthere.getnetworks()[0].addlayer(20);
-    starthere.getnetworks()[0].feed();
+    intelligence starthere(firstlayer, 0.3412, 9);
+    network thenetwork = starthere.getnetworks().at(0);
+    thenetwork.addlayer(20);
+    thenetwork.addlayer(20);
+    //starthere.getnetworks()[0].feed();
+    thenetwork.init_weights();
     
-    std::vector<double> outs =  starthere.getnetworks()[1].produceoutput();
+    std::vector<double> outs =  thenetwork.produceoutput();
     
     for (int i = 0; i < outs.size(); i++) {
       std::cout << outs[i] << std::endl;

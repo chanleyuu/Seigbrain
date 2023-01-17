@@ -29,12 +29,12 @@ private:
     std::vector<double> desire_;
     std::vector<double> inputs_;
     layer outputlayer;
-    const double euler = my_math_euler_num();
+    static inline const double euler = my_math_euler_num();
 public:
 
-    network(std::vector<double>* inputs ,int outputsize, std::vector<double> desire);
+    network(std::vector<double>& inputs ,int outputsize, std::vector<double> desire);
     
-    network(std::vector<double>* inputs, double rate, int outputsize);
+    network(std::vector<double>& inputs, double rate, int outputsize);
 
     double getlearningrate() const;
     void setlearningrate(double rate);
