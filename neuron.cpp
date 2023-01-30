@@ -25,6 +25,12 @@ neuron::neuron(int num, double bias, const double * euler)
     euler_ = euler;
 }
 
+neuron::~neuron()
+{
+    delete weights_;
+}
+
+
 //the vector check is the previous layer's outputs
 double neuron::calculateoutput(std::vector<double>& weights, std::vector<double>& inputs)
 {
@@ -42,12 +48,12 @@ double neuron::calculateoutput(std::vector<double>& weights, std::vector<double>
 
 std::vector<double> neuron::getweights() const 
 {
-    return weights_;
+    return *weights_;
 }
 
 void neuron::setweight(int index, double weight) 
 {
-    weights_[index] = weight;
+    weights_->at(index) = weight;
 }
 
 double neuron::getbias() const 
@@ -97,15 +103,18 @@ double neuron::tranfer_derivitive()
 
 void neuron::addweight()
 {
-    weights_.push_back(0.0);
+    weights_->push_back(0.0);
 }
 
 int neuron::get_weight_count()
 {
-    return weights_.size();
+    return weights_->size();
 }
 
 void neuron::clear_weights()
 {
-    weights_.clear();
+    //weights_->clear();
+    //delete weights_;
+    weights_ = nullptr;
+    weights_ = new std::vector<double>;
 }

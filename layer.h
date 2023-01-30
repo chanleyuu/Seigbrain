@@ -18,21 +18,23 @@
 class layer
 {
 private:
-    inline static std::vector<neuron> neurons_;
+    std::vector<neuron*>* neurons_ = new std::vector<neuron*>;
     
-    inline static double sensetivity;
-    inline static double rate;
-    inline static double cost_;
-    inline static const double* euler_;
+    double sensetivity;
+    double rate;
+    double cost_;
+    const double* euler_;
 public:
     layer();//default constructor ;No initialazation for euler constant pointer
     layer(const double* euler); 
     layer(std::vector<double> inputs, const double* euler); //constructor for base layer
     
-    std::vector<neuron> getneurons() const;
-    void addneuron(neuron n);
+    ~layer(); //destructor
+    
+    std::vector<neuron*> getneurons() const;
+    void addneuron(neuron* n);
     void removeneuron(int number);
-    void setnuerons(std::vector<neuron> inputs);
+    void setnuerons(std::vector<neuron*> inputs);
     neuron getneuron(int number);
     int getsize();
     
@@ -45,6 +47,7 @@ public:
 	void caluclatecost(layer correct);
     
     double getsensitivity() const;
+    void setsensitivity(double sense);
     void calculatesensitivity(layer& lastgen);
     void nudge(); 
 };

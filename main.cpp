@@ -46,8 +46,9 @@ int main(int argc, char **argv) {
     firstlayer.push_back(0.9232);
 
     
-    intelligence starthere(firstlayer, 0.3412, 9);
-    network thenetwork = starthere.getnetworks().at(0);
+    static intelligence starthere(firstlayer, 0.3412, 9);
+    network thenetwork(firstlayer, 0.5,  9);
+    starthere.getnetworks().push_back(thenetwork);
     thenetwork.addlayer(20);
     thenetwork.addlayer(20);
     //starthere.getnetworks()[0].feed();

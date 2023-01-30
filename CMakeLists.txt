@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.0)
 
 project(seigbrain LANGUAGES CXX)
 
-set(PROJECT_SOURCE_DIR "/home/aquadoff/projects/Seigbrain")
-set(PROJECT_BINARY_DIR "/home/aquadoff/projects/Seigbrain//bin")
+set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR})
+set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/bin)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -15,7 +15,9 @@ list(APPEND flags "--cxxflags --cppflags")
 #find_library(IMAGE_LIB ${PROJECT_SOURCE_DIR}/include/stb/stb_image)
 #INCLUDE_DIRECTORIES(/usr/include/CL)
 #LINK_DIRECTORIES(${PROJECT_SOURCE_DIR})
+
 include(${PROJECT_SOURCE_DIR}/build/FindOpenCL.cmake)
+
 #add_library(OPENCL SHARED /usr/include/CL/opencl.hpp 
 #    /usr/include/CL/cl_d3d10.h 
 #    /usr/include/CL/cl_d3d11.h 

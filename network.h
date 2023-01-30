@@ -24,12 +24,12 @@ private:
     double learningrate_;
 
     //Contains input layer and all hidden layers
-    std::vector<layer> layers;
+    std::vector<layer>* layers = new std::vector<layer>();
     std::vector<double> costs_;
     std::vector<double> desire_;
     std::vector<double> inputs_;
-    layer outputlayer;
-    static inline const double euler = my_math_euler_num();
+    const double euler = my_math_euler_num();
+    layer* outputlayer = new layer(&euler);
 public:
 
     network(std::vector<double>& inputs ,int outputsize, std::vector<double> desire);

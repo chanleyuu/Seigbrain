@@ -21,18 +21,20 @@
 class neuron 
 {
 private:
-    inline static int number_;
+    int number_;
     //std::vector<int> condition_; //conditions
-    inline static double activation_;
-    inline static std::vector<double> weights_;
-    inline static double bias_;
-    inline static double delta_;
-    inline static const double* euler_; //Euler constant
+    double activation_;
+    std::vector<double>* weights_ = new std::vector<double>;
+    double bias_;
+    double delta_;
+    const double* euler_; //Euler constant
  //   double output_;
 public: 
     neuron(double* euler); //default constructor 
     
     neuron(int num, double bias, const double* euler); //custom constructor 
+    
+    ~neuron();//destructor
     
     double calculateoutput(std::vector<double>& weights, std::vector<double>& inputs);
   //  double getoutput() const;
