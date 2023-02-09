@@ -23,12 +23,13 @@ class intelligence
 private:
     int generation_;
     std::vector<double> inputs_;
-    std::vector<network> gen;
+    std::vector<network>* gen = new std::vector<network>;
     double learningrate;
     std::vector<int> outputsizes;
 public:
     intelligence(std::vector<double>& inputs, double rate,int outputsize); //constructor
-
+    ~intelligence();//destructor
+    
     void addnetwork();
     void train();
     void setinputs(std::vector<double> l);

@@ -24,7 +24,7 @@ private:
     int number_;
     //std::vector<int> condition_; //conditions
     double activation_;
-    std::vector<double>* weights_ = new std::vector<double>;
+    double* weights_;
     double bias_;
     double delta_;
     const double* euler_; //Euler constant
@@ -40,8 +40,8 @@ public:
   //  double getoutput() const;
     
     std::vector<double> getweights() const;
-    void addweight();
-    void setweight(int index,double weight);
+    //void addweight();
+    void setweights(std::vector<double> weights);
     int get_weight_count();
     void clear_weights();
     

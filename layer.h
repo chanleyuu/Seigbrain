@@ -18,7 +18,7 @@
 class layer
 {
 private:
-    std::vector<neuron*>* neurons_ = new std::vector<neuron*>;
+    std::vector<neuron> neurons_;
     
     double sensetivity;
     double rate;
@@ -31,10 +31,10 @@ public:
     
     ~layer(); //destructor
     
-    std::vector<neuron*> getneurons() const;
-    void addneuron(neuron* n);
+    std::vector<neuron> getneurons() const;
+    void addneuron(neuron n);
     void removeneuron(int number);
-    void setnuerons(std::vector<neuron*> inputs);
+    void setnuerons(std::vector<neuron> inputs);
     neuron getneuron(int number);
     int getsize();
     

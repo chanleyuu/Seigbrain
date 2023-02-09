@@ -45,16 +45,36 @@ int main(int argc, char **argv) {
     firstlayer.push_back(0.76532);
     firstlayer.push_back(0.9232);
 
+    std::vector<double> correct;//Correct output
+    correct.push_back(0);
+    correct.push_back(0);
+    correct.push_back(3);    
+    correct.push_back(0);
+    correct.push_back(0);
+    correct.push_back(0);
+    correct.push_back(0);
+    correct.push_back(0);
+    correct.push_back(0);
     
-    static intelligence starthere(firstlayer, 0.3412, 9);
+    //intelligence starthere(firstlayer, 0.3412, 9);
     network thenetwork(firstlayer, 0.5,  9);
-    starthere.getnetworks().push_back(thenetwork);
+//    starthere.getnetworks().push_back(thenetwork);
     thenetwork.addlayer(20);
     thenetwork.addlayer(20);
     //starthere.getnetworks()[0].feed();
     thenetwork.init_weights();
     
     std::vector<double> outs =  thenetwork.produceoutput();
+    thenetwork.set_desire(correct);
+    thenetwork.tunelayers();
+    
+    for (int i = 0; i < outs.size(); i++) {
+      std::cout << outs[i] << std::endl;
+    }
+    
+    std::cout << "---------------------" << std::endl;
+    
+    outs = thenetwork.produceoutput();
     
     for (int i = 0; i < outs.size(); i++) {
       std::cout << outs[i] << std::endl;

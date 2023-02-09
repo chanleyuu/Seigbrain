@@ -27,7 +27,7 @@ neuron::neuron(int num, double bias, const double * euler)
 
 neuron::~neuron()
 {
-    delete weights_;
+    //delete weights_;
 }
 
 
@@ -48,12 +48,20 @@ double neuron::calculateoutput(std::vector<double>& weights, std::vector<double>
 
 std::vector<double> neuron::getweights() const 
 {
-    return *weights_;
+    std::vector<double> out;
+    for (int i = 0; i < sizeof(weights_); i++){
+        out.push_back(weights_[i]);
+    }
+    return out;
 }
 
-void neuron::setweight(int index, double weight) 
+void neuron::setweights(std::vector<double> weights) 
 {
-    weights_->at(index) = weight;
+    //weights_->at(index) = weight;
+    weights_ = new double[weights.size()];
+    for (int i = 0; i < weights.size(); i++) {
+            weights_[i] = weights.at(i);
+    }
 }
 
 double neuron::getbias() const 
@@ -101,20 +109,22 @@ double neuron::tranfer_derivitive()
     return activation_ * (1.0 - activation_);
 }
 
+/*
 void neuron::addweight()
 {
     weights_->push_back(0.0);
-}
+} */
 
 int neuron::get_weight_count()
 {
-    return weights_->size();
+    return sizeof(*weights_);
 }
 
 void neuron::clear_weights()
 {
     //weights_->clear();
-    //delete weights_;
-    weights_ = nullptr;
-    weights_ = new std::vector<double>;
+    //After clearing weights neuron should not be used until new weights are generated
+    delete weights_;
+    //weights_ = nullptr;
+    //weights_ = new double[];
 }

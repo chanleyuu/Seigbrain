@@ -15,6 +15,7 @@
 #include <vector>
 //#include "layer.h"
 #include <iostream>
+#include <math.h>
 #include "my_math.h"
 #include "layer.h"
 //Diogenes Core
@@ -24,7 +25,7 @@ private:
     double learningrate_;
 
     //Contains input layer and all hidden layers
-    std::vector<layer>* layers = new std::vector<layer>();
+    std::vector<layer*> layers;
     std::vector<double> costs_;
     std::vector<double> desire_;
     std::vector<double> inputs_;
@@ -36,6 +37,8 @@ public:
     
     network(std::vector<double>& inputs, double rate, int outputsize);
 
+    ~network();//Destructor
+    
     double getlearningrate() const;
     void setlearningrate(double rate);
 
@@ -49,7 +52,7 @@ public:
 
     void tunelayers();
 
-    void tunelayer(layer& L, layer& pastlayer);
+    void tunelayer(layer* L, layer* pastlayer);
 
     void readdata();
 
