@@ -131,6 +131,13 @@ void network::tunelayer(layer* L, layer* pastlayer)
 	for (int i = 0; i < L->getneurons().size(); i++)
 	{
         L->getneurons().at(i).set_delta(costs_[i] *  L->getneurons().at(i).tranfer_derivitive());
+        std::vector<double> weights;
+        for (int j = 0; j < L->getneurons().at(i).getweights().size(); j++ ) {
+            weights.push_back(L->getneurons().at(i).getweights().at(j) - L->getneurons().at(i).get_delta());
+        }
+        L->getneurons().at(i).clear_weights();
+        L->getneurons().at(i).setweights(weights);
+        weights.clear();
     }
 }
 
@@ -258,6 +265,9 @@ void network::init_weights()
 
 void network::set_desire(std::vector<double> desire)
 {
+    if (desire.size() > desire_.size()){
+        
+    }
     desire_ = desire;
 }
 
