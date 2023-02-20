@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
     firstlayer.push_back(0.9232);
 
     std::vector<double> correct;//Correct output
-    correct.push_back(0);
+    correct.push_back(0);//Need to reject correct answers that are not the same size as the ouput layer
     correct.push_back(0);
     correct.push_back(3);    
     correct.push_back(0);

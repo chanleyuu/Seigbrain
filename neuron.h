@@ -22,9 +22,10 @@ class neuron
 {
 private:
     int number_;
+    int weightcount_;
     //std::vector<int> condition_; //conditions
     double activation_;
-    double* weights_;
+    double* weights_ = nullptr;
     double bias_;
     double delta_;
     const double* euler_; //Euler constant
@@ -36,10 +37,10 @@ public:
     
     ~neuron();//destructor
     
-    double calculateoutput(std::vector<double>& weights, std::vector<double>& inputs);
+    double calculateoutput(std::vector<double>& inputs, double weights[]);
   //  double getoutput() const;
     
-    std::vector<double> getweights() const;
+    double* getweights() const;
     //void addweight();
     void setweights(std::vector<double> weights);
     int get_weight_count();

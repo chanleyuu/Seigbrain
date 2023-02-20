@@ -52,8 +52,10 @@ public:
 
     void tunelayers();
 
-    void tunelayer(layer* L, layer* pastlayer);
+    std::vector<double> tunelayer(layer* L, layer* pastlayer, std::vector<double> desire);
 
+    //void hiddentune(layer* L, layer* pastlayer);
+    
     void readdata();
 
     void add_inputs();
