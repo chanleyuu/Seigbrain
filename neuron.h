@@ -24,7 +24,7 @@ private:
     int number_;
     int weightcount_;
     //std::vector<int> condition_; //conditions
-    double activation_;
+    double activation_ = 0.0;
     double* weights_ = nullptr;
     double bias_;
     double delta_;
@@ -37,7 +37,7 @@ public:
     
     ~neuron();//destructor
     
-    double calculateoutput(std::vector<double>& inputs, double weights[]);
+    double calculateoutput(std::vector<double>& inputs, double weights[], int weightcount);
   //  double getoutput() const;
     
     double* getweights() const;
@@ -56,6 +56,9 @@ public:
     
     void set_activation(double act);
     double get_activation();
+    
+    void init_activation();
+    void clear_activation();
     
     double get_delta();
     void set_delta(double delta);

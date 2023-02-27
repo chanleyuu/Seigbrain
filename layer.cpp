@@ -26,7 +26,9 @@ layer::layer(const double* euler)
 layer::layer(std::vector<double> inputs, const double* euler)
 {
     euler_ = euler;
-   
+    this->init_vector(); 
+    
+    
     for (int i = 0; i < inputs.size(); i++)
     {
         neuron newinput(i, 0.0, euler);
@@ -34,11 +36,11 @@ layer::layer(std::vector<double> inputs, const double* euler)
         //neurons_.reserve(sizeof(newinput) + (neurons_.size()* sizeof(newinput)));
         //this->addneuron(newinput);
         neurons_->push_back(newinput);
+        //neurons_->at(i).init_activation();
     }
     
 }
 
-//Can't allow memory leaks 
 layer::~layer()
 {
     //delete neurons_;
@@ -52,13 +54,22 @@ std::vector<neuron>* layer::getneurons() const
 
 void layer::addneuron(neuron n)
 {
-    this->neurons_->push_back(n);
+    if (neurons_ != nullptr)
+    {
+        this->neurons_->push_back(n);
+        //this->neurons_->at(neurons_->size() - 1).init_activation();
+    }
+    else {
+        std::cout << "Vector must be initalized!" << std::endl;
+    }
 }
 
 void layer::removeneuron(int number)
 {
     for (int i = 0; i < neurons_->size(); i++) {
         if (neurons_->at(i).getnumber() == number) {
+            //neurons_->at(i).clear_activation();
+            neurons_->at(i).clear_weights();
             neurons_->erase(neurons_->begin() + i);
         }
     }
@@ -197,15 +208,39 @@ std::vector<double> layer::getweights()
 }
 
 void layer::feedforward(layer prev) {
-    std::vector<double> weights = prev.getweights();
+    //std::vector<double> weights = prev.getweights();
     std::vector<double> activations = prev.getactivations();
     
+    
+    
     for (int i = 0; i < neurons_->size(); i++) {
-        neurons_->at(i).calculateoutput( activations);
+        double weights[prev.getneurons()->size()];
+        for (int e = 0; e < prev.getneurons()->size(); e++)
+        {
+            weights[e] = prev.getneurons()->at(e).getweights()[e];
+        }
+        neurons_->at(i).calculateoutput( activations, weights, prev.getneurons()->size());
     }
 }
 
 void layer::setsensitivity(double sense) 
 {
     sensetivity = sense;
+}
+
+void layer::init_vector()
+{
+    if (neurons_ == nullptr)
+    {
+        neurons_ = new std::vector<neuron>;
+    }
+    else {
+            std::cout << "Vetcor already initalized!" << std::endl;
+    }
+}
+
+void layer::delete_vector()
+{
+    delete neurons_;
+    neurons_ = nullptr;
 }

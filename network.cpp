@@ -19,6 +19,7 @@ network::network(std::vector<double>& inputs, double rate, int outputsize): lear
     
     
     outputlayer->setsensitivity(0.3);
+    outputlayer->init_vector();
     //layers.push_back(base);
 
     /*
@@ -39,11 +40,12 @@ network::network(std::vector<double>& inputs, double rate, int outputsize): lear
     }
     //static layer last(&euler);
     layer* first = new layer(inputs_, &euler);
+    //first->init_vector();
     first->setsensitivity(0.6);
     double one = outputlayer->getsensitivity();
     double two = first->getsensitivity();
     layers.push_back(first);
-    delete first;
+    //delete first;
     //outputlayer = last;
     for (int i = 0; i < outputsize; i++) {
         neuron n( i, 0.0, &euler);
@@ -208,12 +210,13 @@ void network::hiddentune(layer* L, layer* pastlayer, layer* realpastlayer)
 void network::addlayer(int size) {
     
     layer* newlayer = new layer(&euler);
+    newlayer->init_vector();
     //neuron c( 1, 0.0, &euler);
     //newlayer.getneurons().resize(size);
     /*newlayer.getneurons().erase(newlayer.getneurons().begin(), newlayer.getneurons().end()); */
     for (int i = 0; i < size; i++) {
         neuron n( i, 0.0, &euler);
-        newlayer->getneurons()->push_back( n);
+        newlayer->addneuron(n);
     } 
     //fill(newlayer.getneurons().begin(), newlayer.getneurons().end(), c);
      
@@ -239,24 +242,28 @@ std::vector<double> network::produceoutput()
         
         
         for (int j = 0; j < layers.at(i)->getneurons()->size(); j++) {
-            std::vector<double> weights;
+            //std::vector<double> weights;
             std::vector<double> activations;
+            double weights[layers.at(i - 1)->getsize()];
             for (int k = 0; k < layers.at(i - 1)->getsize(); k++) {
                 //weights.push_back(layers.at(i - 1)->getneuron(k).getweights()[j]);
+                weights[k] = layers.at(i - 1)->getneuron(k).getweights()[j];
                 activations.push_back(layers.at(i - 1)->getneuron(k).get_activation());
             }
-            layers.at(i)->getneuron(j).calculateoutput( activations);
+            layers.at(i)->getneuron(j).set_activation(layers.at(i)->getneuron(j).calculateoutput( activations, weights, layers.at(i - 1)->getsize()));
         }
     }
 
     for (int i = 0; i < outputlayer->getsize(); i++){
-        std::vector<double> weights;
+        //std::vector<double> weights;
         std::vector<double> activations;
+        double weights[layers.at(n - 1)->getsize()];
         for (int j = 0; j < layers.at(n - 1)->getsize(); j++) {
                 //weights.push_back(layers.at(i - 1)->getneuron(j).getweights()[i]);
+                weights[j] = layers.at(n - 1)->getneuron(j).getweights()[i];
                 activations.push_back(layers.at(n - 1)->getneuron(j).get_activation());
         }
-        out.push_back(outputlayer->getneuron(i).calculateoutput( activations));
+        out.push_back(outputlayer->getneuron(i).calculateoutput( activations, weights, layers.at(n - 1)->getsize()));
     }
 
   //certainty = outputlayer.getcost();

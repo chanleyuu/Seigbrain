@@ -12,13 +12,14 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 
 #include "neuron.h"
 
 class layer
 {
 private:
-    std::vector<neuron>* neurons_ = new std::vector<neuron>();
+    std::vector<neuron>* neurons_ = nullptr;
     
     double sensetivity;
     double rate;
@@ -49,5 +50,7 @@ public:
     double getsensitivity() const;
     void setsensitivity(double sense);
     void calculatesensitivity(layer& lastgen);
+    void init_vector();
+    void delete_vector();
     void nudge(); 
 };

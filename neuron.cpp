@@ -14,8 +14,7 @@
 neuron::neuron(double* euler)
 {
     number_ = 0;
-    activation_ = 0.0;
-    weightcount_ = 0;
+    //weightcount_ = 0;
     bias_ = 0.0;
     euler_ = euler;
 }
@@ -34,17 +33,18 @@ neuron::~neuron()
 
 
 //the vector check is the previous layer's outputs
-double neuron::calculateoutput( std::vector<double>& inputs, double weights[])
+double neuron::calculateoutput( std::vector<double>& inputs, double weights[], int weightcount)
 {
+    //delete activation_;
     double activation = 0.0;
-    for (int i = 0; i < weightcount_; i++) {
-        activation += (weights_[i] * inputs.at(i));
+    for (int i = 0; i < weightcount; i++) {
+        activation += (weights[i] * inputs.at(i));
     }
     activation += bias_;
-    activation = 1.0 / (1.0 +  pow(*euler_, -1.0 * activation_));
+    activation = 1.0 / (1.0 + powf(*euler_, (-1.0 * activation)));
     //delete weights;
     //delete inputs;
-    activation_ = activation;
+    //this->set_activation(activation);
     return activation;
 }
 
@@ -61,10 +61,18 @@ double* neuron::getweights() const
 void neuron::setweights(std::vector<double> weights) 
 {
     //weights_->at(index) = weight;
+    if (weights_ == nullptr) {
+        
+        weights_ = new double[weights.size()];
+        
+    }
+    else {
+        this->clear_weights();
+        weights_ = new double[weights.size()];
+    }
     weightcount_ = weights.size();
-    weights_ = new double[weights.size()];
     for (int i = 0; i < weights.size(); i++) {
-            weights_[i] = weights.at(i);
+                weights_[i] = weights.at(i);
     }
 }
 
@@ -90,6 +98,11 @@ void neuron::setnumber(int num)
 
 void neuron::set_activation(double act)
 {
+    //delete activation_;
+    /*
+    if (activation_ == nullptr) {
+        activation_ = new double;
+    } */
     activation_ = act;
 }
 
@@ -121,8 +134,23 @@ void neuron::addweight()
 
 int neuron::get_weight_count()
 {
-    return sizeof(*weights_);
+    return weightcount_;
 }
+
+/*
+void neuron::init_activation()
+{
+    if (activation_ == nullptr) {
+        activation_ = new double();
+        *activation_ = 0.0;
+    }
+}
+
+void neuron::clear_activation()
+{
+    delete activation_;
+    activation_ = nullptr;
+} */
 
 void neuron::clear_weights()
 {
