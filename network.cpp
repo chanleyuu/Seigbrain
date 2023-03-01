@@ -125,33 +125,36 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
     //Total cost 
     double cost = 0.0;
     std::vector<double> new_desire;
-    std::vector<double> weights;
+    std::vector<std::vector<double>> weights;
     //std::vector<double> costs;
     
     //Neuron's error is first calculated
     for (int i = 0; i < pastlayer->getneurons()->size(); i++)
 	{
         //total cost of the layer will be calculated first
-        cost += 0.5 * pow(desire[i] - pastlayer->getneuron(i).get_activation(),2.0);
+        cost += 0.5 * pow(desire[i] - pastlayer->getneurons()->at(i).get_activation(),2.0);
          //Error is calculated corisponding for every weight
         //for (int j = 0; j < pastlayer->getneurons().at(i).getweights().size(); j++) {
             //cost += (pastlayer->getneurons().at(j).getweights()[i] * pastlayer->getneurons().at(j).get_delta());
         //}
         //costs.push_back(cost);
         //cost = 0.0;
+        error_ = cost;
 	}
 	
 	for (int i = 0; i < L->getneurons()->size(); i++)
 	{
+        std::vector<double> neuronweights;
         for (int e = 0; e < pastlayer->getneurons()->size(); e++)
         {
             double cost_deriv = -1.0 * (desire.at(e) - pastlayer->getneurons()->at(e).get_activation());
             double act_deriv = pastlayer->getneurons()->at(e).get_activation() * (1.0 - pastlayer->getneurons()->at(e).get_activation() );
             double weight_error = L->getneurons()->at(i).get_activation() * act_deriv * cost_deriv;
-            for (int j = 0; j < sizeof(*L->getneurons()->at(i).getweights()); j++){
-                weights.push_back(L->getneurons()->at(i).getweights()[j] - (weight_error * learningrate_));
-            }
+   
+            neuronweights.push_back(L->getneurons()->at(i).getweights()[e] - (weight_error * learningrate_));
+
         }
+        weights.push_back(neuronweights);
         
     }
 	
@@ -172,7 +175,7 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
     for (int i = 0; i < L->getneurons()->size(); i++)
 	{
         L->getneurons()->at(i).clear_weights();
-        L->getneurons()->at(i).setweights(weights);
+        L->getneurons()->at(i).setweights(weights.at(i));
     }
 	/*
      * 
@@ -247,10 +250,10 @@ std::vector<double> network::produceoutput()
             double weights[layers.at(i - 1)->getsize()];
             for (int k = 0; k < layers.at(i - 1)->getsize(); k++) {
                 //weights.push_back(layers.at(i - 1)->getneuron(k).getweights()[j]);
-                weights[k] = layers.at(i - 1)->getneuron(k).getweights()[j];
-                activations.push_back(layers.at(i - 1)->getneuron(k).get_activation());
+                weights[k] = layers.at(i - 1)->getneurons()->at(k).getweights()[j];
+                activations.push_back(layers.at(i - 1)->getneurons()->at(k).get_activation());
             }
-            layers.at(i)->getneuron(j).set_activation(layers.at(i)->getneuron(j).calculateoutput( activations, weights, layers.at(i - 1)->getsize()));
+            layers.at(i)->getneurons()->at(j).set_activation(layers.at(i)->getneurons()->at(j).calculateoutput( activations, weights, layers.at(i - 1)->getsize()));
         }
     }
 
@@ -260,10 +263,12 @@ std::vector<double> network::produceoutput()
         double weights[layers.at(n - 1)->getsize()];
         for (int j = 0; j < layers.at(n - 1)->getsize(); j++) {
                 //weights.push_back(layers.at(i - 1)->getneuron(j).getweights()[i]);
-                weights[j] = layers.at(n - 1)->getneuron(j).getweights()[i];
-                activations.push_back(layers.at(n - 1)->getneuron(j).get_activation());
+                weights[j] = layers.at(n - 1)->getneurons()->at(j).getweights()[i];
+                activations.push_back(layers.at(n - 1)->getneurons()->at(j).get_activation());
         }
-        out.push_back(outputlayer->getneuron(i).calculateoutput( activations, weights, layers.at(n - 1)->getsize()));
+        outputlayer->getneurons()->at(i).set_activation(outputlayer->getneurons()->at(i).calculateoutput( activations, weights, layers.at(n - 1)->getsize()));
+        double output = outputlayer->getneurons()->at(i).get_activation();
+        out.push_back(output);
     }
 
   //certainty = outputlayer.getcost();
@@ -345,3 +350,7 @@ void network::set_desire(std::vector<double> desire)
     desire_ = desire;
 }
 
+double network::get_error() 
+{
+    return error_;
+}

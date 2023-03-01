@@ -22,7 +22,7 @@ class neuron
 {
 private:
     int number_;
-    int weightcount_;
+    int weightcount_ = 0;
     //std::vector<int> condition_; //conditions
     double activation_ = 0.0;
     double* weights_ = nullptr;

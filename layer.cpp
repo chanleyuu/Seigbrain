@@ -75,6 +75,7 @@ void layer::removeneuron(int number)
     }
 }
 
+/*
 neuron layer::getneuron(int number)
 {
 
@@ -82,7 +83,7 @@ neuron layer::getneuron(int number)
         return neurons_->at(number);
     }
     return neurons_->at(number);
-}
+} */
 
 void layer::setnuerons(std::vector<neuron> inputs) 
 {
@@ -121,13 +122,13 @@ void layer::calculatesensitivity(layer& lastgen)
     double out;
     for (int i = 0; i < this->neurons_->size(); i++) {
        //double changeweight = neurons_[i].getweight() - lastgen.getneuron(i).getweight();
-       double changebias = this->neurons_->at(i).getbias() - lastgen.getneuron(i).getbias();
+       double changebias = this->neurons_->at(i).getbias() - lastgen.getneurons()->at(i).getbias();
       // Y *= changeweight / changebias;
     }
 
     for (int i = 0; i < this->neurons_->size(); i++) {
       // double changeweight = neurons_[i].getweight() - lastgen.getneuron(i).getweight();
-       double changebias = neurons_->at(i).getbias() - lastgen.getneuron(i).getbias();
+       double changebias = neurons_->at(i).getbias() - lastgen.getneurons()->at(i).getbias();
      //  Yprime *= (changeweight / changebias * changebias) * -1;
     }
 

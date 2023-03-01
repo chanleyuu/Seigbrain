@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
     correct.push_back(0.0);
     
     //intelligence starthere(firstlayer, 0.3412, 9);
-    network thenetwork(firstlayer, 0.5,  9);
+    network thenetwork(firstlayer, 1.5,  9);
 //    starthere.getnetworks().push_back(thenetwork);
     thenetwork.addlayer(20);
     thenetwork.addlayer(20);
@@ -66,18 +66,32 @@ int main(int argc, char **argv) {
     
     std::vector<double> outs =  thenetwork.produceoutput();
     thenetwork.set_desire(correct);
-    thenetwork.tunelayers();
     
     for (int i = 0; i < outs.size(); i++) {
-      std::cout << outs[i] << std::endl;
+      std::cout << std::setprecision(8) << outs[i] << std::endl;
     }
     
     std::cout << "---------------------" << std::endl;
     
+    thenetwork.tunelayers();
+    
     outs = thenetwork.produceoutput();
     
     for (int i = 0; i < outs.size(); i++) {
-      std::cout << outs[i] << std::endl;
+      std::cout << std::setprecision(8) << outs[i] << std::endl;
+    }
+    
+    std::cout << "---------------------" << std::endl;
+    
+    for (int i = 0; i < 100000; i++){
+      thenetwork.produceoutput();
+      thenetwork.tunelayers();
+    }
+    
+    outs = thenetwork.produceoutput();
+    
+    for (int i = 0; i < outs.size(); i++) {
+      std::cout << std::setprecision(8) << outs[i] << std::endl;
     }
     
     return 0;

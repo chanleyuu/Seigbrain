@@ -29,6 +29,7 @@ private:
     std::vector<double> costs_;
     std::vector<double> desire_;
     std::vector<double> inputs_;
+    double error_;
     const double euler = my_math_euler_num();
     layer* outputlayer = new layer(&euler);
 public:
@@ -71,4 +72,6 @@ public:
     void feed();
     
     std::vector<double> get_desire();
+    
+    double get_error();
 };

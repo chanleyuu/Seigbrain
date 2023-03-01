@@ -36,7 +36,7 @@ public:
     void addneuron(neuron n);
     void removeneuron(int number);
     void setnuerons(std::vector<neuron> inputs);
-    neuron getneuron(int number);
+    //neuron getneuron(int number);
     int getsize();
     
     std::vector<double> getactivations();
