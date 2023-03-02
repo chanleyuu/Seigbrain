@@ -139,6 +139,9 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
         //}
         //costs.push_back(cost);
         //cost = 0.0;
+        double act_deriv = pastlayer->getneurons()->at(i).get_activation() * (1.0 - pastlayer->getneurons()->at(i).get_activation() );
+        double error_deriv = 2.0 * (0.5 * (desire[i] - pastlayer->getneurons()->at(i).get_activation())) * -1 * act_deriv;
+        pastlayer->getneurons()->at(i).setbias(pastlayer->getneurons()->at(i).getbias() - error_deriv * learningrate_);
         error_ = cost;
 	}
 	
