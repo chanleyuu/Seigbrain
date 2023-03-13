@@ -40,6 +40,8 @@ public:
 
     ~network();//Destructor
     
+    void free_network_mem();
+    
     double getlearningrate() const;
     void setlearningrate(double rate);
 
@@ -74,4 +76,10 @@ public:
     std::vector<double> get_desire();
     
     double get_error();
+    
+    int get_output_size();
+    
+    std::vector<layer*> get_layers(); 
+    
+    std::vector<double> getinputs();
 };

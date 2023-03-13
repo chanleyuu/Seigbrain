@@ -43,11 +43,16 @@ public:
     double* getweights() const;
     //void addweight();
     void setweights(std::vector<double> weights);
+    void setweights(double weights[], int count);
+    void addweights(double weights[]);
+    void divideweights(int divisor);
+    
     int get_weight_count();
     void clear_weights();
     
     double getbias() const;
     void setbias(double bias);
+    void dividebias(int divisor);
     
     int getnumber() const;
     void setnumber(int num);

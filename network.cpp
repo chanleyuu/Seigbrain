@@ -58,13 +58,20 @@ network::network(std::vector<double>& inputs, double rate, int outputsize): lear
 
 network::~network()
 {
+    
+}
+
+void network::free_network_mem()
+{
     //delete layers;
     for (int i = 0; i < layers.size(); i++) {
         delete layers.at(i)->getneurons();
+        for (int e = 0; e < layers.at(i)->getneurons()->size(); e++) {
+            layers.at(i)->getneurons()->at(e).clear_weights();
+        }
         delete layers.at(i);
     }
 }
-
 
 int network::think()
 {
@@ -356,4 +363,20 @@ void network::set_desire(std::vector<double> desire)
 double network::get_error() 
 {
     return error_;
+}
+
+int network::get_output_size()
+{
+    return outputlayer->getneurons()->size();
+}
+
+std::vector<double> network::getinputs()
+{
+    return inputs_;
+}
+
+
+std::vector<layer*> network::get_layers()
+{
+    return layers;
 }

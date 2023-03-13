@@ -76,6 +76,37 @@ void neuron::setweights(std::vector<double> weights)
     }
 }
 
+void neuron::setweights(double weights[], int count){
+    if (weights_ == nullptr) {
+        weights_ = new double[count];
+    }
+    else {
+        this->clear_weights();
+        weights_ = new double[count];
+    }
+    weightcount_ = count;
+    for (int i = 0; i < count; i++) {
+        weights_[i] = weights[i];
+    }
+}    
+
+//divides weight values by an integer
+void neuron::divideweights(int divisor)
+{
+    double d_divisor = (double) divisor;
+    for (int i = 0; i < weightcount_; i++) {
+            weights_[i] = weights_[i] / d_divisor;
+    }
+}
+
+//adds values in array to the node's weights
+void neuron::addweights(double weights[])
+{
+    for (int i = 0; i < weightcount_; i++) {
+            weights_[i] = weights_[i] + weights[i];
+    }
+}
+
 double neuron::getbias() const 
 {
     return bias_;
@@ -84,6 +115,11 @@ double neuron::getbias() const
 void neuron::setbias(double bias)
 {
     bias_ = bias;
+}
+
+void neuron::dividebias(int divisor)
+{
+    bias_ = bias_ / (double) divisor;
 }
 
 int neuron::getnumber() const

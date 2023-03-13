@@ -44,7 +44,37 @@ int main(int argc, char **argv) {
     firstlayer.push_back(0.5632);
     firstlayer.push_back(0.76532);
     firstlayer.push_back(0.9232);
+    
+    std::vector<double> moredata;
+    moredata.push_back(0.632);
+    moredata.push_back(0.8123);
+    moredata.push_back(0.3673);
+    moredata.push_back(0.2232);
+    moredata.push_back(0.3432);
+    moredata.push_back(0.532);
+    moredata.push_back(0.86532);
+    moredata.push_back(0.0232);
 
+    std::vector<double> moredata2;
+    moredata2.push_back(0.732);
+    moredata2.push_back(0.91423423);
+    moredata2.push_back(0.2342373);
+    moredata2.push_back(0.6421232);
+    moredata2.push_back(0.93432);
+    moredata2.push_back(0.2147532);
+    moredata2.push_back(0.3386532);
+    moredata2.push_back(0.640232);
+    
+    std::vector<double> moredata3;
+    moredata3.push_back(0.732);
+    moredata3.push_back(0.91423423);
+    moredata3.push_back(0.2342373);
+    moredata3.push_back(0.6421232);
+    moredata3.push_back(0.93432);
+    moredata3.push_back(0.2147532);
+    moredata3.push_back(0.3386532);
+    moredata3.push_back(0.640232);
+    
     std::vector<double> correct;//Correct output
     correct.push_back(0.0);//Need to reject correct answers that are not the same size as the ouput layer
     correct.push_back(0.0);
@@ -56,8 +86,8 @@ int main(int argc, char **argv) {
     correct.push_back(0.0);
     correct.push_back(0.0);
     
-    //intelligence starthere(firstlayer, 0.3412, 9);
     network thenetwork(firstlayer, 1.5,  9);
+    intelligence starthere(firstlayer, thenetwork);
 //    starthere.getnetworks().push_back(thenetwork);
     thenetwork.addlayer(20);
     thenetwork.addlayer(20);
@@ -83,7 +113,7 @@ int main(int argc, char **argv) {
     
     std::cout << "---------------------" << std::endl;
     
-    for (int i = 0; i < 100; i++){
+    for (int i = 0; i < 10000; i++){
       thenetwork.produceoutput();
       thenetwork.tunelayers();
     }
