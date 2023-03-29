@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/seigbrain.dir/imageprocesser.cpp.o"
+  "CMakeFiles/seigbrain.dir/imageprocesser.cpp.o.d"
   "CMakeFiles/seigbrain.dir/intelligence.cpp.o"
   "CMakeFiles/seigbrain.dir/intelligence.cpp.o.d"
   "CMakeFiles/seigbrain.dir/layer.cpp.o"

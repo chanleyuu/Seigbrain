@@ -19,12 +19,16 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <vector>
+//#include <opencv2/opencv.hpp>
 /*
 #include <ImageMagick-7/Magick++.h>
 #include <ImageMagick-7/MagickCore/MagickCore.h>
 #include <ImageMagick-7/MagickCore/quantum.h> */
 #include "./include/stb/stb_image.h"
+#include "network.h"
+#include "my_math.h"
 #include <iostream>
+#include <stdio.h>
 
 //#include "layer.h"
 //#include "neuron.h"
@@ -36,11 +40,18 @@ private:
     
     int width, height, bpp;
     
+    double euler_;
+    
     uint8_t* rgb_image;
 
-    std::vector<double> values_;
+    std::vector<std::vector<double>> values_;
     
-    double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a)/* {
+    char * directory_;
+    
+    double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a);
+    
+    network* net_data;
+    /* {
         const stbi_uc *p = image + (4 * (y * imageWidth + x));
     *r = p[0];
     *g = p[1];
@@ -53,8 +64,27 @@ private:
 
 public:
     imageprocesser(); //constructor
+    
+    imageprocesser(char * directory); //constructor
 
-    std::vector<double> importimage(const char imagepath[]) /*{
+    std::vector<double> importimage(const char imagepath[]);
+    
+    void load_image(std::string im);
+    
+    void load_image_batch(int start, int end);
+    
+    std::vector<double> process_image(const char imagepath[]);
+    
+    std::vector<double> get_correct_answers(int number);
+    
+    void set_model(network* net);
+    network* get_model();
+    /*{
+    
+    //Steps : Load image
+    // Extract pixel values_
+    // Put pixel values through a sigmoid function
+    // Create layer
         
     //TO DO, set image as inputs for neural network 
     height = 100;

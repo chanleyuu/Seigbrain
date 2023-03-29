@@ -28,5 +28,10 @@
   "directory": "/home/aquadoff/projects/Seigbrain/build",
   "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/intelligence.cpp.o -c /home/aquadoff/projects/Seigbrain/intelligence.cpp",
   "file": "/home/aquadoff/projects/Seigbrain/intelligence.cpp"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/imageprocesser.cpp.o -c /home/aquadoff/projects/Seigbrain/imageprocesser.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/imageprocesser.cpp"
 }
 ]

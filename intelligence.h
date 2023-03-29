@@ -24,11 +24,11 @@ private:
     int generation_;
     std::vector<double> inputs_;
     //std::vector<network>* gen = new std::vector<network>;
-    network model_;
+    network* model_;
     double learningrate;
     std::vector<int> outputsizes;
 public:
-    intelligence(std::vector<double>& inputs, network model); //constructor
+    intelligence(std::vector<double>& inputs, network* model); //constructor
     ~intelligence();//destructor
     
     void addnetwork();
@@ -40,7 +40,7 @@ public:
     int getgeneration() const;
     void setgeneration(int generation);
     std::vector<double> get_current_outputs();
-    network get_model();
+    network* get_model();
     
-    void set_model(network model);
+    void set_model(network* model);
 };

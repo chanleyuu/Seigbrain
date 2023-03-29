@@ -174,6 +174,30 @@ seigbrain/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/build
 .PHONY : seigbrain/fast
 
+imageprocesser.o: imageprocesser.cpp.o
+.PHONY : imageprocesser.o
+
+# target to build an object file
+imageprocesser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/imageprocesser.cpp.o
+.PHONY : imageprocesser.cpp.o
+
+imageprocesser.i: imageprocesser.cpp.i
+.PHONY : imageprocesser.i
+
+# target to preprocess a source file
+imageprocesser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/imageprocesser.cpp.i
+.PHONY : imageprocesser.cpp.i
+
+imageprocesser.s: imageprocesser.cpp.s
+.PHONY : imageprocesser.s
+
+# target to generate assembly for a file
+imageprocesser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/seigbrain.dir/build.make CMakeFiles/seigbrain.dir/imageprocesser.cpp.s
+.PHONY : imageprocesser.cpp.s
+
 intelligence.o: intelligence.cpp.o
 .PHONY : intelligence.o
 
@@ -331,6 +355,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... seigbrain"
+	@echo "... imageprocesser.o"
+	@echo "... imageprocesser.i"
+	@echo "... imageprocesser.s"
 	@echo "... intelligence.o"
 	@echo "... intelligence.i"
 	@echo "... intelligence.s"

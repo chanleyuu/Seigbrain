@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
     firstlayer.push_back(0.76532);
     firstlayer.push_back(0.9232);
     
-    std::vector<double> moredata;
+  /*  std::vector<double> moredata;
     moredata.push_back(0.632);
     moredata.push_back(0.8123);
     moredata.push_back(0.3673);
@@ -66,14 +66,15 @@ int main(int argc, char **argv) {
     moredata2.push_back(0.640232);
     
     std::vector<double> moredata3;
-    moredata3.push_back(0.732);
-    moredata3.push_back(0.91423423);
+    moredata3.push_back(0.32);
+    moredata3.push_back(0.14564);
     moredata3.push_back(0.2342373);
-    moredata3.push_back(0.6421232);
-    moredata3.push_back(0.93432);
-    moredata3.push_back(0.2147532);
-    moredata3.push_back(0.3386532);
-    moredata3.push_back(0.640232);
+    moredata3.push_back(0.921232);
+    moredata3.push_back(0.473432);
+    moredata3.push_back(0.32147532);
+    moredata3.push_back(0.63332);
+    moredata3.push_back(0.740232); */
+    
     
     std::vector<double> correct;//Correct output
     correct.push_back(0.0);//Need to reject correct answers that are not the same size as the ouput layer
@@ -86,8 +87,41 @@ int main(int argc, char **argv) {
     correct.push_back(0.0);
     correct.push_back(0.0);
     
+   /* std::vector<double> correct2;//Correct output
+    correct2.push_back(0.0);//Need to reject correct answers that are not the same size as the ouput layer
+    correct2.push_back(0.0);
+    correct2.push_back(0.0);    
+    correct2.push_back(0.0);
+    correct2.push_back(1.0);
+    correct2.push_back(0.0);
+    correct2.push_back(0.0);
+    correct2.push_back(0.0);
+    correct2.push_back(0.0);
+    
+    std::vector<double> correct3;//Correct output
+    correct3.push_back(0.0);//Need to reject correct answers that are not the same size as the ouput layer
+    correct3.push_back(1.0);
+    correct3.push_back(0.0);    
+    correct3.push_back(0.0);
+    correct3.push_back(0.0);
+    correct3.push_back(0.0);
+    correct3.push_back(0.0);
+    correct3.push_back(0.0);
+    correct3.push_back(0.0);
+    
+    std::vector<double> correct4;//Correct output
+    correct4.push_back(1.0);//Need to reject correct answers that are not the same size as the ouput layer
+    correct4.push_back(0.0);
+    correct4.push_back(0.0);    
+    correct4.push_back(0.0);
+    correct4.push_back(0.0);
+    correct4.push_back(0.0);
+    correct4.push_back(0.0);
+    correct4.push_back(0.0);
+    correct4.push_back(0.0); */
+    
     network thenetwork(firstlayer, 1.5,  9);
-    intelligence starthere(firstlayer, thenetwork);
+    //intelligence starthere(firstlayer, thenetwork);
 //    starthere.getnetworks().push_back(thenetwork);
     thenetwork.addlayer(20);
     thenetwork.addlayer(20);

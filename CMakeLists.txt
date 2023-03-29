@@ -50,7 +50,9 @@ set(source_files ${PROJECT_SOURCE_DIR}/main.cpp
     ${PROJECT_SOURCE_DIR}/network.h
     ${PROJECT_SOURCE_DIR}/network.cpp
     ${PROJECT_SOURCE_DIR}/intelligence.h
-    ${PROJECT_SOURCE_DIR}/intelligence.cpp)
+    ${PROJECT_SOURCE_DIR}/intelligence.cpp
+    ${PROJECT_SOURCE_DIR}/imageprocesser.cpp
+    ${PROJECT_SOURCE_DIR}/imageprocesser.h)
 add_executable(seigbrain ${source_files})
 # Loop through each source file
 #foreach(source_file IN LISTS source_files)

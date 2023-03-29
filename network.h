@@ -33,10 +33,13 @@ private:
     const double euler = my_math_euler_num();
     layer* outputlayer = new layer(&euler);
 public:
-
-    network(std::vector<double>& inputs ,int outputsize, std::vector<double> desire);
     
+
     network(std::vector<double>& inputs, double rate, int outputsize);
+    
+    network();
+    
+    network(std::vector<double>& inputs ,int outputsize, std::vector<double> desire);
 
     ~network();//Destructor
     
@@ -63,7 +66,7 @@ public:
 
     void add_inputs();
     
-    void setfirstlayer(layer lay);
+    void setfirstlayer(std::vector<double> inputs);
 
     layer getinputlayer() const;
     

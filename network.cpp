@@ -14,6 +14,8 @@
 //#include <iostream>
 #include "network.h"
 
+
+
 network::network(std::vector<double>& inputs, double rate, int outputsize): learningrate_{ rate }
 {
     
@@ -54,6 +56,11 @@ network::network(std::vector<double>& inputs, double rate, int outputsize): lear
     one = 1 + two;
     first->setsensitivity(one);
     //init_weights();
+}
+
+network::network()
+{
+    
 }
 
 network::~network()
@@ -379,4 +386,11 @@ std::vector<double> network::getinputs()
 std::vector<layer*> network::get_layers()
 {
     return layers;
+}
+
+void network::setfirstlayer(std::vector<double> inputs)
+{
+    layer l(inputs, &euler);
+    layers.at(0) = &l;
+    //this->init_weights();
 }

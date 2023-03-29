@@ -11,7 +11,7 @@
 
 #include "intelligence.h"
 
-intelligence::intelligence(std::vector<double>& inputs,  network model): inputs_{ inputs },  model_{ model }
+intelligence::intelligence(std::vector<double>& inputs,  network* model): inputs_{ inputs },  model_{ model }
 {
 
     //network net(inputs, learningrate, outputsize);
@@ -40,9 +40,9 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
   
   
   for (int i = 0; i < data.size(); i++) {
-    network net( data[i], model_.getlearningrate(), model_.get_output_size());
-    for (int e = 0; e < model_.get_layers().size(); e++){
-        net.addlayer(model_.get_layers().at(e)->getneurons()->size());
+    network net( data[i], model_->getlearningrate(), model_->get_output_size());
+    for (int e = 0; e < model_->get_layers().size(); e++){
+        net.addlayer(model_->get_layers().at(e)->getneurons()->size());
     }
     net.init_weights();
     
@@ -52,7 +52,7 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
         for (int z = 0; z < net.get_layers().at(i)->getneurons()->at(e).get_weight_count(); z++) {
           *net.get_layers().at(i)->getneurons()->at(e).getweights().getweights[z] = *model_.get_layers().at(i)->getneurons()->at(e).getweights().getweights[z];
         } */
-        net.get_layers().at(i)->getneurons()->at(e).setweights(model_.get_layers().at(i)->getneurons()->at(e).getweights(), model_.get_layers().at(i)->getneurons()->at(e).get_weight_count());
+        net.get_layers().at(i)->getneurons()->at(e).setweights(model_->get_layers().at(i)->getneurons()->at(e).getweights(), model_->get_layers().at(i)->getneurons()->at(e).get_weight_count());
       }
     }
     
@@ -73,18 +73,18 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
         for (int z = 0; z < nets.at(i).get_layers().at(e)->getneurons()->at(j).get_weight_count(); z++) {
           //weightaverages.at(e).at(j).push_back( weightaverages.at(e).at(j).at(z) + nets.at(i).get_layers().at(e)->getneurons()->at(j).getweights()[z]);
         } */
-        model_.get_layers().at(e)->getneurons()->at(j).setbias(model_.get_layers().at(e)->getneurons()->at(j).getbias() + nets.at(i).get_layers().at(e)->getneurons()->at(j).getbias());
-        model_.get_layers().at(e)->getneurons()->at(j).addweights(nets.at(i).get_layers().at(e)->getneurons()->at(j).getweights());
+        model_->get_layers().at(e)->getneurons()->at(j).setbias(model_->get_layers().at(e)->getneurons()->at(j).getbias() + nets.at(i).get_layers().at(e)->getneurons()->at(j).getbias());
+        model_->get_layers().at(e)->getneurons()->at(j).addweights(nets.at(i).get_layers().at(e)->getneurons()->at(j).getweights());
       }
     }
   }
   
   
   //Divide the added values to get the avages
-  for (int i = 0; i < model_.get_layers().size(); i++){
-      for (int e = 0; e < model_.get_layers().at(i)->getneurons()->size(); e++){
-        model_.get_layers().at(i)->getneurons()->at(e).dividebias(nets.size());
-        model_.get_layers().at(i)->getneurons()->at(e).divideweights(nets.size());
+  for (int i = 0; i < model_->get_layers().size(); i++){
+      for (int e = 0; e < model_->get_layers().at(i)->getneurons()->size(); e++){
+        model_->get_layers().at(i)->getneurons()->at(e).dividebias(nets.size());
+        model_->get_layers().at(i)->getneurons()->at(e).divideweights(nets.size());
       }
         
   }   
@@ -97,7 +97,7 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
 }
 
 std::vector<double> intelligence::getinputs() const{
-  return model_.getinputlayer().getactivations();
+  return model_->getinputlayer().getactivations();
 }
 
 void intelligence::setinputs(std::vector<double> l){
@@ -112,6 +112,12 @@ void intelligence::setgeneration(int generation) {
   generation_ = generation;
 }
 
-network intelligence::get_model(){
+network* intelligence::get_model(){
   return model_;
 }
+
+void intelligence::set_model(network* model)
+{
+  model_ = model;
+}
+
