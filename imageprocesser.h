@@ -78,7 +78,12 @@ public:
     std::vector<double> get_correct_answers(int number);
     
     void set_model(network* net);
+    
+    void output_images(int start, int end);
+
     network* get_model();
+    
+    int get_result(std::vector<double> result);
     /*{
     
     //Steps : Load image

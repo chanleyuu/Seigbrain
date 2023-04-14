@@ -7,19 +7,25 @@
 imageprocesser::imageprocesser()
 {
   std::vector<double> pixel_act;
-  network net_data(pixel_act, 1.5, 1);
+  net_data =  new network(10000, 1.5, 10);
+  net_data->addlayer(100);
+  net_data->addlayer(100);
+  net_data->addlayer(100);
+  net_data->init_weights();
   
   euler_ = my_math_euler_num();
 }
 
 imageprocesser::imageprocesser(char * directory)
 {
-  directory_ = directory;
+  
+  directory_ = my_math_concat(directory, (char *) "/data");
   std::vector<double> pixel_act;
-  network net_data =  *new network(pixel_act, 1.5, 1);
-  net_data.addlayer(100);
-  net_data.addlayer(100);
-  net_data.addlayer(100);
+  net_data =  new network(10000, 1.5, 10);
+  net_data->addlayer(100);
+  net_data->addlayer(100);
+  net_data->addlayer(100);
+  net_data->init_weights();
   
   euler_ = my_math_euler_num();
 }
@@ -103,29 +109,38 @@ void imageprocesser::load_image_batch(int start, int end)
 {
   //Load data
   char * path = my_math_concat(directory_, (char *) "/number");
+  printf("%s", path);
+  double d = net_data->get_layers().at(0)->getneurons()->at(0).get_activation();
+  printf("%f \n",d);
   for (int i = start; i < end; i++)
   {
-    values_.push_back(importimage(my_math_concat(path, my_math_toArray(i))));
+    values_.push_back(importimage(my_math_concat(path, my_math_concat(my_math_toArray(i), (char *) ".jpg"))));
   }
   //Load labels
   //Labes are stored in a file called "correct_answers.txt"
   char * correct_file = my_math_concat(directory_, (char *) "/correct_answers.txt");
   std::vector<std::vector<double>> correct;
-  for (int i = start; i < end; i++) 
-  {
-        char str[20];
-        int number;
-        FILE *fptr;
-        fptr = fopen(correct_file,"r");
-        
-        if (fptr == NULL)
+  
+  FILE *fptr;
+  fptr = fopen(correct_file,"r");
+  
+  if (fptr == NULL)
         {
           printf("Error!");
           exit(1); 
         }
+  
+  for (int i = start; i < end; i++) 
+  {
+        char str[20];
+        int number;
         
-        fscanf(fptr, "%s %d", str, &number);
-        correct.push_back(get_correct_answers(number));
+        
+        
+        if (fscanf(fptr, "%s %d", str, &number) != EOF){
+         correct.push_back(get_correct_answers(number));
+        }
+        
   }
   
   
@@ -247,7 +262,7 @@ std::vector<double> imageprocesser::get_correct_answers(int number)
       out.push_back(0.0);
       break;
     case 9:
-      out.push_back(1.0);
+      out.push_back(0.0);
       out.push_back(0.0);
       out.push_back(0.0);
       out.push_back(0.0);
@@ -268,10 +283,12 @@ std::vector<double> imageprocesser::get_correct_answers(int number)
       out.push_back(0.0);
       out.push_back(0.0);
       out.push_back(0.0);
+      out.push_back(0.0);
       break;
   }
   return out;
 }
+
 
 
 void imageprocesser::load_image(std::string im)
@@ -304,6 +321,39 @@ std::vector<double> imageprocesser::process_image(const char imagepath[])
   
   std::vector<double> out = net_data->produceoutput();
   
+  return out;
+}
+
+void imageprocesser::output_images(int start, int end) {
+  
+  char * path = my_math_concat(directory_, (char *) "/number");
+  
+  for (int i = start; i < end; i++) {
+    
+    std::vector<double> in = importimage(my_math_concat(path, my_math_concat(my_math_toArray(i), (char *) ".jpg")));
+    
+    net_data->setfirstlayer(in);
+    
+    std::vector<double> out = net_data->produceoutput();
+    
+    printf("%d \n", get_result(out));
+    /*
+    for (int i = 0; i < out.size(); i++) {
+     printf("%f \n", out[i]);
+    } */
+  }
+}
+
+int imageprocesser::get_result(std::vector<double> result)
+{
+  int out = 0;
+  double largest = 0.0;
+  for (int i = 0; i < result.size(); i++){
+    if (largest < result.at(i)) {
+        largest = result.at(i);
+        out = i;
+    }
+  }
   return out;
 }
 

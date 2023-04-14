@@ -4,9 +4,12 @@
 
 #include "intelligence.h"
 //#include "layer.h"
+#include "my_math.h"
 #include "imageprocesser.h"
 #include <sstream>
 #include <unistd.h>
+#include <limits.h>
+#include <stdio.h>
 
 int main(int argc, char **argv) {
     std::cout << "Hello, Time!" << std::endl;
@@ -30,8 +33,14 @@ int main(int argc, char **argv) {
   buffer[count] = '\0';
 
     
-    std::filesystem::path cwd = std::filesystem::current_path();
-    
+   // std::filesystem::path cwd = std::filesystem::current_path();
+   char cwd[PATH_MAX];
+   getcwd(cwd, sizeof(cwd));
+   printf("%s yes \n",cwd);
+   imageprocesser im(cwd);
+
+   im.load_image_batch(1,10);
+   im.output_images(1,10);
    /* char[count] loc = link.;
     std::filesystem::__cxx11::path dou = new std::filesystem::__cxx11::path(cwd + "/data/number1.jpg") ;
     layer firstlayer(im.importimage("/home/aquadoff/projects/Seigbrain/data/number1.jpg")); */

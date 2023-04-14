@@ -15,7 +15,7 @@
 #include "network.h"
 
 
-
+//This constructor will populate the input layer based on the size of the input vector
 network::network(std::vector<double>& inputs, double rate, int outputsize): learningrate_{ rate }
 {
     
@@ -58,10 +58,53 @@ network::network(std::vector<double>& inputs, double rate, int outputsize): lear
     //init_weights();
 }
 
+//This constructor takes a fourth parameter and populates the input layer based on that 
+network::network(int inputsize, double rate, int outputsize): learningrate_{ rate }
+{
+    
+    
+    outputlayer->setsensitivity(0.3);
+    outputlayer->init_vector();
+    //layers.push_back(base);
+
+    /*
+    for (int i = 0; i < 32; i++) {
+        neuron nuer( i, 0.0, 0.0);
+        hiddenlayer1.addneuron(nuer);
+    }
+
+    for (int i = 0; i < 32; i++) {
+        neuron nuer( i, 0.0, 0.0);
+        hiddenlayer2.addneuron(nuer);
+    }
+    */
+    
+    //euler = my_math_euler_num();
+    for (int i = 0; i < inputsize; i++){
+        inputs_.push_back(0.0);
+    }
+    //static layer last(&euler);
+    layer* first = new layer(inputs_, &euler);
+    //first->init_vector();
+    first->setsensitivity(0.6);
+    double one = outputlayer->getsensitivity();
+    double two = first->getsensitivity();
+    layers.push_back(first);
+    //delete first;
+    //outputlayer = last;
+    for (int i = 0; i < outputsize; i++) {
+        neuron n( i, 0.0, &euler);
+        outputlayer->addneuron(n);
+    }
+    one = 1 + two;
+    first->setsensitivity(one);
+    //init_weights();
+}
+/*
 network::network()
 {
     
-}
+} */
 
 network::~network()
 {
@@ -72,10 +115,11 @@ void network::free_network_mem()
 {
     //delete layers;
     for (int i = 0; i < layers.size(); i++) {
-        delete layers.at(i)->getneurons();
         for (int e = 0; e < layers.at(i)->getneurons()->size(); e++) {
             layers.at(i)->getneurons()->at(e).clear_weights();
         }
+        //delete layers.at(i)->getneurons();
+        layers.at(i)->delete_vector();
         delete layers.at(i);
     }
 }
@@ -248,8 +292,8 @@ void network::addlayer(int size) {
 //the first value is the output the second is the cost
 std::vector<double> network::produceoutput()
 {
-  double guess;//The AI's best guess
-  double certainty;//how sure the AI is
+  //double guess;//The AI's best guess
+  //double certainty;//how sure the AI is
   std::vector<double> in;
   std::vector<double> out;
   
@@ -264,8 +308,9 @@ std::vector<double> network::produceoutput()
         for (int j = 0; j < layers.at(i)->getneurons()->size(); j++) {
             //std::vector<double> weights;
             std::vector<double> activations;
-            double weights[layers.at(i - 1)->getsize()];
-            for (int k = 0; k < layers.at(i - 1)->getsize(); k++) {
+            long num2 = layers.at(i - 1)->getsize();
+            double weights[num2];
+            for (int k = 0; k < num2; k++) {
                 //weights.push_back(layers.at(i - 1)->getneuron(k).getweights()[j]);
                 weights[k] = layers.at(i - 1)->getneurons()->at(k).getweights()[j];
                 activations.push_back(layers.at(i - 1)->getneurons()->at(k).get_activation());
@@ -390,7 +435,10 @@ std::vector<layer*> network::get_layers()
 
 void network::setfirstlayer(std::vector<double> inputs)
 {
-    layer l(inputs, &euler);
-    layers.at(0) = &l;
+    layer* l = new layer(inputs, &euler);
+    l->copyweights(*layers.at(0), layers.at(1)->getneurons()->size());
+    layers.at(0)->delete_vector();
+    delete layers.at(0);
+    layers.at(0) = l;
     //this->init_weights();
 }

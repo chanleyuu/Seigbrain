@@ -41,6 +41,8 @@ include(${PROJECT_SOURCE_DIR}/build/FindOpenCL.cmake)
 #set_target_properties(OPENCL PROPERTIES LINKER_LANGUAGE Cxx) 
 #set_target_properties(OPENCL CMAKE_Cxx_CREATE_SHARED_LIBRARY )
 set(source_files ${PROJECT_SOURCE_DIR}/main.cpp
+    ${PROJECT_SOURCE_DIR}/imageprocesser.cpp
+    ${PROJECT_SOURCE_DIR}/imageprocesser.h
     ${PROJECT_SOURCE_DIR}/my_math.h
     ${PROJECT_SOURCE_DIR}/my_math.cpp
     ${PROJECT_SOURCE_DIR}/neuron.h
@@ -51,8 +53,7 @@ set(source_files ${PROJECT_SOURCE_DIR}/main.cpp
     ${PROJECT_SOURCE_DIR}/network.cpp
     ${PROJECT_SOURCE_DIR}/intelligence.h
     ${PROJECT_SOURCE_DIR}/intelligence.cpp
-    ${PROJECT_SOURCE_DIR}/imageprocesser.cpp
-    ${PROJECT_SOURCE_DIR}/imageprocesser.h)
+    )
 add_executable(seigbrain ${source_files})
 # Loop through each source file
 #foreach(source_file IN LISTS source_files)

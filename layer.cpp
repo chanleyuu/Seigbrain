@@ -189,7 +189,7 @@ std::vector<double> layer::getactivations()
 }
 
 
-int layer::getsize() {
+long layer::getsize() {
     return this->neurons_->size();
 }
 
@@ -245,3 +245,17 @@ void layer::delete_vector()
     delete neurons_;
     neurons_ = nullptr;
 }
+
+void layer::copyweights(layer copyfrom, int nextlayersize)
+{
+    if (copyfrom.getneurons()->size() > this->neurons_->size() || copyfrom.getneurons()->size() < this->neurons_->size())
+    {
+            printf("Layers must be same size to copy weights!!!!");
+            return;
+    }
+    
+    for (int i = 0; i < this->neurons_->size(); i++){
+            this->neurons_->at(i).setweights(copyfrom.getneurons()->at(i).getweights(), nextlayersize);
+    }
+}
+

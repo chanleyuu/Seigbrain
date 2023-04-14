@@ -2,36 +2,43 @@
 {
   "directory": "/home/aquadoff/projects/Seigbrain/build",
   "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/main.cpp.o -c /home/aquadoff/projects/Seigbrain/main.cpp",
-  "file": "/home/aquadoff/projects/Seigbrain/main.cpp"
-},
-{
-  "directory": "/home/aquadoff/projects/Seigbrain/build",
-  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/my_math.cpp.o -c /home/aquadoff/projects/Seigbrain/my_math.cpp",
-  "file": "/home/aquadoff/projects/Seigbrain/my_math.cpp"
-},
-{
-  "directory": "/home/aquadoff/projects/Seigbrain/build",
-  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/neuron.cpp.o -c /home/aquadoff/projects/Seigbrain/neuron.cpp",
-  "file": "/home/aquadoff/projects/Seigbrain/neuron.cpp"
-},
-{
-  "directory": "/home/aquadoff/projects/Seigbrain/build",
-  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/layer.cpp.o -c /home/aquadoff/projects/Seigbrain/layer.cpp",
-  "file": "/home/aquadoff/projects/Seigbrain/layer.cpp"
-},
-{
-  "directory": "/home/aquadoff/projects/Seigbrain/build",
-  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/network.cpp.o -c /home/aquadoff/projects/Seigbrain/network.cpp",
-  "file": "/home/aquadoff/projects/Seigbrain/network.cpp"
-},
-{
-  "directory": "/home/aquadoff/projects/Seigbrain/build",
-  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/intelligence.cpp.o -c /home/aquadoff/projects/Seigbrain/intelligence.cpp",
-  "file": "/home/aquadoff/projects/Seigbrain/intelligence.cpp"
+  "file": "/home/aquadoff/projects/Seigbrain/main.cpp",
+  "output": "CMakeFiles/seigbrain.dir/main.cpp.o"
 },
 {
   "directory": "/home/aquadoff/projects/Seigbrain/build",
   "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/imageprocesser.cpp.o -c /home/aquadoff/projects/Seigbrain/imageprocesser.cpp",
-  "file": "/home/aquadoff/projects/Seigbrain/imageprocesser.cpp"
+  "file": "/home/aquadoff/projects/Seigbrain/imageprocesser.cpp",
+  "output": "CMakeFiles/seigbrain.dir/imageprocesser.cpp.o"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/my_math.cpp.o -c /home/aquadoff/projects/Seigbrain/my_math.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/my_math.cpp",
+  "output": "CMakeFiles/seigbrain.dir/my_math.cpp.o"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/neuron.cpp.o -c /home/aquadoff/projects/Seigbrain/neuron.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/neuron.cpp",
+  "output": "CMakeFiles/seigbrain.dir/neuron.cpp.o"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/layer.cpp.o -c /home/aquadoff/projects/Seigbrain/layer.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/layer.cpp",
+  "output": "CMakeFiles/seigbrain.dir/layer.cpp.o"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/network.cpp.o -c /home/aquadoff/projects/Seigbrain/network.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/network.cpp",
+  "output": "CMakeFiles/seigbrain.dir/network.cpp.o"
+},
+{
+  "directory": "/home/aquadoff/projects/Seigbrain/build",
+  "command": "/usr/bin/c++   -g -std=c++17 -o CMakeFiles/seigbrain.dir/intelligence.cpp.o -c /home/aquadoff/projects/Seigbrain/intelligence.cpp",
+  "file": "/home/aquadoff/projects/Seigbrain/intelligence.cpp",
+  "output": "CMakeFiles/seigbrain.dir/intelligence.cpp.o"
 }
 ]

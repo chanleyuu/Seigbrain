@@ -37,7 +37,7 @@ public:
     void removeneuron(int number);
     void setnuerons(std::vector<neuron> inputs);
     //neuron getneuron(int number);
-    int getsize();
+    long getsize();
     
     std::vector<double> getactivations();
     std::vector<double> getweights();
@@ -53,4 +53,5 @@ public:
     void init_vector();
     void delete_vector();
     void nudge(); 
+    void copyweights(layer copyfrom, int nextlayersize);
 };
