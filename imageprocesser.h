@@ -37,6 +37,9 @@ class imageprocesser {
 
 private:
     //Magick::Image image_;
+    char* format;
+    
+    int* labels;
     
     int width, height, bpp;
     
@@ -63,9 +66,9 @@ private:
     }*/;
 
 public:
-    imageprocesser(); //constructor
+    imageprocesser(int size_x, int size_y); //constructor
     
-    imageprocesser(char * directory); //constructor
+    imageprocesser(char * directory, int size_x, int size_y, char * form); //constructor
 
     std::vector<double> importimage(const char imagepath[]);
     
@@ -84,6 +87,12 @@ public:
     network* get_model();
     
     int get_result(std::vector<double> result);
+    
+    void save_model();
+    
+    void load_model();
+    
+    void load_labels(int amount);
     /*{
     
     //Steps : Load image

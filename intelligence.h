@@ -27,6 +27,7 @@ private:
     network* model_;
     double learningrate;
     std::vector<int> outputsizes;
+    std::vector<network> batch_results;
 public:
     intelligence(std::vector<double>& inputs, network* model); //constructor
     ~intelligence();//destructor
@@ -43,4 +44,6 @@ public:
     network* get_model();
     
     void set_model(network* model);
+    
+    void average_results();
 };

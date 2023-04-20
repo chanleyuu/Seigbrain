@@ -248,6 +248,7 @@ void layer::delete_vector()
 
 void layer::copyweights(layer copyfrom, int nextlayersize)
 {
+    //Also copies biases
     if (copyfrom.getneurons()->size() > this->neurons_->size() || copyfrom.getneurons()->size() < this->neurons_->size())
     {
             printf("Layers must be same size to copy weights!!!!");
@@ -256,6 +257,7 @@ void layer::copyweights(layer copyfrom, int nextlayersize)
     
     for (int i = 0; i < this->neurons_->size(); i++){
             this->neurons_->at(i).setweights(copyfrom.getneurons()->at(i).getweights(), nextlayersize);
+            this->neurons_->at(i).setbias(copyfrom.getneurons()->at(i).getbias());
     }
 }
 

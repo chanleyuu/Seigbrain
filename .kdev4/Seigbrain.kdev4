@@ -32,7 +32,7 @@ Dependency Action=Nothing
 Display Demangle Names=true
 Display Static Members=false
 EnvironmentGroup=
-Executable=file:///home/aquadoff/projects/Seigbrain
+Executable=file:///home/aquadoff/projects/Seigbrain/build/seigbrain
 External Terminal=konsole --noclose --workdir %workdir -e %exe
 GDB Path=
 Kill Before Executing Again=4194304
@@ -43,7 +43,7 @@ Remote GDB Shell Script=
 Start With=ApplicationOutput
 Use External Terminal=false
 Working Directory=
-isExecutable=false
+isExecutable=true
 
 [Project]
 VersionControlSupport=kdevgit

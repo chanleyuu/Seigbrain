@@ -51,7 +51,7 @@ public:
     
     network(int inputsize, double rate, int outputsize);
     
-    //network();
+    network();
     
     network(std::vector<double>& inputs ,int outputsize, std::vector<double> desire);
 

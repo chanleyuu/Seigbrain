@@ -100,11 +100,11 @@ network::network(int inputsize, double rate, int outputsize): learningrate_{ rat
     first->setsensitivity(one);
     //init_weights();
 }
-/*
+
 network::network()
 {
     
-} */
+} 
 
 network::~network()
 {
@@ -122,6 +122,10 @@ void network::free_network_mem()
         layers.at(i)->delete_vector();
         delete layers.at(i);
     }
+    for (int e = 0; e < outputlayer->getneurons()->size(); e++) {
+            outputlayer->getneurons()->at(e).clear_weights();
+    }
+    delete outputlayer;
 }
 
 int network::think()
@@ -381,7 +385,7 @@ void network::init_weights()
                     for (int e = 0; e < outputlayer->getneurons()->size(); e++) 
                     {
                         //layers->at(i).getneurons().at(j).addweight();
-                        weights.push_back(1.0);
+                        weights.push_back(0.0);
                     }
                     layers.at(i)->getneurons()->at(j).setweights(weights);
                 }
@@ -395,7 +399,7 @@ void network::init_weights()
                     std::vector<double> weights;
                     for (int j = 0; j < layers.at(i + 1)->getneurons()->size(); j++ ) {
                         //layers->at(i).getneurons().at(e).addweight();
-                        weights.push_back(1.0);
+                        weights.push_back(0.0);
                     }
                     layers.at(i)->getneurons()->at(e).setweights(weights);
                     
@@ -435,10 +439,19 @@ std::vector<layer*> network::get_layers()
 
 void network::setfirstlayer(std::vector<double> inputs)
 {
-    layer* l = new layer(inputs, &euler);
-    l->copyweights(*layers.at(0), layers.at(1)->getneurons()->size());
-    layers.at(0)->delete_vector();
-    delete layers.at(0);
-    layers.at(0) = l;
+    //layer* l = new layer(inputs, &euler);
+    //l->copyweights(*layers.at(0), layers.at(1)->getneurons()->size());
+    //layers.at(0)->delete_vector();
+    //delete layers.at(0);
+    //layers.at(0) = l;
     //this->init_weights();
+    if (this->layers.at(0)->getneurons()->size() <= inputs.size()) {
+        for (int i = 0; i < this->layers.at(0)->getneurons()->size(); i++) {
+            this->layers.at(0)->getneurons()->at(i).set_activation(inputs[i]);
+        }
+    }
+    else {
+        printf("Input vector is too short!!!! \n");
+    }
+    
 }

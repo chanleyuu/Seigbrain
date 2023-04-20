@@ -37,13 +37,37 @@ int main(int argc, char **argv) {
    char cwd[PATH_MAX];
    getcwd(cwd, sizeof(cwd));
    printf("%s yes \n",cwd);
-   imageprocesser im(cwd);
+   imageprocesser im(cwd, 28, 28, (char *)".png");
 
-   im.load_image_batch(1,10);
-   im.output_images(1,10);
+   //for (int i = 0; i < 10; i++) {
+    im.load_labels(70000);
+    std::cout << "Batch1" << std::endl;
+    im.load_image_batch(1,70000);
+    std::cout << "Batch2" << std::endl;
+    //im.load_image_batch(10000,20000);
+    std::cout << "Batch3" << std::endl;
+    //im.load_image_batch(20000,30000);
+    std::cout << "Batch4" << std::endl;
+    //im.load_image_batch(30000,40000);
+    std::cout << "Batch5" << std::endl;
+    //im.load_image_batch(40000,50000);
+    std::cout << "Batch6" << std::endl;
+    //im.load_image_batch(50000,60000);
+    std::cout << "Batch7" << std::endl;
+    //im.load_image_batch(60000,70000);
+    
+   //}
+   im.output_images(1,2);
+   im.output_images(30837,30838);
+   im.output_images(29577,29578);
+   im.output_images(38025,38026);
+   im.output_images(44650,44651);
+   im.output_images(52805,52806);
    /* char[count] loc = link.;
     std::filesystem::__cxx11::path dou = new std::filesystem::__cxx11::path(cwd + "/data/number1.jpg") ;
     layer firstlayer(im.importimage("/home/aquadoff/projects/Seigbrain/data/number1.jpg")); */
+    std::cout << "---------------------" << std::endl;
+   
     std::vector<double> firstlayer;
     firstlayer.push_back(0.5232);
     firstlayer.push_back(0.3123);
@@ -156,8 +180,8 @@ int main(int argc, char **argv) {
     
     std::cout << "---------------------" << std::endl;
     
-    for (int i = 0; i < 10000; i++){
-      thenetwork.produceoutput();
+    for (int i = 0; i < 1000; i++){
+      outs = thenetwork.produceoutput();
       thenetwork.tunelayers();
     }
     
