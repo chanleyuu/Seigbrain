@@ -44,6 +44,8 @@ private:
     double error_;
     const double euler = my_math_euler_num();
     layer* outputlayer = new layer(&euler);
+    
+    bool skip_error = false; //Error is a bit different for hidden layers
 public:
     
 

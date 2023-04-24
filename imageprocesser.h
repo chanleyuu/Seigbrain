@@ -27,6 +27,7 @@
 #include "./include/stb/stb_image.h"
 #include "network.h"
 #include "my_math.h"
+#include "intelligence.h"
 #include <iostream>
 #include <stdio.h>
 
@@ -54,6 +55,8 @@ private:
     double GetPixel(stbi_uc *image, size_t imageWidth, size_t x, size_t y, stbi_uc *r, stbi_uc *g, stbi_uc *b, stbi_uc *a);
     
     network* net_data;
+    
+    intelligence* blast_processor;
     /* {
         const stbi_uc *p = image + (4 * (y * imageWidth + x));
     *r = p[0];
@@ -74,7 +77,7 @@ public:
     
     void load_image(std::string im);
     
-    void load_image_batch(int start, int end);
+    void load_image_batch(int start, int end, bool shuff = true);
     
     std::vector<double> process_image(const char imagepath[]);
     
@@ -93,6 +96,12 @@ public:
     void load_model();
     
     void load_labels(int amount);
+    
+    void shuffle(std::vector< std::vector< double > > &array, int random, int next);
+    
+    void average_batches();
+    
+    void free_mem();
     /*{
     
     //Steps : Load image

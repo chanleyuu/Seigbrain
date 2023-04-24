@@ -29,7 +29,7 @@ private:
     std::vector<int> outputsizes;
     std::vector<network> batch_results;
 public:
-    intelligence(std::vector<double>& inputs, network* model); //constructor
+    intelligence( network* model); //constructor
     ~intelligence();//destructor
     
     void addnetwork();

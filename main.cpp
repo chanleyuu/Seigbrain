@@ -42,20 +42,32 @@ int main(int argc, char **argv) {
    //for (int i = 0; i < 10; i++) {
     im.load_labels(70000);
     std::cout << "Batch1" << std::endl;
-    im.load_image_batch(1,70000);
+    im.load_image_batch(1,70000, true);
+    //im.load_image_batch(1,70000);
     std::cout << "Batch2" << std::endl;
-    //im.load_image_batch(10000,20000);
+    //im.load_image_batch(7000,14000);
     std::cout << "Batch3" << std::endl;
-    //im.load_image_batch(20000,30000);
+    //im.load_image_batch(14000,21000);
     std::cout << "Batch4" << std::endl;
-    //im.load_image_batch(30000,40000);
+    //im.load_image_batch(21000,28000);
     std::cout << "Batch5" << std::endl;
-    //im.load_image_batch(40000,50000);
+    //im.load_image_batch(28000,35000);
     std::cout << "Batch6" << std::endl;
-    //im.load_image_batch(50000,60000);
+    //im.load_image_batch(35000,42000);
     std::cout << "Batch7" << std::endl;
-    //im.load_image_batch(60000,70000);
+    //im.load_image_batch(42000,49000);
+    std::cout << "Batch8" << std::endl;
+    //im.load_image_batch(49000,56000);
+    std::cout << "Batch9" << std::endl;
+    //im.load_image_batch(56000,63000);
+    std::cout << "Batch10" << std::endl;
+    //im.load_image_batch(63000,70000);
     
+    im.average_batches();
+    
+   // im.load_image_batch(1,70000, true);
+    
+    //im.average_batches();
    //}
    im.output_images(1,2);
    im.output_images(30837,30838);
@@ -170,7 +182,7 @@ int main(int argc, char **argv) {
     
     std::cout << "---------------------" << std::endl;
     
-    thenetwork.tunelayers();
+    //thenetwork.tunelayers();
     
     outs = thenetwork.produceoutput();
     

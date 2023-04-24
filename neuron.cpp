@@ -41,7 +41,7 @@ double neuron::calculateoutput( std::vector<double>& inputs, double weights[], i
         activation += (weights[i] * inputs.at(i));
     }
     activation += bias_;
-    activation = 1.0 / (1.0 + powf(*euler_, (-1.0 * activation)));
+    activation = 1.0 / (1.0 + ( 1.0 / powf(*euler_,  activation)));
     //delete weights;
     //delete inputs;
     //this->set_activation(activation);

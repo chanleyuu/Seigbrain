@@ -10,28 +10,35 @@ imageprocesser::imageprocesser(int size_x, int size_y)
   height = size_x;
   width = size_y;
   std::vector<double> pixel_act;
-  net_data =  new network(height * width, 1.5, 10);
-  net_data->addlayer(100);
-  net_data->addlayer(100);
-  net_data->addlayer(100);
+  net_data =  new network(height * width, 0.5, 10);
+  net_data->addlayer(10);
+  net_data->addlayer(30);
+  net_data->addlayer(10);
   net_data->init_weights();
   
+  intelligence* blast =  new intelligence( net_data);
+  
+  blast_processor = blast;
   euler_ = my_math_euler_num();
 }
 
 imageprocesser::imageprocesser(char * directory, int size_x, int size_y, char * form)
 {
+  
   format = form;
   height = size_x;
   width = size_y;
   directory_ = my_math_concat(directory, (char *) "/data");
   std::vector<double> pixel_act;
-  net_data =  new network(height * width, 1.5, 10);
+  net_data =  new network(height * width, 0.5, 10);
   net_data->addlayer(100);
-  net_data->addlayer(100);
-  net_data->addlayer(100);
+  net_data->addlayer(30);
+  net_data->addlayer(10);
   net_data->init_weights();
   
+  intelligence* blast =  new intelligence( net_data);
+  
+  blast_processor = blast;
   euler_ = my_math_euler_num();
 }
 
@@ -75,14 +82,17 @@ std::vector< double > imageprocesser::importimage(const char imagepath[])
               unsigned char g = pixelOffset[1];
               unsigned char b = pixelOffset[2];
               unsigned char a = bpp >= 4 ? pixelOffset[3] : 0xff;
-              long outer = long(r) + long(g) + long(b);
+              double outer = double(r) + double(g) + double(b);
               
               
             // neuron n;
             // n.setbias(double(outer) / 630.0);
              // out.push_back(double(outer) / 630.0);
             //outer = outer / 3;
-            outer = 1.0 / (1.0 + powf(euler_, (-1.0 * outer)));
+            outer = 1.0 / (1.0 + ( 1 / powf(euler_, outer)));
+            if (outer == 1.0) {
+                outer = outer - 0.0001;
+            }
             out.push_back(outer);
           }
       }
@@ -110,7 +120,7 @@ std::vector< double > imageprocesser::importimage(const char imagepath[])
     return out;
 }
 
-void imageprocesser::load_image_batch(int start, int end)
+void imageprocesser::load_image_batch(int start, int end, bool shuff)
 {
   //Load data
   char * path = my_math_concat(directory_, (char *) "/number");
@@ -152,9 +162,14 @@ void imageprocesser::load_image_batch(int start, int end)
   for (int i = start; i <= end; i++) {
     correct.push_back(get_correct_answers(labels[i]));
   }
-  intelligence blast_processer(values_.at(0), net_data);
-  blast_processer.train_examples(values_, correct);
-  blast_processer.average_results();
+  if (shuff == true) {
+    srand((unsigned) time(NULL));
+    int r = rand();
+    shuffle(correct, r, 1);
+    shuffle(values_, r, 1);
+  }
+  blast_processor->train_examples(values_, correct);
+  //blast_processer.average_results();
   values_.clear();
 }
 
@@ -451,3 +466,35 @@ void imageprocesser::load_labels(int amount)
   }
 }
 
+void imageprocesser::shuffle(std::vector<std::vector<double>> &array,int random, int next) 
+{
+  srand(random);
+  int n = array.size();
+  if (n > 1) 
+    {
+        size_t i;
+        for (i = 0; i < n - 1; i+= next) 
+        {
+          size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+          for (int e = 0; e < next; e++) {
+            if (j + next < n) { 
+              std::vector<double> t = array[j + e];
+              array[j + e] = array[i + e];
+              array[i + e] = t;
+            }
+          }
+        }
+    }
+}
+
+void imageprocesser::average_batches()
+{
+  blast_processor->average_results();
+}
+
+void imageprocesser::free_mem()
+{
+  net_data->free_network_mem();
+  delete net_data;
+  delete blast_processor;
+}
