@@ -26,3 +26,11 @@ char* my_math_toArray(int number);
 char* my_math_concat(char * str1, char * str2 );
 
 void *safe_malloc(size_t n);
+
+double my_math_relu(double act);
+
+double my_math_relu_deriv(double act);
+
+double my_math_error(double act, double right);
+
+double my_math_error_deriv(double act, double right);

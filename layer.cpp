@@ -220,7 +220,7 @@ void layer::feedforward(layer prev) {
         {
             weights[e] = prev.getneurons()->at(e).getweights()[e];
         }
-        neurons_->at(i).calculateoutput( activations, weights, prev.getneurons()->size());
+        neurons_->at(i).calculateoutput_sigmoid( activations, weights, prev.getneurons()->size());
     }
 }
 

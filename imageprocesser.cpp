@@ -90,8 +90,8 @@ std::vector< double > imageprocesser::importimage(const char imagepath[])
              // out.push_back(double(outer) / 630.0);
             //outer = outer / 3;
             outer = 1.0 / (1.0 + ( 1 / powf(euler_, outer)));
-            if (outer == 1.0) {
-                outer = outer - 0.0001;
+            if (outer >= 1.0) {
+                outer =  0.9999999999999;
             }
             out.push_back(outer);
           }

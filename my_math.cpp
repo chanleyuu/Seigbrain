@@ -52,3 +52,36 @@ void *safe_malloc(size_t n)
     }
     return p;
 }
+
+double my_math_relu(double act)
+{
+    if (act > 0) {
+        return act;
+    }
+
+    return 0.01 * act;
+}
+
+double my_math_relu_deriv(double act)
+{
+    if (act > 0) {
+        return 1.0;
+    }
+
+    return 0.01;
+}
+
+
+double my_math_error(double act, double right)
+{
+    double out = ((act * log(right)) + ((1 - act) * log(1.001 - right)));
+
+    return out;
+}
+
+double my_math_error_deriv(double act, double right)
+{
+    double out = right - act / (right - 1) * right;
+    return out;
+}
+

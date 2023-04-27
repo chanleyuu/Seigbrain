@@ -37,7 +37,8 @@ public:
     
     ~neuron();//destructor
     
-    double calculateoutput(std::vector<double>& inputs, double weights[], int weightcount);
+    double calculateoutput_sigmoid(std::vector<double>& inputs, double weights[], int weightcount);
+    double calculateoutput_relu(std::vector<double>& inputs, double weights[], int weightcount);
   //  double getoutput() const;
     
     double* getweights() const;

@@ -33,7 +33,7 @@ neuron::~neuron()
 
 
 //the vector check is the previous layer's outputs
-double neuron::calculateoutput( std::vector<double>& inputs, double weights[], int weightcount)
+double neuron::calculateoutput_sigmoid( std::vector<double>& inputs, double weights[], int weightcount)
 {
     //delete activation_;
     double activation = 0.0;
@@ -42,6 +42,22 @@ double neuron::calculateoutput( std::vector<double>& inputs, double weights[], i
     }
     activation += bias_;
     activation = 1.0 / (1.0 + ( 1.0 / powf(*euler_,  activation)));
+    //activation = my_math_relu(activation);
+    //delete weights;
+    //delete inputs;
+    //this->set_activation(activation);
+    return activation;
+}
+
+double neuron::calculateoutput_relu( std::vector<double>& inputs, double weights[], int weightcount)
+{
+    //delete activation_;
+    double activation = 0.0;
+    for (int i = 0; i < weightcount; i++) {
+        activation += (weights[i] * inputs.at(i));
+    }
+    activation += bias_;
+    activation = my_math_relu(activation);
     //delete weights;
     //delete inputs;
     //this->set_activation(activation);
