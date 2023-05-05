@@ -40,11 +40,12 @@ int main(int argc, char **argv) {
    imageprocesser im(cwd, 28, 28, (char *)".png");
 
    //for (int i = 0; i < 10; i++) {
-    im.load_labels(70000);
-    std::cout << "Batch1" << std::endl;
-    im.load_image_batch(1,70000, true);
+    im.load_data(70000);
+    //im.clean();
+    /*std::cout << "Batch1" << std::endl;
+    //im.load_image_batch(1,70000, true);
     //im.load_image_batch(1,70000);
-    std::cout << "Batch2" << std::endl;
+    //std::cout << "Batch2" << std::endl;
     //im.load_image_batch(7000,14000);
     std::cout << "Batch3" << std::endl;
     //im.load_image_batch(14000,21000);
@@ -61,13 +62,21 @@ int main(int argc, char **argv) {
     std::cout << "Batch9" << std::endl;
     //im.load_image_batch(56000,63000);
     std::cout << "Batch10" << std::endl;
-    //im.load_image_batch(63000,70000);
+    //im.load_image_batch(63000,70000); */
     
-    im.average_batches();
-    
-   // im.load_image_batch(1,70000, true);
-    
+
+    for (int i = 0; i < 10; i++) {
+    bool scramble = true;
+    if (i >= 1) {
+      scramble = true;
+    }
+    printf("Epoch %d \n", i + 1);
+    im.load_image_batch(1,70000, scramble);
     //im.average_batches();
+  } 
+    
+    
+   //im.average_batches();
    //}
    im.output_images(1,2);
    im.output_images(30837,30838);

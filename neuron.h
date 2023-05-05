@@ -29,6 +29,7 @@ private:
     double bias_;
     double delta_;
     const double* euler_; //Euler constant
+    bool nobias = false;
  //   double output_;
 public: 
     neuron(double* euler); //default constructor 

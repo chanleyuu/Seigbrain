@@ -16,8 +16,8 @@ list(APPEND flags "--cxxflags --cppflags")
 #INCLUDE_DIRECTORIES(/usr/include/CL)
 #LINK_DIRECTORIES(${PROJECT_SOURCE_DIR})
 
-#include(${PROJECT_SOURCE_DIR}/build/FindOpenCL.cmake)
-include(/usr/share/cmake/Modules/FindOpenCL.cmake)
+include(${PROJECT_SOURCE_DIR}/build/FindOpenCL.cmake)
+#include(/usr/share/cmake/Modules/FindOpenCL.cmake)
 
 #add_library(OPENCL SHARED /usr/include/CL/opencl.hpp 
 #    /usr/include/CL/cl_d3d10.h 

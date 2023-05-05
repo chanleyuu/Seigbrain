@@ -34,6 +34,7 @@ public:
     
     void addnetwork();
     void train_examples(std::vector<std::vector<double>> data, std::vector<std::vector<double>> correct);
+    void clean_outputs(std::vector<std::vector<double>> data);
     void setinputs(std::vector<double> l);
 
     std::vector<double> getinputs() const;

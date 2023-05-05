@@ -34,3 +34,4 @@ double my_math_relu_deriv(double act);
 double my_math_error(double act, double right);
 
 double my_math_error_deriv(double act, double right);
+

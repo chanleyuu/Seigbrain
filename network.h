@@ -43,6 +43,7 @@ private:
     std::vector<double> inputs_;
     double error_;
     const double euler = my_math_euler_num();
+    long step = 0;
     layer* outputlayer = new layer(&euler);
     
     bool skip_error = false; //Error is a bit different for hidden layers
@@ -101,4 +102,8 @@ public:
     std::vector<layer*> get_layers(); 
     
     std::vector<double> getinputs();
+    
+    long get_step();
+    
+    void set_step(long s);
 };

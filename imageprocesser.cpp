@@ -30,10 +30,10 @@ imageprocesser::imageprocesser(char * directory, int size_x, int size_y, char * 
   width = size_y;
   directory_ = my_math_concat(directory, (char *) "/data");
   std::vector<double> pixel_act;
-  net_data =  new network(height * width, 0.5, 10);
+  net_data =  new network(height * width, 0.001, 10);
+  net_data->addlayer(300);
+  net_data->addlayer(200);
   net_data->addlayer(100);
-  net_data->addlayer(30);
-  net_data->addlayer(10);
   net_data->init_weights();
   
   intelligence* blast =  new intelligence( net_data);
@@ -60,37 +60,42 @@ std::vector< double > imageprocesser::importimage(const char imagepath[])
     /*TO DO, set image as inputs for neural network */
     //height = 100;
     //width = 100;
-    bpp = 4;
+    bpp = 1;
     
     std::vector<double> out;
 
     try {
-        rgb_image = stbi_load(imagepath, &width, &height, &bpp, 3);
+        image = stbi_load(imagepath, &width, &height, &bpp, 1);
     }
     catch( std::exception &error_ )
     {
         std::cout << "ERROR!: " << error_.what() << std::endl;
     }
-    if (rgb_image) {
+    if (image) {
       for (int i = 0; i < height; i++) {
           for (int e = 0; e < width; e++){
               
               //int h = 18;
               //int j = 1341;
-              unsigned char* pixelOffset = rgb_image + (i + height * e) * bpp;
-              unsigned char r = pixelOffset[0];
+              //unsigned char* pixelOffset = rgb_image + (e + height * i) * bpp;
+            
+            char pixel = image[height * i + e];
+            /*  unsigned char r = pixelOffset[0];
               unsigned char g = pixelOffset[1];
               unsigned char b = pixelOffset[2];
               unsigned char a = bpp >= 4 ? pixelOffset[3] : 0xff;
-              double outer = double(r) + double(g) + double(b);
+              double outer = double(r) + double(g) + double(b) ; */ 
               
-              
+            double outer = (double) pixel / 255.0;
             // neuron n;
             // n.setbias(double(outer) / 630.0);
              // out.push_back(double(outer) / 630.0);
             //outer = outer / 3;
-            outer = 1.0 / (1.0 + ( 1 / powf(euler_, outer)));
-            if (outer >= 1.0) {
+            //outer = 1.0 / (1.0 + ( 1 / powf(euler_, outer)));
+            if (outer < 0) {
+                outer = outer * -1;
+            }
+            else if (outer >= 1.0) {
                 outer =  0.9999999999999;
             }
             out.push_back(outer);
@@ -123,19 +128,13 @@ std::vector< double > imageprocesser::importimage(const char imagepath[])
 void imageprocesser::load_image_batch(int start, int end, bool shuff)
 {
   //Load data
-  char * path = my_math_concat(directory_, (char *) "/number");
-  //printf("%s", path);
-  double d = net_data->get_layers().at(0)->getneurons()->at(0).get_activation();
-  //printf("%f \n",d);
-  for (int i = start; i <= end; i++)
-  {
-    values_.push_back(importimage(my_math_concat(path, my_math_concat(my_math_toArray(i), format))));
-  }
+  start = start - 1;
+  end = end - 1;
   //Load labels
   //Labes are stored in a file called "correct_answers.txt"
-  char * correct_file = my_math_concat(directory_, (char *) "/correct_answers.txt");
+  //char * correct_file = my_math_concat(directory_, (char *) "/correct_answers.txt");
   std::vector<std::vector<double>> correct;
-  
+  std::vector<std::vector<double>> value;
   /*
   FILE *fptr;
   fptr = fopen(correct_file,"r");
@@ -161,16 +160,17 @@ void imageprocesser::load_image_batch(int start, int end, bool shuff)
   
   for (int i = start; i <= end; i++) {
     correct.push_back(get_correct_answers(labels[i]));
+    value.push_back(values_.at(i));
   }
   if (shuff == true) {
     srand((unsigned) time(NULL));
     int r = rand();
     shuffle(correct, r, 1);
-    shuffle(values_, r, 1);
+    shuffle(value, r, 1);
   }
-  blast_processor->train_examples(values_, correct);
+  blast_processor->train_examples(value, correct);
   //blast_processer.average_results();
-  values_.clear();
+  //values_.clear();
 }
 
 //Converts a single digit integer into neuron activations to compare against outputs
@@ -436,8 +436,18 @@ void imageprocesser::load_model()
   }
 }
 
-void imageprocesser::load_labels(int amount)
+void imageprocesser::load_data(int amount)
 {
+  char * path = my_math_concat(directory_, (char *) "/number");
+  //printf("%s", path);
+  //double d = net_data->get_layers().at(0)->getneurons()->at(0).get_activation();
+  //printf("%f \n",d);
+  for (int i = 1; i < amount + 1; i++)
+  {
+    values_.push_back(importimage(my_math_concat(path, my_math_concat(my_math_toArray(i), format))));
+  }
+  
+  
   labels = (int*) malloc(amount * sizeof(int));
   
   char * correct_file = my_math_concat(directory_, (char *) "/correct_answers.txt");
@@ -497,4 +507,9 @@ void imageprocesser::free_mem()
   net_data->free_network_mem();
   delete net_data;
   delete blast_processor;
+}
+
+void imageprocesser::clean()
+{
+  blast_processor->clean_outputs(values_);
 }

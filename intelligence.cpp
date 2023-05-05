@@ -49,24 +49,24 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
     generation_++; */
   
  // std::vector<network> nets;
+ /*
   network net( data[0], model_->getlearningrate(), model_->get_output_size());
   
   for (int e = 1; e < model_->get_layers().size(); e++){ //Skip the input layer which is first in the layer vector
         net.addlayer(model_->get_layers().at(e)->getneurons()->size());
   }
   net.init_weights();
-  for (int i = 0; i < batch_results.size(); i++) {
-    for(int e = 0; e < batch_results.at(i).get_layers().size(); e++) {
-      for (int j = 0; j < batch_results.at(i).get_layers().at(e)->getneurons()->size(); j++) {
+  for(int e = 0; e < model_->get_layers().size(); e++) {
+    for (int j = 0; j < model_->get_layers().at(e)->getneurons()->size(); j++) { */
         /*
         for (int z = 0; z < nets.at(i).get_layers().at(e)->getneurons()->at(j).get_weight_count(); z++) {
           //weightaverages.at(e).at(j).push_back( weightaverages.at(e).at(j).at(z) + nets.at(i).get_layers().at(e)->getneurons()->at(j).getweights()[z]);
         } */
-        net.get_layers().at(e)->getneurons()->at(j).setbias( model_->get_layers().at(e)->getneurons()->at(j).getbias());
-        net.get_layers().at(e)->getneurons()->at(j).setweights(model_->get_layers().at(e)->getneurons()->at(j).getweights(), model_->get_layers().at(e)->getneurons()->at(j).get_weight_count());
-      }
+    /*  net.get_layers().at(e)->getneurons()->at(j).setbias( model_->get_layers().at(e)->getneurons()->at(j).getbias());
+      net.get_layers().at(e)->getneurons()->at(j).setweights(model_->get_layers().at(e)->getneurons()->at(j).getweights(), model_->get_layers().at(e)->getneurons()->at(j).get_weight_count());
     }
-  }
+  } */
+  
     
     
   std::vector<double> output;
@@ -76,7 +76,7 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
   for (int i = 0; i < data.size(); i++) {
     
     
-    net.setfirstlayer(data[i]);
+    model_->setfirstlayer(data[i]);
     /*
     for (int e = 0; e < net.get_layers().size(); e++){
       for (int j = 0; j < net.get_layers().at(e)->getneurons()->size(); j++){
@@ -90,15 +90,15 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
     } */
     
     //net.produceoutput();
-    net.set_desire(correct.at(i));
+    model_->set_desire(correct.at(i));
     c = correct.at(i);
     
-    for (int e = 0; e < 100; e++){
-      output = net.produceoutput();
-      net.tunelayers();
-      cost = net.get_error();
-    }
-    output = net.produceoutput();
+    //for (int e = 0; e < 10; e++){
+      output = model_->produceoutput();
+      model_->tunelayers();
+      cost = model_->get_error();
+   // }
+    //output = net.produceoutput();
 
     //}
     //nets.push_back(net);
@@ -160,7 +160,7 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
       }
         
   }  */
-  batch_results.push_back(net);
+  //batch_results.push_back(net);
   //Free network memory
   /*
   for (int i = 1; i < nets.size(); i++) {
@@ -168,6 +168,40 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
   }
   nets.clear(); */
 }
+
+void intelligence::clean_outputs(std::vector<std::vector<double>> data)
+{
+  std::vector<double> output;
+  std::vector<double> c;
+  double cost = 0.0;
+  std::vector<double> correct;
+  
+  for (int i = 0; i < 10; i++) {
+  correct.push_back(0.0);
+  }
+  model_->set_desire(correct);
+  
+  for (int i = 0; i < 1000; i++) {
+    
+    
+    model_->setfirstlayer(data[i]);
+    
+    c = correct;
+    
+    for (int e = 0; e < 10; e++){
+      output = model_->produceoutput();
+      model_->tunelayers();
+      cost = model_->get_error();
+    }
+    //output = net.produceoutput();
+
+    //}
+    //nets.push_back(net);
+  
+  
+  }
+}
+
 
 std::vector<double> intelligence::getinputs() const{
   return model_->getinputlayer().getactivations();
@@ -203,7 +237,7 @@ void intelligence::average_results()
         for (int z = 0; z < nets.at(i).get_layers().at(e)->getneurons()->at(j).get_weight_count(); z++) {
           //weightaverages.at(e).at(j).push_back( weightaverages.at(e).at(j).at(z) + nets.at(i).get_layers().at(e)->getneurons()->at(j).getweights()[z]);
         } */
-        batch_results.at(0).get_layers().at(e)->getneurons()->at(j).setbias( batch_results.at(i).get_layers().at(e)->getneurons()->at(j).getbias());
+        batch_results.at(0).get_layers().at(e)->getneurons()->at(j).setbias( batch_results.at(0).get_layers().at(e)->getneurons()->at(j).getbias() + batch_results.at(i).get_layers().at(e)->getneurons()->at(j).getbias());
         batch_results.at(0).get_layers().at(e)->getneurons()->at(j).addweights(batch_results.at(i).get_layers().at(e)->getneurons()->at(j).getweights());
       }
     }

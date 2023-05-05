@@ -47,6 +47,7 @@ private:
     double euler_;
     
     uint8_t* rgb_image;
+    stbi_uc *image;
 
     std::vector<std::vector<double>> values_;
     
@@ -95,9 +96,11 @@ public:
     
     void load_model();
     
-    void load_labels(int amount);
+    void load_data(int amount);
     
     void shuffle(std::vector< std::vector< double > > &array, int random, int next);
+    
+    void clean();
     
     void average_batches();
     
