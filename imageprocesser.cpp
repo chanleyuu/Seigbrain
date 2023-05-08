@@ -31,9 +31,9 @@ imageprocesser::imageprocesser(char * directory, int size_x, int size_y, char * 
   directory_ = my_math_concat(directory, (char *) "/data");
   std::vector<double> pixel_act;
   net_data =  new network(height * width, 0.001, 10);
-  net_data->addlayer(300);
+  //net_data->addlayer(400);
+  //net_data->addlayer(300);
   net_data->addlayer(200);
-  net_data->addlayer(100);
   net_data->init_weights();
   
   intelligence* blast =  new intelligence( net_data);

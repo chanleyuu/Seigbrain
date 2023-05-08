@@ -188,14 +188,13 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
 {
     //Total cost 
     double cost = 0.0;
-    double change = 0.0;
     //Smooting variables
     
-    double velocity = 0.0;
-    double m = 0.0;
-    double v = 0.0;
-    double mt = 0.0;
-    double vt = 0.0;
+    //double velocity = 0.0;
+    //double m = 0.0;
+    //double v = 0.0;
+    //double mt = 0.0;
+    //double vt = 0.0;
     double beta1 = 0.9;
     double beta2 = 0.999; 
     std::vector<double> new_desire;
@@ -207,7 +206,7 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
 	{
         //total cost of the layer will be calculated first
         if (skip_error == false) {
-            cost += ((desire[i] - pastlayer->getneurons()->at(i).get_activation()) * (desire[i] - pastlayer->getneurons()->at(i).get_activation())) / 2;
+        cost += ((desire[i] - pastlayer->getneurons()->at(i).get_activation()) * (desire[i] - pastlayer->getneurons()->at(i).get_activation())) / 2;
             //cost += my_math_error(pastlayer->getneurons()->at(i).get_activation(), desire[i]);
         }
          //Error is calculated corisponding for every weight
@@ -230,13 +229,14 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
             //error_deriv = (desire[i] - pastlayer->getneurons()->at(i).get_activation()) * -1.0 * act_deriv;
             error_deriv = desire[i] * act_deriv;
         }
-        
-        m = (beta1 * m) + (1 - beta1) *  error_deriv;
+        /*
+            m = (beta1 * m) + (1 - beta1) *  error_deriv;
             v = (beta2 * v) + (1 - beta2) * ( error_deriv *  error_deriv);
-            mt = mt / (1.0 - powf64(beta1, 1 + (double) step)); 
-            vt = vt / (1.0 - powf64(beta2, 1 + (double) step));
-            velocity =  velocity - learningrate_ * mt / (sqrt(vt) + 0.000000001); 
-        pastlayer->getneurons()->at(i).setbias(pastlayer->getneurons()->at(i).getbias() - ( velocity /* * learningrate_ */ ));
+            mt = m / (1.0 - powf64(beta1, 1 + (double) step)); 
+            vt = v / (1.0 - powf64(beta2, 1 + (double) step)); */
+            //velocity =  (pastlayer->getneurons()->at(i).getbias()  - (learningrate_ * mt)) / (sqrt(vt) + 0.00000001); 
+            pastlayer->getneurons()->at(i).setbias(pastlayer->getneurons()->at(i).getbias() - (error_deriv * learningrate_  ));
+            //pastlayer->getneurons()->at(i).setbias((pastlayer->getneurons()->at(i).getbias()  - (learningrate_ * mt)) / (sqrt(vt) + 0.00000001));
 	}
 	
 	for (int i = 0; i < L->getneurons()->size(); i++)
@@ -260,14 +260,14 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
             //double act_deriv = my_math_relu_deriv(pastlayer->getneurons()->at(i).get_activation());
             double weight_error = L->getneurons()->at(i).get_activation() * act_deriv * cost_deriv;
             
-            m = (beta1 * m) + (1 - beta1) * weight_error;
-            v = (beta2 * v) + (1 - beta2) * (weight_error * weight_error);
-            mt = mt / (1.0 - powf64(beta1, 1 + (double) step)); 
-            vt = vt / (1.0 - powf64(beta2, 1 + (double) step));
-            velocity =  velocity - learningrate_ * mt / (sqrt(vt) + 0.000000001); 
+            pastlayer->getneurons()->at(e).set_first_moment( (beta1 * pastlayer->getneurons()->at(e).get_first_moment()) + (1 - beta1) * weight_error);
+            pastlayer->getneurons()->at(e).set_second_moment( (beta2 * pastlayer->getneurons()->at(e).get_second_moment()) + (1 - beta2) * (weight_error * weight_error));
+            double mt = pastlayer->getneurons()->at(e).get_first_moment() / (1.0 - powf64(beta1, 1 + (double) step)); 
+            double vt = pastlayer->getneurons()->at(e).get_second_moment() / (1.0 - powf64(beta2, 1 + (double) step));
+            //velocity =  (L->getneurons()->at(i).getweights()[e] - (learningrate_ * mt)) / (sqrt(vt) + 0.00000001); 
             
-            neuronweights.push_back(L->getneurons()->at(i).getweights()[e] - (weight_error /* * learningrate_ */ ));
-
+            //neuronweights.push_back(L->getneurons()->at(i).getweights()[e] - (velocity  /* * learningrate_  */ ));
+            neuronweights.push_back((L->getneurons()->at(i).getweights()[e] - ((learningrate_ * mt)) / (sqrt(vt) + 0.00000001)));
         }
        /* m = 0;
         v = 0;
@@ -295,8 +295,8 @@ std::vector<double> network::tunelayer(layer* L, layer* pastlayer,  std::vector<
             }
             else {
                 act_deriv = my_math_relu_deriv(pastlayer->getneurons()->at(e).get_activation());
-                error_deriv = desire[e] * act_deriv;
-                //error_deriv = (desire[e] - pastlayer->getneurons()->at(e).get_activation()) * -1.0 * act_deriv;
+                //error_deriv = desire[e] * act_deriv;
+                error_deriv = (desire[e] - pastlayer->getneurons()->at(e).get_activation()) * -1.0 * act_deriv;
             }
             new_target += error_deriv * L->getneurons()->at(i).getweights()[e] ;
         }

@@ -98,7 +98,7 @@ void intelligence::train_examples(std::vector<std::vector<double>> data, std::ve
       model_->tunelayers();
       cost = model_->get_error();
    // }
-    //output = net.produceoutput();
+    //output = model_->produceoutput();
 
     //}
     //nets.push_back(net);

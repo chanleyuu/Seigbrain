@@ -29,7 +29,8 @@ private:
     double bias_;
     double delta_;
     const double* euler_; //Euler constant
-    bool nobias = false;
+    double moment1 = 0.0;
+    double moment2 = 0.0;
  //   double output_;
 public: 
     neuron(double* euler); //default constructor 
@@ -70,4 +71,9 @@ public:
     double get_delta();
     void set_delta(double delta);
     
+    double get_first_moment();
+    void set_first_moment(double m);
+    
+    double get_second_moment();
+    void set_second_moment(double m);
 };

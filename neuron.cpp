@@ -212,3 +212,23 @@ void neuron::clear_weights()
     weights_ = nullptr;
     //weights_ = new double[];
 }
+
+double neuron::get_first_moment()
+{
+    return moment1;
+}
+
+void neuron::set_first_moment(double m)
+{
+    moment1 = m;
+}
+
+double neuron::get_second_moment()
+{
+    return moment2;
+}
+
+void neuron::set_second_moment(double m)
+{
+    moment2 = m;
+}
